@@ -1,1 +1,14 @@
-node_modules/
+# Ignore all files in your project directory for keeping the project clean and organized
+# .cursor
+# .github/workflows/ci.yml
+# agent-system
+# core
+# docs
+# examples
+# logs
+# memory
+# scripts
+# templates
+# tools
+# AGENTS.md
+# QUICK_START.md
