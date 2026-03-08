@@ -1,5 +1,22 @@
 # AGENTS — Role definitions, capabilities, escalation
 
+## Agent responsibilities (at a glance)
+
+| Agent | Responsibility |
+|-------|----------------|
+| **Idea** | Parse project idea; prepare for research |
+| **Research** | Domain research, competitors, tech stack |
+| **Planner** | Define roadmap, phased milestones |
+| **Product Manager** | PRD, user journeys, feature specs |
+| **Project Manager** | Roadmap, task breakdown, task board |
+| **Architect** | Design system, database, API |
+| **Reviewer** | Critique architecture; CLEAR or revise |
+| **Worker** | Implement code |
+| **Critic** | Review Worker output; find flaws |
+| **Coder** | Code implementation (mid/senior) |
+| **Tester** | Validate code; run tests |
+| **Skill Generator** | Detect repeated patterns → create new skills |
+
 ---
 
 ## 1. Idea Agent

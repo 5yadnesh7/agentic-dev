@@ -18,7 +18,20 @@
 | Worker ↔ Critic | Critic finds flaws in code | 2–3 |
 | Tester ↔ Coder | Verify fails | Until pass |
 
+## Error handling
+
+| Condition | Action |
+|-----------|--------|
+| **Skill output invalid** (missing artifact, wrong format) | Retry up to 2 times with same skill |
+| **After 2 retries** | Fallback skill if defined (e.g. workflow-project-spec → role-product-manager); else **ask user** |
+| **`npm test` fails** | Loop back to Worker; do not commit |
+| **Lint fails** | Fix and re-run; do not commit |
+| **User gate** (e.g. spec approval) | Pause; ask user; resume on approval |
+
+**Principle:** Never guess. Retry → fallback → ask user.
+
 ## Source of truth
 
+- `core/orchestrator-spec.md` — Execution logic, skill selection
 - `agent-system/WORK_MANAGER.md` — Phases, per-task loop
 - `agent-system/ORCHESTRATOR.md` — Commit rule, quality gate

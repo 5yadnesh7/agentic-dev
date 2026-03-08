@@ -34,5 +34,6 @@ result
 
 ## Source of truth
 
+- `core/orchestrator-spec.md` — Stepwise execution logic, skill selection, validation
 - `agent-system/ORCHESTRATOR.md` — Trigger map, commit rules, quality gate
 - `.cursor/agents/dev-supervisor.md` — Master agent; executes this flow

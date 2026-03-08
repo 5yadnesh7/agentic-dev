@@ -79,6 +79,13 @@ If user says **"build X"** (e.g. "build a SaaS for gym booking"):
 
 ---
 
+## Observability
+
+After each phase, append to `logs/agent-execution.md`:
+```
+[YYYY-MM-DD HH:MM] [agent] → [brief output] | OK | BLOCKED | CLEAR
+```
+
 ## Rules
 
 - **Explicit order** — Do not run Step N+1 until Step N is done

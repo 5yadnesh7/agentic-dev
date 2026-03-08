@@ -36,12 +36,13 @@ read state → think → act → update state
 | 6 | Verify | npm test, npm run lint | All pass |
 | 7 | **If fail → loop to 4** | Revise fix, retest | — |
 | 8 | Commit | fix(scope): + test(scope): | Committed |
-| 9 | **Update state** | project-memory, dev-lessons | Next run has context |
+| 9 | **Update state** | project-memory, dev-lessons, project-brain (if decision) | Next run has context |
+| 10 | **Self-evolving (optional)** | If fix is reusable playbook done 2+ times → workflow-skill-creator | New skill or — |
 
 ---
 
 ## How to run
 
 1. **Read** `.cursor/skills/workflow-semantic-debugging/SKILL.md`
-2. **Execute** steps 1–8; loop 4→6→7 until verify passes
+2. **Execute** steps 1–10; loop 4→6→7 until verify passes
 3. **Read** `docs/project-brain.md` or `docs/dev-lessons.md` for context

@@ -1,6 +1,6 @@
 # Skill contract — Standard interface
 
-Every skill should define: **Purpose**, **Input**, **Output**, **Layer**.
+Every skill should define: **Purpose**, **Input**, **Output**, **Layer**, **Dependencies**.
 
 This allows agents to chain skills reliably.
 
@@ -11,6 +11,9 @@ This allows agents to chain skills reliably.
 name: skill-name
 description: [What]. Use when [triggers].
 tags: [layer, domain, tech]
+layer: executive | strategic | operational
+produces: [docs/artifact.md, ...]
+required_context: [project-brain, project-context, ...]
 ---
 
 ## Skill contract
@@ -20,11 +23,23 @@ tags: [layer, domain, tech]
 | **Layer** | Executive | Strategic | Operational |
 | **Input** | [What goes in] |
 | **Output** | [What comes out] |
+| **Dependencies** | [Other skills or files required before running] |
 | **Purpose** | [One sentence] |
 
 ## Purpose
 ...
 ```
+
+## Frontmatter (machine-readable)
+
+| Field | Required | Purpose |
+|-------|----------|---------|
+| `name` | Yes | Skill identifier |
+| `description` | Yes | What it does; trigger phrases |
+| `tags` | Yes | Discovery: [layer, domain, tech] |
+| `layer` | Yes | executive \| strategic \| operational |
+| `produces` | Recommended | Paths of artifacts (e.g. docs/architecture.md) |
+| `required_context` | Optional | Files to read first (project-brain, project-context, etc.) |
 
 ## Examples
 
