@@ -7,9 +7,19 @@ layer: executive
 
 # Workflow: Skill Receiver (dispatcher)
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Executive |
+| **Input** | User message (no explicit trigger) |
+| **Output** | Invoked skill; matched from SKILL_INDEX |
+| **Dependencies** | SKILL_INDEX.md, .cursor/skills/skill-router.md |
+| **Purpose** | Match user intent to best skill and invoke it |
+
 ## Purpose
 
-When the user message does **not** start with a known trigger, **intelligently match** their intent to the best skill in SKILL_INDEX and invoke it. Use keywords, domain, and intent—do not require the user to know trigger names. If the message **does** start with a trigger (Idea:, Workflow:, etc.), use **workflow-orchestrator** instead—do not use skill-receiver.
+When the user message does **not** start with a known trigger, use **skill-router** logic (`.cursor/skills/skill-router.md`): match intent, tags, domain to the best skill in SKILL_INDEX and invoke it. Do not require the user to know trigger names. If the message **does** start with a trigger (Idea:, Workflow:, etc.), use **workflow-orchestrator** instead—do not use skill-receiver.
 
 **Every skill is trigger-based:** direct (explicit prefix) or intelligent (this receiver). When user intent clearly maps to a skill, invoke it.
 
@@ -26,11 +36,11 @@ If message starts with a known trigger → **use workflow-orchestrator**, not sk
 
 **Checklist:** [ ] Message scanned for trigger; [ ] No trigger → continue
 
-### Step 2: Read SKILL_INDEX
+### Step 2: Read SKILL_INDEX and skill-router
 
-Read `agent-system/SKILL_INDEX.md`. Each row: skill name | when to use
+Read `agent-system/SKILL_INDEX.md` and `.cursor/skills/skill-router.md`. Router logic: match intent, tags, domain; optionally score candidates.
 
-**Checklist:** [ ] SKILL_INDEX read
+**Checklist:** [ ] SKILL_INDEX read; [ ] skill-router logic applied
 
 ### Step 3: Match intent (intelligent trigger)
 

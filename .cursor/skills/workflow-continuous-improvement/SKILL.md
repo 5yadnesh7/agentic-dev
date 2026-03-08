@@ -7,6 +7,16 @@ layer: strategic
 
 # Workflow: Continuous Improvement
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Strategic |
+| **Input** | Architecture, codebase, recent changes |
+| **Output** | Improvement suggestions; refactor/tech-debt report |
+| **Dependencies** | project-brain, architecture docs |
+| **Purpose** | Retrospective; suggest improvements for architecture, DB, refactor |
+
 ## Purpose
 
 Run a retrospective / improvement pass. Agents ask critical questions and suggest improvements for architecture, DB, refactor, and tech debt.

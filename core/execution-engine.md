@@ -9,6 +9,7 @@
 3. **Commit** — After every atomic unit (one model, one endpoint, one test file)
 4. **No WIP on main** — Stash or branch
 5. **No commit with failing tests**
+6. **Read state first** — Before acting, read `memory/project-state.md`; after acting, update it
 
 ## Loops
 
@@ -32,6 +33,7 @@
 
 ## Source of truth
 
-- `core/orchestrator-spec.md` — Execution logic, skill selection
+- `core/orchestrator-spec.md` — Execution logic, skill selection, validation
 - `agent-system/WORK_MANAGER.md` — Phases, per-task loop
 - `agent-system/ORCHESTRATOR.md` — Commit rule, quality gate
+- `.cursor/skills/skill-router.md` — Dynamic skill selection (intent, tags, domain)

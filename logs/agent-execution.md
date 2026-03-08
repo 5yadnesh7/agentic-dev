@@ -18,6 +18,14 @@ Each entry: `[YYYY-MM-DD HH:MM] Agent → Output | Status`
 2026-03-08 11:20 tester → npm test | 12 passed
 ```
 
+## Status codes
+
+| Status | Meaning |
+|--------|---------|
+| **OK** | Phase completed; output produced; no blockers |
+| **BLOCKED** | Phase needs revision or user input before proceeding |
+| **CLEAR** | Reviewer/critic pass complete; no blocking issues |
+
 ## Instructions for orchestrator
 
 After each phase:

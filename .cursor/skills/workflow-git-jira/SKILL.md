@@ -7,6 +7,16 @@ layer: operational
 
 # Workflow: Git + Jira
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational |
+| **Input** | Commit message, branch name, Jira ticket (optional); .cursor/commit-convention.md |
+| **Output** | Branch created; commit made; Jira linked (if applicable) |
+| **Dependencies** | .cursor/commit-convention.md |
+| **Purpose** | Consistent commits, branch naming, Jira linking |
+
 ## Purpose
 
 Ensure consistent commits, branch naming, and (when applicable) Jira linking. Uses project commit convention. One atomic unit per commit.

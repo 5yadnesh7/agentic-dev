@@ -7,6 +7,16 @@ layer: strategic
 
 # Workflow: Architecture Review (Pre-Coding Gate)
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Strategic |
+| **Input** | docs/architecture.md, database.md, api.md |
+| **Output** | Issues, recommendations; revised architecture until CLEAR |
+| **Dependencies** | Architecture docs |
+| **Purpose** | Self-critique architecture for scalability, security, performance before coding |
+
 ## Purpose
 
 **Reviewer critiques Architect.** Mimics senior engineer design review. Architect ↔ Reviewer debate: Reviewer finds issues → Architect revises → re-review until CLEAR. Run **after** spec (product, architecture, database, API) and **before** implementation.

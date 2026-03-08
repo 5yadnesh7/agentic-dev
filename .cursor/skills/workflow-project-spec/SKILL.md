@@ -7,6 +7,16 @@ layer: strategic
 
 # Workflow: Spec-First Engineering
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Strategic |
+| **Input** | Idea; optionally research, assumptions |
+| **Output** | docs/product.md, architecture.md, database.md, api.md, tasks.md |
+| **Dependencies** | — |
+| **Purpose** | Convert idea into structured specification; never code before spec |
+
 ## Purpose
 
 **Professional engineering starts with specs.** Convert any idea into a structured specification. **NEVER code before the spec exists.**

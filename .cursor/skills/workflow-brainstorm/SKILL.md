@@ -7,6 +7,16 @@ layer: strategic
 
 # Workflow: Brainstorm
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Strategic |
+| **Input** | Vague idea or request |
+| **Output** | Product concept, features, modules, risks; Product Planning input |
+| **Dependencies** | — |
+| **Purpose** | Explore options, clarify scope before PRD |
+
 ## When to run
 
 - User says: "brainstorm", "explore options", "before we start"

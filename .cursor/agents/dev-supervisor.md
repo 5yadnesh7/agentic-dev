@@ -65,7 +65,7 @@ If user says **"build X"** (e.g. "build a SaaS for gym booking"):
 - **Read** the skill's SKILL.md
 - **Execute** its step-by-step process
 - **Write** outputs to the specified paths
-- **Update** `docs/project-memory.md` after each phase
+- **Update** `memory/project-state.md` after each phase
 
 ---
 
@@ -76,6 +76,8 @@ If user says **"build X"** (e.g. "build a SaaS for gym booking"):
 | New project, greenfield | new-project | `.cursor/workflows/new-project.workflow.md` |
 | Add feature to existing | feature-development | `.cursor/workflows/feature-development.workflow.md` |
 | Fix a bug | bug-fix | `.cursor/workflows/bug-fix.workflow.md` |
+
+**Dynamic routing:** For sub-steps (e.g. "database schema", "API design"), use `.cursor/skills/skill-router.md` to select the best skill from SKILL_INDEX when multiple skills could apply.
 
 ---
 
@@ -91,4 +93,4 @@ After each phase, append to `logs/agent-execution.md`:
 - **Explicit order** — Do not run Step N+1 until Step N is done
 - **Call, don't describe** — Actually invoke each skill; do not just list what would happen
 - **One brain** — You are the single coordinator; delegate to skills, not to "another agent"
-- **Update memory** — After each step, update `docs/project-memory.md` and `docs/project-context.md` (via workflow-project-context)
+- **Update memory** — After each step, update `memory/project-state.md` (via workflow-project-context or directly)

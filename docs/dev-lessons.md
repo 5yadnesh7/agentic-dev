@@ -2,6 +2,8 @@
 
 > **Agent learns over time.** Record patterns that worked, mistakes to avoid, correct approaches. Reference before similar work.
 
+**Note:** When using the new memory layout, also update `memory/project-state.md` → Lessons Learned. This file can remain for detailed format or legacy projects.
+
 ## Format
 
 ```markdown

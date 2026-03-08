@@ -7,6 +7,16 @@ layer: operational
 
 # Workflow: Commit Convention
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational |
+| **Input** | User preference or project needs |
+| **Output** | .cursor/commit-convention.md |
+| **Dependencies** | — |
+| **Purpose** | Establish commit message convention for the project |
+
 ## Purpose
 
 Establish and persist the project's commit message convention so all agents use the same format. Run once per project; thereafter read from file. Used by workflow-git-jira and all agents making commits.

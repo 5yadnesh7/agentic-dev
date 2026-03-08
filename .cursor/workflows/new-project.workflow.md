@@ -58,5 +58,11 @@ User says: **"build a SaaS for gym booking"**
 
 1. **Activate** dev-supervisor (`agents/dev-supervisor.md`)
 2. **Choose** new-project (this workflow) or bootstrapping path
-3. **Invoke** each step's skill
+3. **Invoke** each step's skill in sequence
 4. **Do not skip** — execute in order
+5. **Update** `memory/project-state.md` after each phase (Current Phase, Completed Tasks, Key Decisions)
+
+## Validation
+
+- Each skill produces expected output per its contract (see `agent-system/SKILL_CONTRACT.md`)
+- User gates: Product spec (Step 6) and UX (if applicable) require approval before task planning

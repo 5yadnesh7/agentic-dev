@@ -1,25 +1,24 @@
-# Memory — Project state
+# Memory — Project state and agent communication
 
-Persistent state for agents. **Every agent reads and updates these files.**
+Persistent state and inter-agent communication. **Every agent reads and updates these files.**
 
-## Files (in docs/)
+## Files
 
 | File | Purpose |
 |------|---------|
-| `docs/project-brain.md` | Vision, decisions, stack, open questions, lessons |
-| `docs/project-memory.md` | Current phase, task board, blockers |
-| `docs/project-context.md` | Stack, structure, patterns (updated per phase) |
-| `docs/decision-log.md` | Why decisions were made |
-| `docs/dev-lessons.md` | Lessons learned; reusable patterns |
+| **`project-state.md`** | Single source of truth. Project, phase, tasks, stack, decisions, lessons. All agents read and update before acting. |
+| **`agent-messages.md`** | Shared communication channel. Agents leave notes for each other (e.g. Architect → Reviewer). Enables collaboration and decision trails. |
 
 ## Stateful reasoning
 
 ```
-read state → think → act → update state
+read project-state → perform task → update project-state
 ```
 
-Do not rely on chat history. Use structured files.
+Optionally read/post `agent-messages.md` when collaborating or handing off.
 
 ## See also
 
 - `agent-system/MEMORY_SYSTEM.md` — Full memory layer definition
+- `docs/decision-log.md` — Why decisions were made (detailed rationale)
+- `docs/project-context-full.md` — Exhaustive codebase context (from GetContext:)

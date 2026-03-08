@@ -63,7 +63,7 @@ When working in a codebase, agents should:
 
 ## Tool memory
 
-Results of tool runs that are worth reusing live in `docs/tool-memory.md`. Agents update it when:
+Results of tool runs that are worth reusing live in `docs/tool-memory.md`. For project state (phase, tasks, decisions), use `memory/project-state.md`. Agents update tool-memory when:
 
 - A command succeeds after earlier failures
 - Env or config is discovered

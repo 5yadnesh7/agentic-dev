@@ -7,6 +7,16 @@ layer: operational
 
 # Workflow: Code Review (pre-commit)
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational |
+| **Input** | Current diff (unstaged or staged); .cursor/rules |
+| **Output** | Pre-commit review report (blocking/suggestions) |
+| **Dependencies** | .cursor/rules for file types |
+| **Purpose** | Review changes against standards before commit |
+
 ## Purpose
 
 Review current (uncommitted or staged) changes against project standards before commit. Catch issues early. Ensure one atomic unit per commit with no blocking issues.

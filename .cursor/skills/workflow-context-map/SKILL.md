@@ -7,6 +7,16 @@ layer: strategic
 
 # Workflow: Context Map
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Strategic |
+| **Input** | Codebase; user question (optional) |
+| **Output** | Repo mental map (where logic lives, what to edit) |
+| **Dependencies** | — |
+| **Purpose** | Build repo mental map for LLM navigation |
+
 ## Purpose
 
 Large repos confuse LLMs. This skill builds a **repo mental map**: where logic lives, where to edit code, what not to touch. Makes Cursor far more accurate when navigating the codebase.

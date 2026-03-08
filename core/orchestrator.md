@@ -8,7 +8,7 @@
 2. **Determine workflow** — new-project, feature-dev, bug-fix, refactor
 3. **Assign agents** — Planner, Architect, Worker, Critic, Tester
 4. **Manage iteration loops** — Architect ↔ Reviewer; Worker ↔ Critic; Tester ↔ Coder
-5. **Update project memory** — docs/project-memory.md, docs/project-brain.md after each phase
+5. **Update project memory** — `memory/project-state.md` after each phase (see `agent-system/MEMORY_SYSTEM.md`)
 
 ## Execution flow
 

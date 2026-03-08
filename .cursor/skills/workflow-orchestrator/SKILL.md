@@ -7,6 +7,16 @@ layer: executive
 
 # Workflow Orchestrator
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Executive |
+| **Input** | User request with Idea:/Project:/Build:/Workflow: trigger; ORCHESTRATOR.md, WORK_MANAGER.md |
+| **Output** | Orchestrated execution; phases run; artifacts in docs/, tasks/ |
+| **Dependencies** | ORCHESTRATOR.md, WORK_MANAGER.md |
+| **Purpose** | Execute full product lifecycle from idea to PR |
+
 ## Purpose
 
 Execute the full product lifecycle from idea to PR. Manages phases, assigns agents, enforces order, tracks progress, and applies quality gates.

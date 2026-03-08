@@ -4,7 +4,7 @@ description: Semantic debugging: find root cause and implement fix end-to-end. U
 tags: [operational, debugging, bug-fix]
 layer: operational
 produces: [docs/debug/[slug]-report.md]
-required_context: [project-brain, project-context, dev-lessons]
+required_context: [memory/project-state]
 ---
 
 # Workflow: Semantic Debugging
@@ -16,7 +16,7 @@ required_context: [project-brain, project-context, dev-lessons]
 | **Layer** | Operational (execution) |
 | **Input** | Bug description, error message, stack trace, steps to reproduce |
 | **Output** | Fix committed; regression test; `docs/debug/[slug]-report.md` (optional) |
-| **Dependencies** | project-brain, project-context, dev-lessons (read first) |
+| **Dependencies** | memory/project-state.md (read first); memory/agent-messages.md (if handoff) |
 | **Purpose** | Find root cause, implement fix, add regression test, verify, commit |
 
 ## Purpose
@@ -55,10 +55,10 @@ read state → think → act → update state
 
 | Step | Action |
 |------|--------|
-| **Read** | `docs/project-brain.md`, `docs/project-context.md`, `docs/dev-lessons.md` (if exist) |
+| **Read** | `memory/project-state.md` (primary; if exist) |
 | **Think** | Steps 1–3 (reproduce, analyze, root cause) |
 | **Act** | Steps 4–7 (fix, test, verify, commit) |
-| **Update** | After commit: `docs/project-memory.md` (completed fix), `docs/dev-lessons.md` (if reusable lesson) |
+| **Update** | After commit: `memory/project-state.md` (completed fix, lessons learned) |
 
 ## When to run
 
@@ -69,9 +69,7 @@ read state → think → act → update state
 
 ### Step 0: Read state
 
-- **Read** `docs/project-brain.md` — stack, architecture, decisions
-- **Read** `docs/dev-lessons.md` — similar past bugs, correct patterns
-- **Read** `docs/project-context.md` — where logic lives
+- **Read** `memory/project-state.md` — stack, architecture, decisions, lessons learned, structure
 - **Checklist:** [ ] State loaded; [ ] Context understood
 
 ---
@@ -253,11 +251,9 @@ it('handles [bug scenario] - regression for [bug id]', () => {
 
 | File | What to update |
 |------|----------------|
-| `docs/project-memory.md` | Add bug fix to completed items; clear blocker if resolved |
-| `docs/dev-lessons.md` | Add lesson if bug reveals reusable pattern (e.g. "API returns null, not []") |
-| `docs/project-brain.md` | If fix affects architecture or adds a decision — document why |
+| `memory/project-state.md` | Add bug fix to Completed Tasks; add to Lessons Learned if reusable; update Key Decisions if architecture changed |
 
-**Checklist:** [ ] project-memory updated; [ ] dev-lessons updated if applicable
+**Checklist:** [ ] project-state updated
 
 ---
 
@@ -308,10 +304,10 @@ Produce `docs/debug/[bug-slug]-report.md` (optional, for record):
 
 ---
 
-## Project brain / memory (stateful reasoning)
+## Project state (stateful reasoning)
 
-- **Read at start (Step 0):** project-brain, project-context, dev-lessons
-- **Update at end (Step 8):** project-memory, dev-lessons (if lesson), project-brain (if decision)
+- **Read at start (Step 0):** memory/project-state.md
+- **Update at end (Step 8):** memory/project-state.md (completed fix, lessons, decisions)
 
 ## Self-evolving skills
 

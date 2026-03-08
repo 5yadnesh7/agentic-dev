@@ -1,8 +1,10 @@
 # Architecture — [Project]
 
+> **How to fill:** Replace `—` with concrete choices. Overview = 2–4 sentences on structure, modules, data flow.
+
 ## Overview
 
-[One paragraph: high-level structure]
+[One paragraph: high-level structure; e.g. "Monolith with modular domains. API layer → services → repositories → DB."]
 
 ## Stack
 

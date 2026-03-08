@@ -7,6 +7,16 @@ layer: strategic
 
 # Workflow: Create New Skill
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Strategic |
+| **Input** | User request or repeated pattern from dev-lessons; solution summary |
+| **Output** | New skill at .cursor/skills/<name>/SKILL.md; SKILL_INDEX updated |
+| **Dependencies** | SKILL_CONTRACT.md, SKILL_INDEX.md |
+| **Purpose** | Create reusable skill from pattern; register in SKILL_INDEX |
+
 ## Purpose
 
 Create a new Cursor skill that can be invoked by workflow-skill-receiver. Ensures consistent structure, trigger terms for matching, and registration in SKILL_INDEX.

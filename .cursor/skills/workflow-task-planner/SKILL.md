@@ -7,6 +7,16 @@ layer: strategic
 
 # Workflow: Task Planner
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Strategic |
+| **Input** | Spec, roadmap; docs/product.md, docs/architecture.md |
+| **Output** | tasks/001-X.md, tasks/002-Y.md, ... |
+| **Dependencies** | docs/roadmap.md, product/architecture spec |
+| **Purpose** | Decompose project into executable task files |
+
 ## Purpose
 
 Decompose a project into executable task files. Each task becomes a file in `tasks/` that agents then implement. **Roadmap + task tree:** Read `docs/roadmap.md` for phase order; map tasks to phases (Phase 1 → tasks 001–003, Phase 2 → 004–006, etc.).

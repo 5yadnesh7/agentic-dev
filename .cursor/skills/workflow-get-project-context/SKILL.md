@@ -7,6 +7,16 @@ layer: strategic
 
 # Workflow: Get Project Context (Comprehensive)
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Strategic |
+| **Input** | Codebase |
+| **Output** | docs/project-context-full.md (exhaustive) |
+| **Dependencies** | — |
+| **Purpose** | Capture complete project context for onboarding or handoff |
+
 ## Purpose
 
 Capture **every small bit of project information** into a single Markdown file. Exhaustive deep dive: all files, configs, dependencies, env, scripts, patterns, conventions. Produces `docs/project-context-full.md` for full onboarding or context handoff.

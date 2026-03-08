@@ -203,7 +203,7 @@ Agent systems work better as **graphs** than as strict linear pipelines. Paralle
 | `Validate:` / `Assume:` | workflow-assumption-validation | Think-before-build; list assumptions, risks, missing info |
 | `Roadmap:` | workflow-project-roadmap | Phased milestones (docs/roadmap.md) before architecture |
 
-**No explicit trigger?** Use **workflow-skill-receiver** (intelligent trigger): match user intent to SKILL_INDEX.md by keywords, domain, and intent—then run the matching skill. Every skill in SKILL_INDEX is invokable by direct trigger (above) or by intelligent intent matching.
+**No explicit trigger?** Use **workflow-skill-receiver** with **skill-router** (`.cursor/skills/skill-router.md`): match user intent to SKILL_INDEX by keywords, tags, domain, and optional confidence scoring—then run the best-matching skill. Every skill is invokable by direct trigger (above) or by intelligent routing.
 
 ---
 

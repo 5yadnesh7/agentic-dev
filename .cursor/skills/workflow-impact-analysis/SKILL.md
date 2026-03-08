@@ -7,6 +7,16 @@ layer: operational
 
 # Workflow: Impact Analysis (Change Propagation)
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational |
+| **Input** | Changed file(s) or path; codebase |
+| **Output** | Dependents list; verification result; fixes if needed |
+| **Dependencies** | project-context |
+| **Purpose** | Find dependents after changes; verify and fix broken callers |
+
 ## Purpose
 
 **Run after changes** to find all direct and indirect dependents, verify nothing is broken, and fix any hampered code. When something changes (function, API, schema, module), identify what else may be affected, run tests, and—if issues exist—invoke the right role (Junior/Senior Engineer, Tester, etc.) to handle fixes. Ensures the codebase stays consistent.

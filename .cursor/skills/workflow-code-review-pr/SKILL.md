@@ -7,6 +7,16 @@ layer: operational
 
 # Workflow: Code review (PR/MR)
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational |
+| **Input** | PR title, description, changed files |
+| **Output** | PR review report (blocking/suggestions) |
+| **Dependencies** | .cursor/rules |
+| **Purpose** | Full PR/MR review: standards, tests, security, docs |
+
 ## When to run
 
 - User says: "review this PR", "Review: src/auth/", "MR review"

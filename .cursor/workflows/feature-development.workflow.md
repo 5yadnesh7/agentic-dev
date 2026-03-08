@@ -12,7 +12,7 @@
 
 | # | Step | Skill / Agent | Output |
 |---|------|---------------|--------|
-| 1 | Context | workflow-project-context (if brownfield) | `docs/project-context.md` |
+| 1 | Context | workflow-project-context (if brownfield) | `memory/project-state.md` (Structure & Patterns) |
 | 2 | Requirements | role-product-manager | PRD, ACs for feature |
 | 3 | Assumption validation | workflow-assumption-validation | Assumptions, risks, missing info for feature |
 | 4 | Architecture | LLD / role-senior-engineer | Technical design |
@@ -32,4 +32,4 @@
 1. **Activate** dev-supervisor
 2. **Invoke** each step's skill in order
 3. **User gates** — UX approval before step 8
-4. **Update** `docs/project-memory.md` after each phase
+4. **Update** `memory/project-state.md` after each phase

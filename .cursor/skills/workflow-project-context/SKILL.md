@@ -7,6 +7,16 @@ layer: strategic
 
 # Workflow: Project Context
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Strategic |
+| **Input** | Codebase; phase output |
+| **Output** | docs/project-context.md (updated) |
+| **Dependencies** | — |
+| **Purpose** | Get and maintain project context; update after each phase |
+
 ## Purpose
 
 Get and maintain a **persistent project context doc** that is:

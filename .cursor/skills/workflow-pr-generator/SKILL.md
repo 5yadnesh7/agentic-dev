@@ -7,6 +7,16 @@ layer: operational
 
 # Workflow: PR Generator
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational |
+| **Input** | Branch, commits; feature/fix scope |
+| **Output** | PR with title and description; ready for merge |
+| **Dependencies** | Quality gate (tests, lint) passed |
+| **Purpose** | Create branch, commits, PR description |
+
 ## Purpose
 
 Create a branch, make commits (following atomic-unit rule), and generate a PR with title and description.

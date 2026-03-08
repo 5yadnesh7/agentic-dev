@@ -1,5 +1,7 @@
 # Task [ID] — [Title]
 
+> **How to fill:** ID = 001, 002, ...; Title = short verb phrase; Assign by complexity; Size = XS/S/M/L; Depends = comma-separated task IDs.
+
 Assign: Junior | Senior
 Size: XS | S | M | L
 Sensitive: YES | NO

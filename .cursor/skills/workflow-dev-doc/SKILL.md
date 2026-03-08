@@ -7,6 +7,16 @@ layer: operational
 
 # Workflow: Dev Doc (task-scoped context)
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational |
+| **Input** | Task file; files to modify, ACs |
+| **Output** | .cursor/dev-docs/<TASK-ID>.md; deleted when task DONE |
+| **Dependencies** | Task file |
+| **Purpose** | Create temporary task context; reduce hallucination during implementation |
+
 ## Purpose
 
 During development (Phases 3–4), create a **temporary dev doc** for the current task or phase that:

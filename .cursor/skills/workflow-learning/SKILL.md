@@ -7,6 +7,16 @@ layer: operational
 
 # Workflow: Learning
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational |
+| **Input** | Wrong approach, correct pattern; context |
+| **Output** | Entry in docs/dev-lessons.md |
+| **Dependencies** | — |
+| **Purpose** | Record lessons for future reuse |
+
 ## Purpose
 
 **Agents record lessons.** When a pattern is discovered (correct or incorrect), add it to `docs/dev-lessons.md`. Future runs reference it. The system improves over time.

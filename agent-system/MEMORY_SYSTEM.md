@@ -4,6 +4,35 @@ Agentic systems need memory to avoid repeating work and to maintain context acro
 
 ---
 
+## Central architecture (single source of truth)
+
+**Two files in `memory/` form the core:**
+
+| File | Purpose |
+|------|---------|
+| **`memory/project-state.md`** | Single source of truth. All agents read and update before acting. Consolidates project, phase, tasks, stack, decisions, lessons. |
+| **`memory/agent-messages.md`** | Shared communication channel. Agents leave notes for each other (e.g. Architect → Reviewer). Enables collaboration, architecture debate, decision trails. |
+
+**Agent flow:**
+
+```
+read project-state → (optionally read agent-messages) → perform task → update project-state → (optionally post to agent-messages)
+```
+
+**Pipeline placement:**
+
+```
+User Idea → Supervisor → Planner → Architect → Agent Messages (discussion) → Reviewer → Task Planner → Worker ↔ Critic → Tester
+                                                                  ↑
+                                                    project-state.md tracks everything
+```
+
+**Why project-state:** Prevents duplicated decisions, lost context, inconsistent planning. Acts as the central brain.
+
+**Why agent-messages:** Enables collective intelligence—agents collaborate instead of only operating sequentially.
+
+---
+
 ## Stateful reasoning (core principle)
 
 **Every agent must follow:**
@@ -14,10 +43,12 @@ read state → think → act → update state
 
 | Phase | Action |
 |-------|--------|
-| **Read** | project-brain, project-context, project-memory, dev-lessons (as applicable) |
+| **Read** | `memory/project-state.md` (primary); `memory/agent-messages.md` if collaboration needed |
 | **Think** | Analyze, plan, hypothesize |
 | **Act** | Implement, fix, test |
-| **Update** | Write back: project-memory, project-brain, dev-lessons, decision-log |
+| **Update** | `memory/project-state.md`; optionally post to `memory/agent-messages.md` for handoffs |
+
+**Legacy:** `docs/project-brain.md`, `docs/project-context.md`, `docs/project-memory.md`, `docs/dev-lessons.md` are consolidated into `memory/project-state.md`. Use project-state for new work. Docs files may remain for backward compatibility.
 
 **Why:** Chat history gets truncated and loses structure. Structured state is the single source of truth.
 
@@ -46,11 +77,10 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 | Layer | Purpose | File | Updated by |
 |-------|---------|------|------------|
 | **Session** | Current chat; immediate context | Cursor chat | Automatic |
-| **Project** | Phase status, tasks, blockers | `docs/project-memory.md` | Orchestrator, workflow-project-context |
-| **Project brain** | Vision, decisions, stack | `docs/project-brain.md` | All agents |
-| **Knowledge** | Research, architecture, patterns | `docs/project-context.md`, `docs/` | workflow-project-context |
-| **Decisions** | Why choices were made | `docs/decision-log.md` | Architect, CTO |
-| **Lessons** | Reusable patterns | `docs/dev-lessons.md` | Any agent |
+| **Project state** | Phase, tasks, stack, decisions, lessons | `memory/project-state.md` | All agents |
+| **Agent messages** | Inter-agent communication | `memory/agent-messages.md` | Architect, Reviewer, CTO, etc. |
+| **Decisions** | Why choices were made (detailed) | `docs/decision-log.md` | Architect, CTO |
+| **Knowledge** | Exhaustive context | `docs/project-context-full.md` | workflow-get-project-context |
 | **Tool** | Commands, env notes | `docs/tool-memory.md` | Optional |
 
 ---
@@ -60,9 +90,10 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 | Memory | Purpose | Storage | Updated by |
 |--------|---------|---------|------------|
 | **Short memory** | Current conversation; immediate context | Cursor chat session | Automatic |
-| **Project memory** | Phase status, decisions, task state | `docs/project-memory.md` | workflow-project-context, orchestrator |
+| **Project state** | Phase, tasks, stack, decisions, lessons | `memory/project-state.md` | All agents |
+| **Agent messages** | Inter-agent handoffs, architecture debate | `memory/agent-messages.md` | Architect, Reviewer, etc. |
 | **Tool memory** | Previous commands, results, reusable snippets | `docs/tool-memory.md` (optional) | Agents after tool use |
-| **Knowledge memory** | Research results, architecture, patterns | `docs/project-context.md`, `docs/` | workflow-project-context, research, phases |
+| **Knowledge memory** | Research, architecture, patterns, full context | `docs/project-context-full.md`, `docs/` | workflow-get-project-context, research |
 
 ---
 
@@ -77,40 +108,15 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 
 ---
 
-## 2. Project memory
+## 2. Project state (central brain)
 
-- **What:** Current phase, completed phases, open tasks, blockers, key decisions, user approvals
-- **Where:** `docs/project-memory.md`
-- **Updated:** After each phase; when tasks change; when blockers appear or clear
+- **What:** Project name, phase, active task, stack, completed tasks, open decisions, task board, lessons learned
+- **Where:** `memory/project-state.md`
+- **Updated:** After each phase; when tasks change; when decisions are made; when lessons are learned
 
-**Schema (example):**
+**Agent rule:** Read project-state at session/phase start. Update project-state after each phase or significant action. Do not act without reading state first.
 
-```markdown
-# Project Memory — [feature/scope]
-
-## Status
-- Current phase: [X]
-- Blockers: [list or none]
-- Next: [what runs next]
-
-## Completed phases
-- [ ] -2 Idea | [ ] -1 Research | [x] 0 Setup | [x] 1 UX | ...
-
-## Task board
-| ID | Title | State |
-|----|-------|-------|
-| BE-01 | Auth | ✅ DONE |
-| FE-01 | Login form | 🔄 IN LOOP |
-
-## Key decisions
-- [Date] [Decision] — [rationale]
-
-## User approvals
-- [Date] Product Planning — approved
-- [Date] UX — approved
-```
-
-**Agent rule:** Update project memory after each phase. Read it before starting the next phase.
+**Schema:** See `memory/project-state.md` for the full template.
 
 ---
 
@@ -140,21 +146,31 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 
 ---
 
-## 4. Knowledge memory (research, architecture, patterns)
+## 4. Agent messages (collaboration)
 
-- **What:** Stack, structure, architecture decisions, research findings, patterns
-- **Where:** `docs/project-context.md`, `docs/project-context-full.md`, `docs/project-brain.md`, research docs
-- **Updated:** workflow-project-context after each phase; research analyst; LLD/HLD outputs
+- **What:** Notes from one agent to another (e.g. Architect → Reviewer)
+- **Where:** `memory/agent-messages.md`
+- **Updated:** When an agent needs to hand off context, request review, or debate a decision
+
+**Format:** `[FromAgent → ToAgent]` + context + message + question/request.
+
+**Agent rule:** Post to agent-messages when handing off to another agent or when a decision needs review. Read agent-messages before acting if you are the recipient.
+
+---
+
+## 5. Knowledge memory (research, architecture, patterns)
+
+- **What:** Stack, structure, architecture decisions, research findings, full codebase context
+- **Where:** `memory/project-state.md` (summary), `docs/project-context-full.md` (exhaustive), `docs/` (research, PRD, specs)
+- **Updated:** workflow-project-context / workflow-get-project-context; research analyst; LLD/HLD outputs
 
 **Sources:**
-- `docs/project-context.md` — High-level summary; per-phase updates
+- `memory/project-state.md` — **Primary.** Stack, structure, patterns, decisions, lessons
 - `docs/project-context-full.md` — Exhaustive context (from GetContext:)
-- `docs/project-brain.md` — **Project brain:** vision, decisions, stack, open questions, lessons. Every agent reads and updates.
-- `docs/decision-log.md` — **Why** decisions were made; rationale for architecture choices
-- `docs/dev-lessons.md` — Lessons learned; reusable patterns from bugs and fixes
+- `docs/decision-log.md` — Why decisions were made; rationale
 - `docs/` — Research, PRD, architecture, API specs
 
-**Agent rule:** Read project-context and project-brain before a phase. Update project-brain after key decisions. Log "why" in decision-log when making architecture decisions.
+**Agent rule:** Read project-state before a phase. Update project-state after key decisions. Log "why" in decision-log when making architecture decisions.
 
 ---
 
@@ -162,13 +178,13 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 
 If an agent run is interrupted (session ended, error, user stop):
 
-1. **Read state** — `docs/project-memory.md`, `docs/project-brain.md`, `docs/project-context.md`
-2. **Identify last completed phase** — From project-memory "Completed phases" and "Current phase"
-3. **Identify in-progress task** — From "Task board" (IN LOOP or PENDING)
+1. **Read state** — `memory/project-state.md` (and `memory/agent-messages.md` if handoff context)
+2. **Identify last completed phase** — From "Completed Tasks" and "Current Phase"
+3. **Identify in-progress task** — From "Active Task" or "Task Board" (IN LOOP or PENDING)
 4. **Resume from next step** — Do not restart; continue from where execution stopped
-5. **Re-validate if unsure** — Re-read project-memory; confirm blockers and next phase
+5. **Re-validate if unsure** — Re-read project-state; confirm blockers and next phase
 
-**Agent rule:** Always read project-memory at session start. If "Current phase" or "Task board" shows work in progress, resume that work instead of starting fresh.
+**Agent rule:** Always read project-state at session start. If "Current Phase" or "Active Task" shows work in progress, resume that work instead of starting fresh.
 
 ---
 
@@ -188,9 +204,8 @@ The current setup (Markdown in `docs/`) is enough for most Cursor-based flows.
 
 ## Checklist for agents
 
-- [ ] Read `docs/project-memory.md` at phase start
-- [ ] Read `docs/project-brain.md` and `docs/project-context.md` before implementation
-- [ ] Update `docs/project-memory.md` after each phase
-- [ ] Update `docs/project-context.md` via workflow-project-context
-- [ ] Update `docs/project-brain.md` after key decisions or lessons learned
+- [ ] Read `memory/project-state.md` at phase/session start
+- [ ] Read `memory/agent-messages.md` if expecting a handoff or review request
+- [ ] Update `memory/project-state.md` after each phase or significant action
+- [ ] Post to `memory/agent-messages.md` when handing off to another agent or requesting review
 - [ ] Optionally append to `docs/tool-memory.md` after useful tool runs

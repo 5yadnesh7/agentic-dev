@@ -7,6 +7,16 @@ layer: operational
 
 # Workflow: Process Log
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational |
+| **Input** | Step name, phase/task id |
+| **Output** | Entry in process-log with start/end, duration |
+| **Dependencies** | — |
+| **Purpose** | Log step timings; flag slow steps |
+
 ## Purpose
 
 Maintain a human-readable log of workflow steps with timestamps and duration. Helps with visibility, debugging slow steps, and improving skills. Optional but recommended for Workflow execution.

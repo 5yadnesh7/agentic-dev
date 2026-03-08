@@ -2,6 +2,8 @@
 
 Append here when something repeats or when a step took longer than expected. The agent (or you) can read this before similar tasks and update skills if needed.
 
+**Integration:** Reusable patterns should also go in `memory/project-state.md` → Lessons Learned. This file is for process/velocity learnings (what took long, what to change in workflows).
+
 ## Format
 
 - **Date** | **What** | **Lesson** (what worked / what to do differently)

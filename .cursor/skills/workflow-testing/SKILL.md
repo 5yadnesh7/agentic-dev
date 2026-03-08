@@ -7,6 +7,16 @@ layer: operational
 
 # Workflow: Testing
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational |
+| **Input** | Target (file, path, feature); project test setup |
+| **Output** | Tests (Jest, Playwright); coverage report |
+| **Dependencies** | Project testing tools (Jest, Playwright) |
+| **Purpose** | Unit and E2E testing; route by scope to Junior/Mid/Senior tester |
+
 ## Tools (use only)
 
 - **Jest** — Unit tests, integration tests, API tests, component tests

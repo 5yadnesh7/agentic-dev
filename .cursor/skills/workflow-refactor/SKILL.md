@@ -7,6 +7,16 @@ layer: operational
 
 # Workflow: Refactor
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational |
+| **Input** | Path or recent changes; docs/project-context.md |
+| **Output** | Refactor suggestions (duplicates, large functions, naming) |
+| **Dependencies** | project-context |
+| **Purpose** | Code quality review; output suggestions, do not auto-apply |
+
 ## Purpose
 
 Good agents improve code quality over time. This skill checks for refactor opportunities and outputs **suggestions** — does not auto-refactor. User or agent decides what to implement.

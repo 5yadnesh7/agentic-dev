@@ -7,6 +7,16 @@ layer: operational
 
 # Workflow: Context in MD, then cleanup
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational |
+| **Input** | Task/phase with large context |
+| **Output** | .cursor/context/<task-id>.md; deleted when task DONE |
+| **Dependencies** | — |
+| **Purpose** | Offload task context to MD; reduce context overflow |
+
 ## Purpose
 
 Offload task-specific context into a single Markdown file when the task has many files or long history. Reduces context limits and keeps the agent focused. **Delete when task is DONE.**

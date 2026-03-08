@@ -7,6 +7,16 @@ layer: strategic
 
 # Workflow: Project Roadmap (PRP)
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Strategic |
+| **Input** | Idea; research, assumptions |
+| **Output** | docs/roadmap.md (phased milestones) |
+| **Dependencies** | Research, assumption validation |
+| **Purpose** | Convert idea into phased milestones before architecture |
+
 ## Purpose
 
 **Lay the railway tracks before the train.** Convert an idea into phased development milestones **before** architecture and coding. Prevents: building UI before backend, APIs without DB design, features before auth.

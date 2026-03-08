@@ -35,3 +35,9 @@ User decides what to implement
 - Missing abstraction
 - God objects
 - Deep nesting
+
+## Skill
+
+- **Invoke:** `workflow-refactor` (`.cursor/skills/workflow-refactor/SKILL.md`)
+- **Input:** Path or recent changes; `docs/project-context.md` (or `memory/project-state.md`) for patterns
+- **Output:** `docs/refactor-suggestions-[date].md` — prioritized list; user decides what to implement

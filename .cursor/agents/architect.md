@@ -23,3 +23,8 @@
 ## Architect ↔ Reviewer loop
 
 Reviewer (workflow-architecture-review) critiques. If BLOCKED → Architect revises → re-review until CLEAR.
+
+## State
+
+- **Read before:** `memory/project-state.md` (Technology Stack, Open Decisions)
+- **Post handoff:** `memory/agent-messages.md` when proposing architecture for review

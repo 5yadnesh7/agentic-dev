@@ -7,6 +7,16 @@ layer: strategic
 
 # Workflow: Assumption Validation (Think-Before-Build)
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Strategic |
+| **Input** | Idea, research; context |
+| **Output** | Assumptions list, risks, missing info |
+| **Dependencies** | Research (optional) |
+| **Purpose** | List and verify assumptions before implementation |
+
 ## Purpose
 
 **Senior engineers pause before coding.** They ask: What am I assuming? What might break? What information is missing?

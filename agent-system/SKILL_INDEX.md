@@ -1,6 +1,8 @@
-# SKILL INDEX — Match user intent to skill (for workflow-skill-receiver)
+# SKILL INDEX — Match user intent to skill
 
-Every skill is **trigger-based**: invokable by **direct trigger** (ORCHESTRATOR) or **intelligent match** (keywords, intent, domain).
+Every skill is **trigger-based**: invokable by **direct trigger** (ORCHESTRATOR) or **intelligent match** (skill-router).
+
+**Skill Router:** `.cursor/skills/skill-router.md` — dynamic skill selection using tags, domain, intent, confidence scoring. Used by workflow-skill-receiver and workflow-orchestrator.
 
 | Skill name | Direct trigger | Intelligent match (keywords/phrases) |
 |------------|----------------|-------------------------------------|
@@ -58,5 +60,5 @@ Every skill is **trigger-based**: invokable by **direct trigger** (ORCHESTRATOR)
 ## Trigger policy
 
 - **Direct trigger** → workflow-orchestrator routes to the mapped skill.
-- **No direct trigger** → workflow-skill-receiver matches user message (keywords, intent, domain) to the table above and invokes the best-matching skill.
-- **Every skill** is invokable by at least one of: direct trigger or intelligent match.
+- **No direct trigger** → workflow-skill-receiver uses skill-router logic (intent, tags, domain, confidence) to select best skill from this index.
+- **Every skill** is invokable by at least one of: direct trigger or intelligent match (skill-router).
