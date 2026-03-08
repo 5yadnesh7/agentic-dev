@@ -1,3 +1,11 @@
+---
+name: skill-router
+description: Dynamic skill selection. Match task to best skill using intent, tags, domain. Used by workflow-skill-receiver and workflow-orchestrator. Reference doc — read SKILL_INDEX, apply matching logic.
+tags: [executive, dispatcher, routing]
+layer: executive
+required_context: [agent-system/SKILL_INDEX.md]
+---
+
 # Skill Router — Dynamic Skill Selection
 
 > **Dispatcher.** Selects the best skill for a task using tags, domain, and intent. Converts static routing into an adaptive skill system.

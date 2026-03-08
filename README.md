@@ -76,7 +76,7 @@ memory/                 # Single source of truth
   project-state.md      # Project, phase, tasks, stack, decisions, lessons
   agent-messages.md     # Inter-agent communication
 
-templates/              # architecture-template, task-template
+templates/              # architecture-template, task-template, skill-template, agent-template
 
 examples/               # Demo project (proves framework flow)
   saas-example/         # Todo SaaS: Idea → Roadmap → Architecture → Tasks
