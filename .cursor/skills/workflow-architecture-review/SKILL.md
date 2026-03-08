@@ -1,6 +1,8 @@
 ---
 name: workflow-architecture-review
 description: Self-critique before coding. Agent reviews its own architecture for scalability, security, performance. Use for ArchReview:, "architecture review before coding", "review my architecture plan".
+tags: [strategic, architecture, review]
+layer: strategic
 ---
 
 # Workflow: Architecture Review (Pre-Coding Gate)

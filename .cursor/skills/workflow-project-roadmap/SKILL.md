@@ -1,6 +1,8 @@
 ---
 name: workflow-project-roadmap
 description: Project Roadmap Planning (PRP). Convert idea into phased development milestones before architecture. Lays the railway tracks before the train. Use for Roadmap:, "project roadmap", "phased plan".
+tags: [strategic, planning, roadmap]
+layer: strategic
 ---
 
 # Workflow: Project Roadmap (PRP)

@@ -1,6 +1,8 @@
 ---
 name: workflow-pr-generator
 description: PR generator. Creates branch, commits, and PR description. Use for PR:, "open PR", "create PR", "generate PR".
+tags: [operational, git, pr]
+layer: operational
 ---
 
 # Workflow: PR Generator

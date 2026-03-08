@@ -1,6 +1,8 @@
 ---
 name: workflow-skill-creator
 description: Creates a new Cursor skill when the user explicitly asks or when the same pattern was done 2+ times. Follows criteria: name, description with trigger terms, location, SKILL.md structure, register in SKILL_INDEX.
+tags: [strategic, meta, skill-creation]
+layer: strategic
 ---
 
 # Workflow: Create New Skill

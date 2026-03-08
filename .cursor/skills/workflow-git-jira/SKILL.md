@@ -1,6 +1,8 @@
 ---
 name: workflow-git-jira
 description: Commit convention, branch naming, commits, Jira linking. Use when the user asks to commit, create branch, or link work to Jira. Follows .cursor/commit-convention.md.
+tags: [operational, git, jira]
+layer: operational
 ---
 
 # Workflow: Git + Jira

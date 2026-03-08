@@ -1,6 +1,8 @@
 ---
 name: role-research-developer
 description: Prototypes, R&D code, spikes, experiments. Use when the user asks for prototype, spike, POC, or experimental code. Keeps R&D separate from production; hands off to Senior/CTO for promotion.
+tags: [operational, rnd, prototype]
+layer: operational
 ---
 
 # Role: Research Developer

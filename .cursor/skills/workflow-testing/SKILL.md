@@ -1,6 +1,8 @@
 ---
 name: workflow-testing
 description: Unit and E2E testing with Jest and Playwright only. Use when the user asks for unit tests, E2E tests, regression, or Test: trigger. Routes to Junior/Mid/Senior tester by scope.
+tags: [operational, testing, jest, playwright]
+layer: operational
 ---
 
 # Workflow: Testing

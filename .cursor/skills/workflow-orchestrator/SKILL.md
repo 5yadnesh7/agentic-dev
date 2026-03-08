@@ -1,6 +1,8 @@
 ---
 name: workflow-orchestrator
 description: Orchestrates the full idea-to-production lifecycle. Use for Idea:, Project:, Build:, Workflow: triggers. Reads ORCHESTRATOR.md and WORK_MANAGER.md. Parallel when nothing blocks; sequential and wait when Depends or blocker.
+tags: [executive, orchestration, lifecycle]
+layer: executive
 ---
 
 # Workflow Orchestrator

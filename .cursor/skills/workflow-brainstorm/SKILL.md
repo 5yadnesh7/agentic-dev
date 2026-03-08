@@ -1,6 +1,8 @@
 ---
 name: workflow-brainstorm
 description: Brainstorm product concept, features, modules, risks. Asks clarifying questions first; suggests options; produces Product Planning input. Use before PRD or when user says brainstorm, explore options, Phase 0.5.
+tags: [strategic, product, planning]
+layer: strategic
 ---
 
 # Workflow: Brainstorm

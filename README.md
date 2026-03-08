@@ -49,7 +49,8 @@ No prefix? The skill-receiver matches your intent to a skill and runs it.
 ```
 core/                   # Central brain
   orchestrator.md       # Read request, determine workflow, assign agents
-  execution-engine.md   # Parallel/sequential rules, loops
+  orchestrator-spec.md  # Stepwise execution logic, skill selection, validation
+  execution-engine.md   # Parallel/sequential rules, loops, error handling
 
 agent-system/           # Orchestrator source of truth
   ORCHESTRATOR.md       # Trigger map, commit rules, quality gate
@@ -69,6 +70,12 @@ memory/                 # Project state (docs/ holds actual files)
 
 templates/              # architecture-template, task-template
 
+examples/               # Demo project (proves framework flow)
+  saas-example/         # Todo SaaS: Idea → Roadmap → Architecture → Tasks
+
+logs/                   # Agent execution log (observability)
+  agent-execution.md    # Per-phase trace
+
 tools/                  # search, filesystem, github, terminal
 docs/                   # project-brain, project-memory, decision-log, …
 ```
@@ -82,8 +89,9 @@ docs/                   # project-brain, project-memory, decision-log, …
 - [agent-system/SKILL_HIERARCHY.md](agent-system/SKILL_HIERARCHY.md) — Executive → Strategic → Operational
 - [agent-system/SKILL_CONTRACT.md](agent-system/SKILL_CONTRACT.md) — Purpose, Input, Output standard
 - [core/orchestrator.md](core/orchestrator.md) — Central brain
+- [core/orchestrator-spec.md](core/orchestrator-spec.md) — Execution logic, skill selection
 - [memory/README.md](memory/README.md) — Project state
-- [PRODUCT-COMPANY-SETUP.md](PRODUCT-COMPANY-SETUP.md) — Detailed setup and workflow design
+- [examples/saas-example/](examples/saas-example/) — Demo project (Idea → Roadmap → Architecture → Tasks)
 
 ## Agent Pipeline
 

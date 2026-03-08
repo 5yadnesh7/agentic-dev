@@ -1,6 +1,8 @@
 ---
 name: workflow-continuous-improvement
 description: Continuous improvement. Agents ask: Is architecture scalable? Should we change DB? Refactor? Use for Improve:, Retro:, "continuous improvement", "architecture review", "should we refactor".
+tags: [strategic, improvement, retrospective]
+layer: strategic
 ---
 
 # Workflow: Continuous Improvement

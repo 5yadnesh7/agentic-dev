@@ -1,6 +1,8 @@
 ---
 name: role-junior-tester
 description: Basic unit tests with Jest, simple regression. Use when the user asks for unit tests for a function/component, or per-task loop Step 3 (Unit Test). Escalates to Mid/Senior for strategy, integration, or flaky tests.
+tags: [operational, testing, unit]
+layer: operational
 ---
 
 # Role: Junior Tester

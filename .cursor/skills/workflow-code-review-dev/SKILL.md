@@ -1,6 +1,8 @@
 ---
 name: workflow-code-review-dev
 description: Pre-commit code review. Reviews current changes against standards before commit. Use when the user asks to review current changes, pre-commit review, or review my code before I commit.
+tags: [operational, code-review, pre-commit]
+layer: operational
 ---
 
 # Workflow: Code Review (pre-commit)
@@ -28,11 +30,13 @@ Review current (uncommitted or staged) changes against project standards before 
 ### Step 2: Apply project rules
 
 For each file type, apply `.cursor/rules/`:
-- React/Next: `react-next.mdc`
-- Node/Express: `express-node.mdc`
+- Next.js: `next-*.mdc`
+- React/Vite: `react-vite-*.mdc`
+- Node/Express: `express-*.mdc`
 - Python: `python-*.mdc`
-- DB: `db-schema-postgres.mdc`, etc.
+- DB: `db-schema-postgres.mdc`, `db-schema-mysql.mdc`, `db-schema-sql.mdc`, `db-mongodb.mdc`, `db-redis.mdc`
 - Terraform: `terraform-*.mdc`
+- Playwright: `playwright-*.mdc`
 
 **Checklist:** [ ] Rules applied per file type
 

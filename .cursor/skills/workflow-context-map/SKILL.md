@@ -1,6 +1,8 @@
 ---
 name: workflow-context-map
 description: Build a repo mental map. Where logic lives, where to edit, what not to touch. Large repos confuse LLMs—this skill fixes that. Use for ContextMap:, "map the repo", "repo structure", "where does X live".
+tags: [strategic, context, exploration]
+layer: strategic
 ---
 
 # Workflow: Context Map

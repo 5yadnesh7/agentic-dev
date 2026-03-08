@@ -1,6 +1,8 @@
 ---
 name: domain-microservices
 description: Microservice design: service boundaries, API contracts, communication. Use when the user asks for microservice design, API contracts, service decomposition, or Micro: trigger.
+tags: [strategic, architecture, microservices]
+layer: strategic
 ---
 
 # Domain: Microservices

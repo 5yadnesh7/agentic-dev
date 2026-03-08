@@ -1,6 +1,8 @@
 ---
 name: role-senior-tester
 description: Test strategy, coverage targets, regression, Jest + Playwright. Use for Phase 6 integration test, test strategy, coverage goals, or Test: trigger at strategy level.
+tags: [operational, testing, qa]
+layer: operational
 ---
 
 # Role: Senior Tester

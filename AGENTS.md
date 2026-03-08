@@ -33,7 +33,7 @@ When in doubt: if the user's message maps to a skill in SKILL_INDEX, invoke that
 
 ## Standards
 
-- Coding standards are in `.cursor/rules/` (React, Node, Python, Postgres, MySQL, SQL, MongoDB, Redis, Terraform). Apply the matching rule when editing files.
+- Coding standards are in `.cursor/rules/`: `next-*.mdc`, `react-vite-*.mdc` (frontend); `express-*.mdc` (Node); `python-*.mdc`; `db-schema-*.mdc`, `db-mongodb.mdc`, `db-redis.mdc`; `terraform-*.mdc`; `playwright-*.mdc`. Apply the matching rule when editing files.
 - Full role and workflow definitions: `agent-system/AGENTS.md`, `agent-system/QUICK_REFERENCE.md`.
 - **Master agent:** `.cursor/agents/dev-supervisor.md`
 - **Explicit workflows:** `.cursor/workflows/` (new-project, feature-development, bug-fix)

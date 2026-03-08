@@ -1,6 +1,8 @@
 ---
 name: workflow-assumption-validation
 description: Think-before-build. Explicitly list and verify assumptions before implementation. Prevents wrong architecture, incorrect API assumptions, incompatible libraries. Use for Validate:, "validate assumptions", "check assumptions before building".
+tags: [strategic, validation, planning]
+layer: strategic
 ---
 
 # Workflow: Assumption Validation (Think-Before-Build)

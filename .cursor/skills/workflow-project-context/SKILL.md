@@ -1,6 +1,8 @@
 ---
 name: workflow-project-context
 description: Get and maintain project context. Creates/updates docs/project-context.md. Run at Phase 0 (explore) and after each phase to update context for future reuse. Use for Explore:, brownfield, or when user asks for project/codebase context.
+tags: [strategic, context, exploration]
+layer: strategic
 ---
 
 # Workflow: Project Context

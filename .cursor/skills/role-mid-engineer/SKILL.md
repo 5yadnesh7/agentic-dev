@@ -1,6 +1,8 @@
 ---
 name: role-mid-engineer
 description: Implementation of standard features: CRUD, forms, tests. Use for tasks marked Mid/Junior, implementation help, or mid-level PR review.
+tags: [operational, coding, mid]
+layer: operational
 ---
 
 # Role: Mid Engineer

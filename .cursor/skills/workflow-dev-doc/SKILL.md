@@ -1,6 +1,8 @@
 ---
 name: workflow-dev-doc
 description: Temporary dev doc for in-progress task/phase. Reduces long context and hallucination. Create when task/phase starts; delete when DONE. Use during Phase 3–4 (implementation).
+tags: [operational, context, task-scope]
+layer: operational
 ---
 
 # Workflow: Dev Doc (task-scoped context)

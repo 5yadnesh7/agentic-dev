@@ -1,6 +1,8 @@
 ---
 name: role-end-consumer
 description: Simulated cold user testing after PM sign-off. Use in Phase 8: try primary goal with no prior context; report satisfaction, confusion, and verdict.
+tags: [operational, ux, validation]
+layer: operational
 ---
 
 # Role: End Consumer

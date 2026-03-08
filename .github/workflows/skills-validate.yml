@@ -1,0 +1,29 @@
+name: Validate skills
+
+on:
+  push:
+    paths:
+      - '.cursor/skills/**'
+      - 'agent-system/SKILL_CONTRACT.md'
+  pull_request:
+    paths:
+      - '.cursor/skills/**'
+      - 'agent-system/SKILL_CONTRACT.md'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check skill frontmatter (name, description, tags, layer)
+        run: |
+          MISSING=0
+          for f in .cursor/skills/*/SKILL.md; do
+            [ -f "$f" ] || continue
+            if ! grep -q "^name:" "$f"; then echo "Missing name in $f"; MISSING=1; fi
+            if ! grep -q "^description:" "$f"; then echo "Missing description in $f"; MISSING=1; fi
+            if ! grep -q "^tags:" "$f"; then echo "Missing tags in $f (per SKILL_CONTRACT)"; MISSING=1; fi
+            if ! grep -q "^layer:" "$f"; then echo "Missing layer in $f (per SKILL_CONTRACT)"; MISSING=1; fi
+          done
+          [ $MISSING -eq 0 ] || exit 1

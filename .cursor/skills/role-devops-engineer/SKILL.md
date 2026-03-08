@@ -1,6 +1,8 @@
 ---
 name: role-devops-engineer
 description: CI/CD pipelines, Docker, deployment automation. Use when the user asks for DevOps, CI/CD, pipeline setup, GitHub Actions, Docker, or Infra: trigger. Distinct from role-cloud-engineer (Terraform).
+tags: [operational, devops, cicd]
+layer: operational
 ---
 
 # Role: DevOps Engineer

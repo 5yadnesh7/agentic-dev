@@ -1,6 +1,8 @@
 ---
 name: role-ui-ux-designer
 description: UX design: product screens, user flows, navigation, wireframes, design system. Use for Design: trigger, Phase 2. Design must be user-approved before development.
+tags: [strategic, design, ux]
+layer: strategic
 ---
 
 # Role: UI/UX Designer

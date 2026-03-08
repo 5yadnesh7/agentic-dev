@@ -1,6 +1,8 @@
 ---
 name: role-content-writer
 description: All user-facing copy: labels, messages, tooltips, onboarding. Runs in Phase 2b (pre-dev content gate) so developers know exactly what to implement.
+tags: [strategic, content, copy]
+layer: strategic
 ---
 
 # Role: Content Writer

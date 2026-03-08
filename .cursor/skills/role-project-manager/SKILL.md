@@ -1,6 +1,8 @@
 ---
 name: role-project-manager
 description: Converts product spec and UX into roadmap, phases, and task breakdown. Use for Phase 1b, Planner: trigger, or when user asks for roadmap, phases, or task breakdown.
+tags: [strategic, planning, project]
+layer: strategic
 ---
 
 # Role: Project Manager

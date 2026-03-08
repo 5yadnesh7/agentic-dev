@@ -1,6 +1,8 @@
 ---
 name: workflow-code-review-pr
 description: Full PR/MR review: standards, tests, security, docs. Use when the user asks for PR review, MR review, or Review: trigger.
+tags: [operational, code-review, pr]
+layer: operational
 ---
 
 # Workflow: Code review (PR/MR)
@@ -21,7 +23,8 @@ description: Full PR/MR review: standards, tests, security, docs. Use when the u
 ### 2. Apply standards
 
 - For each file type, apply the matching .cursor/rules:
-  - `*.tsx` → react-next-standards
+  - `*.tsx` (Next.js) → next-*.mdc
+  - `*.tsx` (React/Vite) → react-vite-*.mdc
   - `*.ts`, `*.js` (backend) → express-01-core.mdc, express-02-routes-services.mdc, express-03-middleware-auth.mdc, express-04-db-api.mdc, express-05-quality.mdc, express-06-ops.mdc
   - `*.py` → python-01-core.mdc, python-02-structure.mdc, python-03-api-services.mdc, python-04-quality.mdc, python-05-ops.mdc
   - migrations, schema → db-schema-postgres / mysql / sql / mongodb

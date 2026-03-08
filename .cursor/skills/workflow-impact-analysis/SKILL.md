@@ -1,6 +1,8 @@
 ---
 name: workflow-impact-analysis
 description: After changes: find direct and indirect dependents, check if anything is hampered, invoke Junior/Senior Engineer or other skills to fix. Use for Impact: trigger, after changes, check dependents, ripple effect.
+tags: [operational, impact, dependents]
+layer: operational
 ---
 
 # Workflow: Impact Analysis (Change Propagation)

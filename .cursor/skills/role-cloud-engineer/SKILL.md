@@ -1,6 +1,8 @@
 ---
 name: role-cloud-engineer
 description: Terraform, cloud resources, cost optimization. Use when the user asks for Terraform, Infra: terraform, cloud setup, AWS/GCP provisioning, or cost optimization. Follows .cursor/rules/terraform-*.mdc.
+tags: [operational, cloud, terraform]
+layer: operational
 ---
 
 # Role: Cloud Engineer

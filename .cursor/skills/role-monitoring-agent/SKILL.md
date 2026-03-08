@@ -1,6 +1,8 @@
 ---
 name: role-monitoring-agent
 description: Post-release monitoring: error tracking, performance, analytics, logging. Use for Phase 11, monitoring setup, observability. Tools: Sentry, Prometheus, Grafana, Datadog.
+tags: [operational, observability, monitoring]
+layer: operational
 ---
 
 # Role: Monitoring Agent

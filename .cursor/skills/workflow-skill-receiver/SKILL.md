@@ -1,6 +1,8 @@
 ---
 name: workflow-skill-receiver
 description: Matches user intent to the right skill and invokes it. Use when the user does NOT start with an explicit trigger but asks for something a skill can do.
+tags: [executive, dispatcher, intent-matching]
+layer: executive
 ---
 
 # Workflow: Skill Receiver (dispatcher)

@@ -1,6 +1,8 @@
 ---
 name: workflow-commit-convention
 description: Asks user for commit message pattern once; saves to .cursor/commit-convention.md. Use when starting in a new project, user asks commit format, or no convention file exists.
+tags: [operational, git, convention]
+layer: operational
 ---
 
 # Workflow: Commit Convention

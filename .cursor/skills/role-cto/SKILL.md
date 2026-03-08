@@ -1,6 +1,8 @@
 ---
 name: role-cto
 description: CTO review, architecture sign-off, tech strategy, escalation. Use when the user asks for CTO review, architecture approval, tech debt assessment, risk review, or escalation from Senior Engineer.
+tags: [strategic, architecture, escalation]
+layer: strategic
 ---
 
 # Role: CTO

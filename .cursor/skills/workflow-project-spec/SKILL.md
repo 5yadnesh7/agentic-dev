@@ -1,6 +1,8 @@
 ---
 name: workflow-project-spec
 description: Spec-first engineering. NEVER code before spec. Converts idea → product → architecture → database → API → tasks. Use for Spec:, "generate project spec", "project spec for X".
+tags: [strategic, spec, planning]
+layer: strategic
 ---
 
 # Workflow: Spec-First Engineering

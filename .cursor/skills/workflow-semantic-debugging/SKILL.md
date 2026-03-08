@@ -2,6 +2,9 @@
 name: workflow-semantic-debugging
 description: Semantic debugging: find root cause and implement fix end-to-end. Use for Bug: trigger, debugging, or when user reports a bug. Finds, fixes, adds regression test, verifies, commits.
 tags: [operational, debugging, bug-fix]
+layer: operational
+produces: [docs/debug/[slug]-report.md]
+required_context: [project-brain, project-context, dev-lessons]
 ---
 
 # Workflow: Semantic Debugging
@@ -13,6 +16,7 @@ tags: [operational, debugging, bug-fix]
 | **Layer** | Operational (execution) |
 | **Input** | Bug description, error message, stack trace, steps to reproduce |
 | **Output** | Fix committed; regression test; `docs/debug/[slug]-report.md` (optional) |
+| **Dependencies** | project-brain, project-context, dev-lessons (read first) |
 | **Purpose** | Find root cause, implement fix, add regression test, verify, commit |
 
 ## Purpose

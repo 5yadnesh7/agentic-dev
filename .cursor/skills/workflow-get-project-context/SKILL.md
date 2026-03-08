@@ -1,6 +1,8 @@
 ---
 name: workflow-get-project-context
 description: Get whole project context—every small bit of information—and write to docs/project-context-full.md. Use when user asks for full project context, complete codebase map, or exhaustive project documentation.
+tags: [strategic, context, exploration]
+layer: strategic
 ---
 
 # Workflow: Get Project Context (Comprehensive)

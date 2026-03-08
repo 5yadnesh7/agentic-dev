@@ -1,6 +1,8 @@
 ---
 name: role-senior-engineer
 description: Complex implementation, design, PR review at senior level. Use when the user asks for senior engineer review, complex feature design, or tasks marked Senior (auth, payments, cross-layer, M/L size).
+tags: [operational, coding, senior]
+layer: operational
 ---
 
 # Role: Senior Engineer

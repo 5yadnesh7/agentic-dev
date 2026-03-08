@@ -1,6 +1,8 @@
 ---
 name: workflow-learning
 description: Record lessons for future reuse. Agent records: wrong approach, correct pattern. System improves over time. Use for Learn:, "record lesson", "add to dev-lessons".
+tags: [operational, knowledge, lessons]
+layer: operational
 ---
 
 # Workflow: Learning

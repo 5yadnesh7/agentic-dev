@@ -1,6 +1,8 @@
 ---
 name: workflow-context-md
 description: For long tasks: creates .cursor/context/<task-id>.md with task context; deletes when task done. Use when context is large. For Phase 3–4 implementation tasks, prefer workflow-dev-doc.
+tags: [operational, context, task-scope]
+layer: operational
 ---
 
 # Workflow: Context in MD, then cleanup

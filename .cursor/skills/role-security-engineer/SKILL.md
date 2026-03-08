@@ -1,6 +1,8 @@
 ---
 name: role-security-engineer
 description: Security review: auth, authz, API, OWASP, input validation, vulnerability scan. Use for Phase 6b (full security testing), sensitive task review, Auth: trigger.
+tags: [operational, security, owasp]
+layer: operational
 ---
 
 # Role: Security Engineer

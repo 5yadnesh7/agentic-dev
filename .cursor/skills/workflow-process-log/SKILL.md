@@ -1,6 +1,8 @@
 ---
 name: workflow-process-log
 description: Logs step name, start/end time, duration; flags slow steps. Use for process visibility, phase/task tracking, or when user wants time-per-step metrics. No UI dashboard.
+tags: [operational, observability, logging]
+layer: operational
 ---
 
 # Workflow: Process Log

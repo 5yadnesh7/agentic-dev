@@ -1,6 +1,8 @@
 ---
 name: workflow-refactor
 description: Code quality review. Finds duplicate code, large functions, poor naming, missing abstraction. Outputs refactor suggestions. Use for Refactor:, "refactor suggestions", "code quality review".
+tags: [operational, refactor, code-quality]
+layer: operational
 ---
 
 # Workflow: Refactor

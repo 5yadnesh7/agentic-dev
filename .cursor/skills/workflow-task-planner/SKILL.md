@@ -1,6 +1,8 @@
 ---
 name: workflow-task-planner
 description: Task decomposition. Produces tasks/001-X.md, tasks/002-Y.md from product/architecture/tasks spec. Use for Planner:, "decompose tasks", "create task files", "task plan".
+tags: [strategic, planning, task-breakdown]
+layer: strategic
 ---
 
 # Workflow: Task Planner

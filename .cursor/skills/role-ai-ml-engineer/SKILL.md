@@ -1,6 +1,8 @@
 ---
 name: role-ai-ml-engineer
 description: AI/ML integration, LLMs, RAG, pipelines, evaluation. Use when the user asks for AI:, ML:, model integration, RAG, fine-tuning, or ML pipeline. Escalates to CTO for architecture, Research for feasibility.
+tags: [operational, ai, ml]
+layer: operational
 ---
 
 # Role: AI/ML Engineer

@@ -1,6 +1,8 @@
 ---
 name: role-product-manager
 description: Product Planning Document, PRD, requirements, acceptance criteria, task board, feature specs. Use for Planner: trigger, Phase 0.5, 1, 2c, 7.
+tags: [strategic, product, planning]
+layer: strategic
 ---
 
 # Role: Product Manager

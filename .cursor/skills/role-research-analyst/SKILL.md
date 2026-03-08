@@ -1,6 +1,8 @@
 ---
 name: role-research-analyst
 description: Deep research: domain, competitors, tech, best practices, self-questioning. Use for Research: trigger, Phase -1 (greenfield), feasibility, tech comparison.
+tags: [strategic, research, feasibility]
+layer: strategic
 ---
 
 # Role: Research Analyst

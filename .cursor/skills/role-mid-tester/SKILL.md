@@ -1,6 +1,8 @@
 ---
 name: role-mid-tester
 description: Test cases, execution, Jest + Playwright, structured reporting. Use for test cases, test execution, Phase 6 integration tests, or Test: trigger.
+tags: [operational, testing, qa]
+layer: operational
 ---
 
 # Role: Mid Tester

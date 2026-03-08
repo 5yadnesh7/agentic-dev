@@ -1,6 +1,8 @@
 ---
 name: role-idea-agent
 description: Parses project idea, determines category and scope, prepares research brief. Use for Idea:, Project:, Build: triggers. Runs first in greenfield flow (Phase -2).
+tags: [strategic, product, ideation]
+layer: strategic
 ---
 
 # Role: Idea Agent

@@ -41,7 +41,21 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 
 ---
 
-## Memory layers
+## Memory layers (summary)
+
+| Layer | Purpose | File | Updated by |
+|-------|---------|------|------------|
+| **Session** | Current chat; immediate context | Cursor chat | Automatic |
+| **Project** | Phase status, tasks, blockers | `docs/project-memory.md` | Orchestrator, workflow-project-context |
+| **Project brain** | Vision, decisions, stack | `docs/project-brain.md` | All agents |
+| **Knowledge** | Research, architecture, patterns | `docs/project-context.md`, `docs/` | workflow-project-context |
+| **Decisions** | Why choices were made | `docs/decision-log.md` | Architect, CTO |
+| **Lessons** | Reusable patterns | `docs/dev-lessons.md` | Any agent |
+| **Tool** | Commands, env notes | `docs/tool-memory.md` | Optional |
+
+---
+
+## Memory layers (detail)
 
 | Memory | Purpose | Storage | Updated by |
 |--------|---------|---------|------------|
@@ -141,6 +155,20 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 - `docs/` — Research, PRD, architecture, API specs
 
 **Agent rule:** Read project-context and project-brain before a phase. Update project-brain after key decisions. Log "why" in decision-log when making architecture decisions.
+
+---
+
+## Recovery and resume
+
+If an agent run is interrupted (session ended, error, user stop):
+
+1. **Read state** — `docs/project-memory.md`, `docs/project-brain.md`, `docs/project-context.md`
+2. **Identify last completed phase** — From project-memory "Completed phases" and "Current phase"
+3. **Identify in-progress task** — From "Task board" (IN LOOP or PENDING)
+4. **Resume from next step** — Do not restart; continue from where execution stopped
+5. **Re-validate if unsure** — Re-read project-memory; confirm blockers and next phase
+
+**Agent rule:** Always read project-memory at session start. If "Current phase" or "Task board" shows work in progress, resume that work instead of starting fresh.
 
 ---
 
