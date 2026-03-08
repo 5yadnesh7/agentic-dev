@@ -96,7 +96,7 @@ Use this for intelligent matching. Each row = user intent maps to skill.
 
 | User intent (keywords/phrases) | Skill |
 |-------------------------------|-------|
-| Full workflow, idea to production, build X, run lifecycle | workflow-orchestrator |
+| Full workflow, idea to production, build X, build a SaaS for, run lifecycle, autonomous | workflow-orchestrator (→ dev-supervisor for Idea/Project/Build) |
 | Bug, debug, fix this bug, why is X failing, investigate error | workflow-semantic-debugging |
 | Full project context, whole codebase, every detail | workflow-get-project-context |
 | Review my code, pre-commit review, review before commit | workflow-code-review-dev |
@@ -127,6 +127,16 @@ Use this for intelligent matching. Each row = user intent maps to skill.
 | Microservices, service decomposition, service boundaries | domain-microservices |
 | Monitoring, Sentry, Grafana, Prometheus, error tracking, observability | role-monitoring-agent |
 | Impact of changes, check dependents, ripple effect, after changes, did my change break anything | workflow-impact-analysis |
+| Generate project spec, project spec for X, full spec for idea | workflow-project-spec |
+| Decompose tasks, create task files, task plan, task breakdown to files | workflow-task-planner |
+| Open PR, create PR, generate PR, ready for PR | workflow-pr-generator |
+| Continuous improvement, architecture review, should we refactor, tech debt, retrospective | workflow-continuous-improvement |
+| Architecture review before coding, critique architecture plan | workflow-architecture-review |
+| Map the repo, repo structure, where does X live, codebase map | workflow-context-map |
+| Refactor suggestions, code quality, duplicate code, clean up | workflow-refactor |
+| Record lesson, add to dev-lessons, remember this pattern | workflow-learning |
+| Validate assumptions, check assumptions, think before building | workflow-assumption-validation |
+| Project roadmap, phased plan, development milestones | workflow-project-roadmap |
 | MySQL schema, Postgres schema, MongoDB, Redis | db-schema-* rule |
 
 ## Multi-skill invocation

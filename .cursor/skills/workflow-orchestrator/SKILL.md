@@ -13,7 +13,7 @@ Execute the full product lifecycle from idea to PR. Manages phases, assigns agen
 
 - User message **starts with** `Idea:`, `Project:`, `Build:` → **Greenfield** lifecycle
 - User message **starts with** `Workflow: [feature]` → Full feature lifecycle
-- User message **starts with** any trigger from `agent-system/QUICK_REFERENCE.md`
+- User message **starts with** any trigger from `agent-system/QUICK_REFERENCE.md` (including `Spec:`, `PR:`, `Improve:`, `Retro:`)
 - User asks: "how does the workflow run?", "what are the phases?"
 
 **No direct trigger?** → Use **workflow-skill-receiver** (intelligent match). Do not use orchestrator when user says something in natural language (e.g. "review my code") without a prefix—skill-receiver will match intent and invoke the right skill.
@@ -32,9 +32,10 @@ Read in order:
 
 | Trigger | Entry mode | Flow |
 |---------|------------|------|
-| `Idea:`, `Project:`, `Build:` | Greenfield | Phase -2 → -1 → 0.5 → 0.6 → 0 → 1 → 1b → 2 → 2a → 2b → 3–11 |
-| `Workflow: [feature]` | Feature | Phases 0–11 (or -2–11 if greenfield) |
-| `Planner:`, `Bug:`, `Review:`, etc. | Single-purpose | See ORCHESTRATOR trigger map |
+| `Idea:`, `Project:`, `Build:` | **Greenfield — use dev-supervisor** | Read `agents/dev-supervisor.md`. Execute its numbered steps. Call each skill explicitly. Use `.cursor/workflows/new-project.workflow.md` for explicit order. |
+| `Workflow: [feature]` | Feature | Phases 0–11; use `.cursor/workflows/feature-development.workflow.md` for explicit order |
+| `Bug:` | Bug fix | Use `.cursor/workflows/bug-fix.workflow.md`; invoke workflow-semantic-debugging |
+| `Planner:`, `Review:`, etc. | Single-purpose | See ORCHESTRATOR trigger map |
 
 ### 3. Execute phases
 

@@ -40,6 +40,16 @@ Every skill is **trigger-based**: invokable by **direct trigger** (ORCHESTRATOR)
 | workflow-context-md | — | "long context", "context file", "create context md", "reduce context" |
 | domain-microservices | Micro: | "microservices", "service decomposition", "service boundaries" |
 | workflow-impact-analysis | Impact: | "impact of changes", "check dependents", "ripple effect", "after changes", "did my change break anything" |
+| workflow-project-spec | Spec:, Build: | "generate project spec", "project spec for X", "full spec for [idea]", "build a SaaS for", "build [X]" |
+| workflow-task-planner | Planner: | "decompose tasks", "create task files", "task plan", "task breakdown to files" |
+| workflow-pr-generator | PR: | "open PR", "create PR", "generate PR", "ready for PR" |
+| workflow-continuous-improvement | Improve:, Retro: | "continuous improvement", "architecture review", "should we refactor", "tech debt", "retrospective" |
+| workflow-architecture-review | ArchReview: | "architecture review before coding", "review my architecture plan", "critique architecture" |
+| workflow-context-map | ContextMap: | "map the repo", "repo structure", "where does X live", "codebase map" |
+| workflow-refactor | Refactor: | "refactor suggestions", "code quality", "duplicate code", "clean up code" |
+| workflow-learning | Learn: | "record lesson", "add to dev-lessons", "remember this pattern" |
+| workflow-assumption-validation | Validate:, Assume: | "validate assumptions", "check assumptions", "think before building" |
+| workflow-project-roadmap | Roadmap: | "project roadmap", "phased plan", "development milestones" |
 
 **DB standards (rules, not skills):** db-schema-postgres, db-schema-mysql, db-schema-sql, db-mongodb, db-redis — apply when editing matching files. Match on "Postgres schema", "MySQL schema", "MongoDB", "Redis".
 

@@ -12,7 +12,8 @@ Create a new Cursor skill that can be invoked by workflow-skill-receiver. Ensure
 ## When to run
 
 - **User explicitly asks** — "create a skill for X", "add a skill that does Y"
-- **Repeated pattern** — Same workflow done 2+ times (noted in LESSONS.md or process-log); suggest creating a skill
+- **Repeated pattern** — Same workflow done 2+ times (noted in dev-lessons.md or process-log); create skill automatically
+- **Self-evolving** — Semantic debugging, feature work, or any agent encounters reusable playbook (e.g. JWT auth, Redis cache); extract and create skill
 - **User says** — "from now on, when I ask Z, always do A, B, C"
 
 **Do not create when:**
@@ -61,7 +62,7 @@ Ask or infer:
 **Location:** Project: `.cursor/skills/<skill-name>/SKILL.md`; Personal: `~/.cursor/skills/<skill-name>/SKILL.md`
 
 **Required sections:**
-- YAML frontmatter: `name`, `description`
+- YAML frontmatter: `name`, `description`, `tags` (optional but recommended)
 - Your persona (1–2 sentences)
 - When to act (triggers)
 - Step-by-step process (numbered)
@@ -76,7 +77,7 @@ Ask or infer:
 
 Append to `agent-system/SKILL_INDEX.md` (or update existing row). SKILL_INDEX has two columns: **Direct trigger** and **Intelligent match**. Add:
 - **Direct trigger** — Prefix if applicable (e.g. `Review:`), or `—` if none
-- **Intelligent match** — Keywords/phrases for skill-receiver (e.g. "validate OpenAPI", "check API spec")
+- **Intelligent match** — Keywords/phrases; include tag-based phrases (e.g. tags: [auth, jwt] → "JWT auth", "auth setup")
 
 **Checklist:** [ ] Row added with Direct trigger; [ ] Intelligent match phrases; [ ] No overwrite without asking
 
@@ -103,6 +104,7 @@ Append to `agent-system/SKILL_INDEX.md` (or update existing row). SKILL_INDEX ha
 ---
 name: skill-name
 description: [What it does]. Use when the user asks to [X], [Y], or [Z].
+tags: [task-type, technology, domain]
 ---
 
 # Skill: [Display Name]
@@ -157,6 +159,18 @@ VALIDATION REPORT — [file]
 ✅ Valid / ❌ [N] errors
 [Error list with fix]
 ```
+
+## Skill tags (for discovery)
+
+Add `tags` in frontmatter so agents can search by task type, technology, or domain:
+
+```yaml
+tags: [auth, backend, node]
+tags: [payments, stripe, api]
+tags: [cache, redis, performance]
+```
+
+Skill receiver can match on tags when user asks "JWT auth" or "Stripe integration".
 
 ## Rules
 

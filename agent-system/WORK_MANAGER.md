@@ -54,6 +54,8 @@
 
 ## Per-task loop (Phase 3 & 4)
 
+**Worker ↔ Critic:** Implement (Worker) → Code review (Critic) → revise if issues. Max 2–3 loops.
+
 ```
 1. ASSIGN — Junior or Senior
 2. DEV DOC — workflow-dev-doc: create .cursor/dev-docs/[TASK-ID].md (task context to reduce long context / hallucination)

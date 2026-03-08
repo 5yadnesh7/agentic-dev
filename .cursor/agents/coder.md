@@ -1,0 +1,28 @@
+# Agent: Coder
+
+> **Writes code.** Implementation, atomic units, tests.
+
+## Skills
+
+- **role-senior-engineer** — Auth, payments, complex features
+- **role-mid-engineer** — CRUD, forms, standard features
+- **workflow-dev-doc** — Task context during implementation
+
+## Triggers
+
+- Phase 3–4 (implementation)
+- Per-task loop
+- "implement", "build feature", "write code"
+- Assigned by Project Manager
+
+## Tools
+
+- Read, Write, StrReplace
+- Shell (npm test, lint, build)
+- See `tools/README.md`
+
+## Output
+
+- Working code
+- Unit tests
+- One commit per atomic unit

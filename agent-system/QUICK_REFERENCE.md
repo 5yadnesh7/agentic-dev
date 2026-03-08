@@ -17,6 +17,15 @@
 | `GetContext:` | workflow-get-project-context (full context → docs/project-context-full.md) |
 | `Auth:` | Auth Engineer, Security |
 | `Impact:` | workflow-impact-analysis (after changes: check dependents, fix if broken) |
+| `Spec: [idea]` | workflow-project-spec (product, architecture, database, api, tasks) |
+| `PR:` | workflow-pr-generator (branch, commits, PR description) |
+| `Improve:` / `Retro:` | workflow-continuous-improvement (architecture/DB/refactor review) |
+| `ArchReview:` | workflow-architecture-review (pre-coding: scalability, security, performance) |
+| `ContextMap:` | workflow-context-map (repo mental map) |
+| `Refactor:` | workflow-refactor (refactor suggestions) |
+| `Learn:` | workflow-learning (record → docs/dev-lessons.md) |
+| `Validate:` / `Assume:` | workflow-assumption-validation (think-before-build) |
+| `Roadmap:` | workflow-project-roadmap (phased milestones) |
 | `Infra:`, `Doc:`, `API:`, `Release:` | See ORCHESTRATOR |
 
 **No direct trigger?** Use **workflow-skill-receiver** (intelligent trigger): match user intent to SKILL_INDEX and invoke the skill. Every skill is trigger-based: direct or intelligent.

@@ -1,13 +1,60 @@
 ---
 name: workflow-semantic-debugging
 description: Semantic debugging: find root cause and implement fix end-to-end. Use for Bug: trigger, debugging, or when user reports a bug. Finds, fixes, adds regression test, verifies, commits.
+tags: [operational, debugging, bug-fix]
 ---
 
 # Workflow: Semantic Debugging
 
+## Skill contract
+
+| | |
+|-|-|
+| **Layer** | Operational (execution) |
+| **Input** | Bug description, error message, stack trace, steps to reproduce |
+| **Output** | Fix committed; regression test; `docs/debug/[slug]-report.md` (optional) |
+| **Purpose** | Find root cause, implement fix, add regression test, verify, commit |
+
 ## Purpose
 
-**Find and fix** bugs end-to-end using semantic analysis. Understand what the code means, trace execution, identify root cause, **implement the fix**, add regression test, verify, and commit. Complete debugging workflow—no handoff; do all fixes yourself.
+**Find and fix** bugs end-to-end using semantic analysis. Implements the **Tester ↔ Coder** feedback loop: Tester finds bug → Coder fixes → Tester verifies → (if fail) back to Coder. Complete debugging workflow—no handoff; do all fixes yourself.
+
+## Collaborative loop (Tester ↔ Coder)
+
+```
+Coder (implement) → Tester (verify)
+       ↑                    │
+       └── if bug found ────┘
+```
+
+**If verify fails:** Loop back to Step 4 (Implement fix). Do not proceed to commit until all checks pass.
+
+---
+
+## Dual-Brain (Worker ↔ Critic)
+
+```
+Worker (implement fix) → Critic (review fix)
+       ↑                         │
+       └── if issues found ──────┘
+```
+
+**Worker** produces the fix. **Critic** finds flaws (logic, security, edge cases). Worker revises; Critic re-checks. Usually 2–3 loops. Assume production, 1M users — identify all risks.
+
+## Stateful reasoning (every run)
+
+```
+read state → think → act → update state
+```
+
+**Do not run without state.** Agents without persistent state become inconsistent and forget previous decisions.
+
+| Step | Action |
+|------|--------|
+| **Read** | `docs/project-brain.md`, `docs/project-context.md`, `docs/dev-lessons.md` (if exist) |
+| **Think** | Steps 1–3 (reproduce, analyze, root cause) |
+| **Act** | Steps 4–7 (fix, test, verify, commit) |
+| **Update** | After commit: `docs/project-memory.md` (completed fix), `docs/dev-lessons.md` (if reusable lesson) |
 
 ## When to run
 
@@ -15,6 +62,15 @@ description: Semantic debugging: find root cause and implement fix end-to-end. U
 - **User says:** "debug", "fix this bug", "why is X failing?", "investigate and fix error"
 
 ## End-to-end process (find → fix → test → verify → commit)
+
+### Step 0: Read state
+
+- **Read** `docs/project-brain.md` — stack, architecture, decisions
+- **Read** `docs/dev-lessons.md` — similar past bugs, correct patterns
+- **Read** `docs/project-context.md` — where logic lives
+- **Checklist:** [ ] State loaded; [ ] Context understood
+
+---
 
 ### Step 1: Reproduce the bug
 
@@ -50,7 +106,28 @@ description: Semantic debugging: find root cause and implement fix end-to-end. U
 
 ---
 
+### Step 2.5: Generate hypothesis
+
+**Do not guess; form hypotheses from evidence.**
+
+| Action | Details |
+|--------|---------|
+| **List possible causes** | e.g. "API response empty", "state initialization missing", "undefined in array access" |
+| **Rank by likelihood** | Based on stack trace, data flow, common patterns |
+| **Narrow** | Trace to confirm or reject each; pick the one that fits |
+
+**Example reasoning:**
+> Error: Cannot read property 'map' of undefined  
+> Possible causes: API response empty; state initialization missing; optional chaining needed  
+> Suggested fix: Add default array fallback or guard before .map
+
+**Checklist:** [ ] At least one hypothesis formed; [ ] Trace to confirm before fixing
+
+---
+
 ### Step 3: Identify root cause
+
+**Question your assumptions.** What was assumed that might be wrong? (e.g. "API always returns array" → it returns null; "user exists" → user deleted.)
 
 | Root cause category | Examples |
 |---------------------|----------|
@@ -69,6 +146,8 @@ description: Semantic debugging: find root cause and implement fix end-to-end. U
 
 ### Step 4: Implement the fix
 
+**Optional: Proposed-fix critique.** Before editing, ask: Would this fix cause other issues? Is there a simpler approach? (Mimics Reviewer challenging Coder.)
+
 | Action | Details |
 |--------|---------|
 | **Edit** | Apply fix in the correct file at the identified location |
@@ -80,6 +159,25 @@ description: Semantic debugging: find root cause and implement fix end-to-end. U
 - [ ] Fix addresses root cause
 - [ ] No new lint errors
 - [ ] Fix is minimal and targeted
+
+---
+
+### Step 4.5: Critic review (Worker–Critic loop)
+
+**After Worker produces fix, Critic reviews before regression test.**
+
+| Critic checks | Examples |
+|---------------|----------|
+| Logical errors | Edge case missed? Wrong condition? |
+| Security | Input validation? Secrets? Injection? |
+| Architecture | Violates patterns? Breaks boundaries? |
+| Performance | N+1? Missing index? |
+
+**Instruction for Critic:** Assume production, 1M users. Find flaws; don't praise. Provide actionable corrections.
+
+**Loop:** If Critic finds issues → Worker revises → Critic re-checks. Max 2–3 iterations.
+
+**Checklist:** [ ] Critic pass complete; [ ] No blocking issues (or fixes applied)
 
 ---
 
@@ -115,13 +213,19 @@ it('handles [bug scenario] - regression for [bug id]', () => {
 | **Run tests** | `npm test` — all pass |
 | **Run lint** | `npm run lint` — 0 errors |
 | **Manual check** | If applicable: reproduce original steps; bug is gone |
-| **No regressions** | Existing tests still pass |
+| **Verify impact** | Check dependents: does fix break callers? Use workflow-impact-analysis if many files |
+| **No regressions** | Existing tests still pass; no new failures |
+
+**Verify impact:** If fix touches shared code (utils, models, hooks), trace callers and run related tests. For large changes, run full test suite and consider `Impact:` to find dependents.
 
 **Checklist:**
 - [ ] `npm test` passes
 - [ ] `npm run lint` passes
 - [ ] Bug no longer reproducible
+- [ ] Impact verified (no broken dependents)
 - [ ] No new failures
+
+**Feedback loop:** If any check fails → loop back to Step 4 (Implement fix). Revise fix, re-run tests, re-verify. Do not commit until all pass.
 
 ---
 
@@ -136,6 +240,32 @@ it('handles [bug scenario] - regression for [bug id]', () => {
 - Two commits: fix first, then test (or one if project prefers)
 - Use project commit convention
 - Do not commit with failing tests
+
+---
+
+### Step 8: Update state
+
+**Every agent updates state after acting.** Without this, the next run has no context.
+
+| File | What to update |
+|------|----------------|
+| `docs/project-memory.md` | Add bug fix to completed items; clear blocker if resolved |
+| `docs/dev-lessons.md` | Add lesson if bug reveals reusable pattern (e.g. "API returns null, not []") |
+| `docs/project-brain.md` | If fix affects architecture or adds a decision — document why |
+
+**Checklist:** [ ] project-memory updated; [ ] dev-lessons updated if applicable
+
+---
+
+### Step 9: Self-evolving skills (optional)
+
+**If the fix reveals a reusable playbook** (e.g. JWT auth setup, Redis cache, Stripe integration) and this pattern has been done 2+ times (check `docs/dev-lessons.md` or process-log):
+
+1. **Invoke workflow-skill-creator** — Summarize the solution, convert to reusable instructions
+2. **Save as new skill** — e.g. `skills/jwt-auth-setup.md`, `skills/redis-cache.md`
+3. **Add tags** — `tags: [auth, backend, node]` for discovery by task type, technology, domain
+
+**Evolution loop:** solve problem → extract knowledge → create skill → reuse next time.
 
 ---
 
@@ -174,6 +304,15 @@ Produce `docs/debug/[bug-slug]-report.md` (optional, for record):
 
 ---
 
+## Project brain / memory (stateful reasoning)
+
+- **Read at start (Step 0):** project-brain, project-context, dev-lessons
+- **Update at end (Step 8):** project-memory, dev-lessons (if lesson), project-brain (if decision)
+
+## Self-evolving skills
+
+If the fix is a **reusable playbook** done 2+ times → invoke **workflow-skill-creator** to create a new skill. System improves over time.
+
 ## Rules
 
 - **Find and fix** — Do the full workflow; do not hand off. Implement fix yourself.
@@ -182,4 +321,5 @@ Produce `docs/debug/[bug-slug]-report.md` (optional, for record):
 - **Minimal fix** — Smallest change that fixes the bug.
 - **Regression test** — Every fix must have a test that would have caught it.
 - **No commit with failing tests** — Verify before commit.
+- **Feedback loop** — If verify fails, loop back to implement fix; do not advance.
 - **Two commits** — `fix(scope):` and `test(scope):` (or per project convention).

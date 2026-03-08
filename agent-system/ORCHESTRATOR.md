@@ -7,12 +7,33 @@ The orchestrator manages workflow, assigns tasks to agents, tracks project progr
 
 ---
 
+## Hierarchical skill execution
+
+```
+User Request → Executive (dev-supervisor) → Strategic (plan) → Operational (execute)
+```
+
+- **Executive:** Decides workflow, selects skills, orchestrates
+- **Strategic:** Research, roadmap, architecture, task planning (produce plans)
+- **Operational:** Coding, debugging, refactoring (perform work)
+
+See `agent-system/SKILL_HIERARCHY.md`.
+
+---
+
+## Stateful reasoning
+
+**Every agent:** read state → think → act → update state. Do not rely on chat history; use structured files.
+
 ## Project memory & context
 
 | Doc | Purpose |
 |-----|---------|
 | `docs/project-context.md` | **Persistent.** Stack, structure, patterns, phase outputs. Updated by **workflow-project-context** after each phase. Reuse for future phases. |
 | `docs/project-memory.md` | Current phase, completed phases, open tasks, key decisions, user approvals |
+| `docs/project-brain.md` | Vision, decisions, stack, open questions, lessons. Every agent reads and updates. |
+| `docs/decision-log.md` | Why decisions were made; rationale for architecture choices |
+| `docs/tool-memory.md` | Commands that worked, env notes (optional). See **agent-system/MEMORY_SYSTEM.md**. |
 | `.cursor/dev-docs/[TASK-ID].md` | **Temporary.** Task-scoped context during Phase 3–4. Created by **workflow-dev-doc** at task start; **deleted when task DONE**. Reduces long context and hallucination. |
 
 **After each phase:** Invoke workflow-project-context to update `docs/project-context.md`.
@@ -118,13 +139,45 @@ COMMIT: "chore: init branch"             ▼
 
 ---
 
+## Graph orchestration (flow view)
+
+Agent systems work better as **graphs** than as strict linear pipelines. Parallel branches run when nothing blocks.
+
+```
+                    ┌─────────────┐
+                    │   research  │ (role-research-analyst)
+                    └──────┬──────┘
+                           │
+     USER ──► planner ─────┴──────► tasks (role-project-manager)
+                    │
+          ┌─────────┴─────────┐
+          ▼                   ▼
+       ┌──────┐           ┌──────┐
+       │ code │           │ docs │ (role-product-manager, role-content-writer)
+       └──┬───┘           └──────┘
+          │
+          ▼
+       ┌──────┐
+       │ tests│ (role-senior-tester, role-junior-tester)
+       └──┬───┘
+          │
+          ▼
+       ┌──────┐
+       │review│ (workflow-code-review-pr, role-security-engineer)
+       └──────┘
+```
+
+**See also:** `agent-system/MEMORY_SYSTEM.md`, `agent-system/WORK_MANAGER.md`, `tools/README.md`.
+
+---
+
 ## Trigger → Agent map
 
 | Trigger | Agents / Skills | Notes |
 |---------|-----------------|-------|
-| `Idea:` / `Project:` / `Build:` | Full greenfield: Idea Agent → Research → Brainstorm → Product Manager → UI/UX → Project Manager → phases 2–11 | Idea-to-production lifecycle |
+| `Idea:` / `Project:` / `Build:` | **dev-supervisor** → `agents/dev-supervisor.md` — Master agent; orchestrates research → architecture → task plan → execute. Explicit order in `.cursor/workflows/new-project.workflow.md`. | Autonomous dev system |
 | `Workflow: [feature]` | Full loop (WORK_MANAGER phases -1–11) | Parallel where Depends allow. Phase -1 & 0.5 only if greenfield. |
-| `Planner: [task]` | PM + Brainstormer | PRD + task board |
+| `Planner: [task]` | workflow-task-planner, role-product-manager, role-project-manager | Task files `tasks/001-X.md`, PRD, task board |
 | `Bug: [desc]` | workflow-semantic-debugging | Find root cause, implement fix, add regression test, verify, commit |
 | `Review: [target]` | Code Reviewer + Security | workflow-code-review-pr |
 | `Test: [target]` | QA Lead, test skills | Unit, integration, E2E |
@@ -140,6 +193,15 @@ COMMIT: "chore: init branch"             ▼
 | `Research:` | Research Analyst | Feasibility, tech comparison |
 | `AI:` / `ML:` | AI/ML Engineer | Model integration |
 | `Impact:` | workflow-impact-analysis | After changes: find dependents, verify, fix or route to Junior/Senior/Tester |
+| `Spec: [idea]` | workflow-project-spec | Generate product.md, architecture.md, database.md, api.md, tasks.md |
+| `PR:` | workflow-pr-generator | Branch, commits, PR description, open PR |
+| `Improve:` / `Retro:` | workflow-continuous-improvement | Architecture/DB/refactor review; improvement report |
+| `ArchReview:` | workflow-architecture-review | Pre-coding: review spec for scalability, security, performance |
+| `ContextMap:` | workflow-context-map | Repo mental map; where logic lives, what to edit |
+| `Refactor:` | workflow-refactor | Refactor suggestions; duplicate code, large functions, naming |
+| `Learn:` | workflow-learning | Record lesson → docs/dev-lessons.md |
+| `Validate:` / `Assume:` | workflow-assumption-validation | Think-before-build; list assumptions, risks, missing info |
+| `Roadmap:` | workflow-project-roadmap | Phased milestones (docs/roadmap.md) before architecture |
 
 **No explicit trigger?** Use **workflow-skill-receiver** (intelligent trigger): match user intent to SKILL_INDEX.md by keywords, domain, and intent—then run the matching skill. Every skill in SKILL_INDEX is invokable by direct trigger (above) or by intelligent intent matching.
 
