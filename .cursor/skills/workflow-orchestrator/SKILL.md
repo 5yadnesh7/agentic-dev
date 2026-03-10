@@ -61,7 +61,7 @@ Run phases in order. **User gates:** Phase 0.6 (Product Planning approval), Phas
 | 0 | workflow-project-context (if brownfield) | Branch, project context |
 | 0.5 | workflow-brainstorm | Brainstorm (greenfield only) |
 | 0.6 | role-product-manager | Product Planning Document (user approval) |
-| 1 | role-ui-ux-designer | UX design (user approval) |
+| 1 | role-ui-ux-designer | UX design, HTML/CSS mockups (user approval) |
 | 1b | role-project-manager | Roadmap, phases, task board |
 | 2 | LLD/HLD | Technical design |
 | 2a | role-product-manager | Documentation (API specs, edge cases) |

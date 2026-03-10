@@ -25,7 +25,7 @@
 | **0** | Setup: create branch `feature/[TICKET]-[desc]`; if existing repo → workflow-project-context. Create/update `docs/project-context.md`. | Commit: `chore: init feature/[TICKET]-[desc]` |
 | **0.5** | **Brainstorm** (greenfield): workflow-brainstorm → feature ideas, product variations, future expansion | Commit: `docs: add brainstorm for [idea]` |
 | **0.6** | **Product Manager** (greenfield): role-product-manager → Product Planning Document (overview, users, core/non-core features, user journeys, business rules, modules, tech, architecture) | **Gate:** User approves. Commit: `docs: add product planning for [idea]` |
-| **1** | UX Design: role-ui-ux-designer → flows, screen specs, wireframes, design tokens | Skip if pure backend. **Gate:** User approves design. Commit: `docs: add UX design for [feature]` |
+| **1** | UX Design: role-ui-ux-designer → flows, screen specs, wireframes, HTML/CSS mockups, design tokens | Skip if pure backend. **Gate:** User approves design. Output: `docs/ux-design.md`, `mockups/*.html`, `mockups/*.css`. Commit: `docs: add UX design and mockups for [feature]` |
 | **1b** | **Project Manager**: role-project-manager → roadmap, phases, task breakdown (from product spec + UX) | Commit: `docs: add project roadmap and task board` |
 | **2** | Technical Design: LLD/HLD (interfaces, schema, sequences) | Commit: `docs: add LLD/HLD for [feature]` |
 | **2a** | **Documentation Agent**: role-product-manager — API specs, feature descriptions, edge cases, validation rules | Commit: `docs: add technical documentation for [feature]` |

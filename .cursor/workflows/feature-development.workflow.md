@@ -18,7 +18,7 @@
 | 4 | Architecture | LLD / role-senior-engineer | Technical design |
 | 5 | Database design | (if DB changes) | `docs/database.md` or migration spec |
 | 6 | API design | (if API changes) | `docs/api.md` or endpoint spec |
-| 7 | Frontend structure | role-ui-ux-designer (if UI) | Screens, flows |
+| 7 | Frontend structure | role-ui-ux-designer (if UI) | Screens, flows, HTML/CSS mockups in mockups/ |
 | 8 | Task plan | workflow-task-planner | `tasks/001-X.md`, `tasks/002-Y.md`, ... |
 | 9 | Execute tasks | Per-task loop | Code, tests, commits |
 | 10 | Integration | role-senior-engineer | Wire FE/BE |

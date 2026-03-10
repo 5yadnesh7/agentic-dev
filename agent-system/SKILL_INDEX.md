@@ -18,7 +18,7 @@ Every skill is **trigger-based**: invokable by **direct trigger** (ORCHESTRATOR)
 | role-senior-tester | Test: | "test strategy", "regression", "E2E strategy", "QA lead" |
 | role-mid-tester | Test: | "test cases", "test execution", "test reporting" |
 | role-junior-tester | Test: | "unit tests", "simple regression", "test checklist" |
-| role-ui-ux-designer | — | "UX design", "Design:", "screen specs", "user flows", "wireframes", "design system" |
+| role-ui-ux-designer | Design: | "UX design", "Design:", "screen specs", "user flows", "wireframes", "HTML mockup", "CSS mockup", "design system" |
 | role-content-writer | — | "content gate", "labels", "messages", "tooltips", "copy for UI" |
 | role-security-engineer | Review: (security) | "security review", "OWASP", "auth audit", "dependency scan", "vulnerability" |
 | role-monitoring-agent | — | "monitoring", "Sentry", "Grafana", "Prometheus", "error tracking", "observability" |

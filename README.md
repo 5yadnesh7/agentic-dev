@@ -78,6 +78,8 @@ memory/                 # Single source of truth
 
 templates/              # architecture-template, task-template, skill-template, agent-template
 
+mockups/                # HTML/CSS mockup pages (from role-ui-ux-designer; visual design)
+
 examples/               # Demo project (proves framework flow)
   saas-example/         # Todo SaaS: Idea → Roadmap → Architecture → Tasks
 

@@ -62,10 +62,11 @@
 
 ## 5. UI/UX Designer
 
-**Product screens, flows, wireframes, design system.**
+**Product screens, flows, wireframes, design system, HTML/CSS mockups.**
 
-- **Capabilities:** Product screens, user flows, navigation, wireframes, layout hierarchy, interaction behavior, design tokens.
+- **Capabilities:** Product screens, user flows, navigation, wireframes, layout hierarchy, **HTML/CSS mockup pages** (visual mockups like Figma in runnable form), interaction behavior, design tokens.
 - **Skills:** role-ui-ux-designer.
+- **Output:** `docs/ux-design.md`, `mockups/*.html`, `mockups/*.css`.
 - **Called when:** Phase 1, Design:. Skip if pure backend. **User approval gate** before development.
 
 ---

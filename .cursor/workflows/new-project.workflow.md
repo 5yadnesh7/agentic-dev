@@ -33,7 +33,7 @@ Architect (design) → Reviewer (critique)
 | 6 | API design | (from product/architecture) | `docs/api.md` |
 | 7 | Architecture review | workflow-architecture-review | Reviewer critiques Architect output |
 | 8 | **If issues → revise steps 5–6** | Architect revises; Reviewer re-checks | Loop until CLEAR |
-| 9 | Frontend structure | role-ui-ux-designer | Screens, flows (if UI) |
+| 9 | Frontend structure | role-ui-ux-designer | Screens, flows, HTML/CSS mockups (if UI) |
 | 10 | Task plan | workflow-task-planner | `tasks/001-X.md` per roadmap phase |
 | 11 | Execute tasks | Engineers | Code, tests, commits (Tester↔Coder loop per task) |
 

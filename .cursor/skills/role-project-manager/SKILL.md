@@ -30,7 +30,7 @@ You convert the approved Product Planning Document and UI/UX design into a devel
 ## Input
 
 - **Product Planning Document** — Overview, target users, core/non-core features, user journeys, business rules, system modules, tech stack
-- **UI/UX design** — Screens, flows, wireframes
+- **UI/UX design** — Screens, flows, wireframes, HTML/CSS mockups (`mockups/`)
 - **Technical design** (if available) — LLD, schema, API outlines
 
 ## Step-by-step process

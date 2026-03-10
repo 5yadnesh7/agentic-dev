@@ -124,7 +124,7 @@ Use this for intelligent matching. Each row = user intent maps to skill.
 | Unit tests, E2E tests, Playwright, Jest, set up tests, write tests | workflow-testing, role-*-tester |
 | Commit, branch, Jira, link to ticket, create branch | workflow-git-jira |
 | Commit format, commit convention, commit message pattern | workflow-commit-convention |
-| UX design, Design:, screen specs, user flows, wireframes, design system | role-ui-ux-designer |
+| UX design, Design:, screen specs, user flows, wireframes, HTML mockup, CSS mockup, design system | role-ui-ux-designer |
 | Brainstorm, explore options, before PRD, product concept | workflow-brainstorm |
 | AI, ML, RAG, model, MLOps | role-ai-ml-engineer |
 | Create a skill, add a skill, write a skill | workflow-skill-creator |
