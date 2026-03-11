@@ -91,7 +91,18 @@
 
 ---
 
-## 8. Security Engineer
+## 8. Database Schema Engineer
+
+**Dedicated data modelling and database design.**
+
+- **Capabilities:** Conceptual, logical, and physical data models; engine selection (SQL/NoSQL); schema normalisation; indexes and constraints; migration plans ready for implementation.
+- **Skills:** role-db-schema-engineer.
+- **Called when:** Database design phase (e.g. Step 8 in Dev Supervisor workflow); user asks for DB/schema/data model design; significant schema refactors.
+- **Escalates to:** Architect and CTO for cross-system impact or major storage trade-offs.
+
+---
+
+## 9. Security Engineer
 
 **Per-task security, Phase 6b full security testing.**
 
@@ -102,7 +113,7 @@
 
 ---
 
-## 9. Code Reviewer
+## 10. Code Reviewer
 
 **Code quality, standards, PR review.**
 
@@ -110,7 +121,7 @@
 
 ---
 
-## 10. Test Agent (QA)
+## 11. Test Agent (QA)
 
 **Jest + Playwright only.**
 
@@ -119,7 +130,7 @@
 
 ---
 
-## 11. End Consumer
+## 12. End Consumer
 
 **Simulated cold user.**
 
@@ -128,7 +139,7 @@
 
 ---
 
-## 12. Monitoring Agent
+## 13. Monitoring Agent
 
 **Post-release observability.**
 
@@ -138,7 +149,7 @@
 
 ---
 
-## 13. DevOps / Cloud / AI-ML
+## 14. DevOps / Cloud / AI-ML
 
 - **DevOps:** CI/CD, Terraform, Infra:, DevOps:.
 - **Cloud:** Terraform, AWS/GCP, Infra: terraform/aws.

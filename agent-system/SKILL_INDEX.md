@@ -52,6 +52,7 @@ Every skill is **trigger-based**: invokable by **direct trigger** (ORCHESTRATOR)
 | workflow-learning | Learn: | "record lesson", "add to dev-lessons", "remember this pattern" |
 | workflow-assumption-validation | Validate:, Assume: | "validate assumptions", "check assumptions", "think before building" |
 | workflow-project-roadmap | Roadmap: | "project roadmap", "phased plan", "development milestones" |
+| role-db-schema-engineer | DB: | "database schema", "db schema", "db design", "design the database", "data model" |
 
 **DB standards (rules, not skills):** db-schema-postgres, db-schema-mysql, db-schema-sql, db-mongodb, db-redis — apply when editing matching files. Match on "Postgres schema", "MySQL schema", "MongoDB", "Redis".
 

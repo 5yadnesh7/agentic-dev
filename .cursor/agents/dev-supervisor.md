@@ -35,7 +35,7 @@ You are the **dev supervisor**. You understand the user request, call skills in 
 | 5 | Brainstorm | workflow-brainstorm | Feature ideas, variations |
 | 6 | Product spec | role-product-manager | `docs/product.md` |
 | 7 | Architecture | workflow-project-spec (or LLD) | `docs/architecture.md` |
-| 8 | Database design | (from spec) | `docs/database.md` |
+| 8 | Database design | role-db-schema-engineer | `docs/database-*.md` (conceptual, logical, engine-specific) |
 | 9 | API design | (from spec) | `docs/api.md` |
 | 10 | Architecture review | workflow-architecture-review | Self-critique: scalability, security, performance |
 | 11 | Task plan | workflow-task-planner | `tasks/001-X.md`, `tasks/002-Y.md`, ... (roadmap + task tree) |
