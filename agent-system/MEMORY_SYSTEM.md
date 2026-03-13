@@ -48,7 +48,7 @@ read state → think → act → update state
 | **Act** | Implement, fix, test |
 | **Update** | `memory/project-state.md`; optionally post to `memory/agent-messages.md` for handoffs |
 
-**Legacy:** `docs/project-brain.md`, `docs/project-context.md`, `docs/project-memory.md`, `docs/dev-lessons.md` are consolidated into `memory/project-state.md`. Use project-state for new work. Docs files may remain for backward compatibility.
+**Legacy:** `docs/user-docs/shared/project-brain.md`, `docs/user-docs/workflow-project-context/project-context.md`, `docs/user-docs/shared/project-memory.md`, `docs/system-docs/dev-lessons.md` are consolidated into `memory/project-state.md`. Use project-state for new work. Docs files may remain for backward compatibility.
 
 **Why:** Chat history gets truncated and loses structure. Structured state is the single source of truth.
 
@@ -79,9 +79,9 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 | **Session** | Current chat; immediate context | Cursor chat | Automatic |
 | **Project state** | Phase, tasks, stack, decisions, lessons | `memory/project-state.md` | All agents |
 | **Agent messages** | Inter-agent communication | `memory/agent-messages.md` | Architect, Reviewer, CTO, etc. |
-| **Decisions** | Why choices were made (detailed) | `docs/decision-log.md` | Architect, CTO |
-| **Knowledge** | Exhaustive context | `docs/project-context-full.md` | workflow-get-project-context |
-| **Tool** | Commands, env notes | `docs/tool-memory.md` | Optional |
+| **Decisions** | Why choices were made (detailed) | `docs/system-docs/decision-log.md` | Architect, CTO |
+| **Knowledge** | Exhaustive context | `docs/user-docs/workflow-get-project-context/project-context-full.md` | workflow-get-project-context |
+| **Tool** | Commands, env notes | `docs/system-docs/tool-memory.md` | Optional |
 
 ---
 
@@ -92,8 +92,8 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 | **Short memory** | Current conversation; immediate context | Cursor chat session | Automatic |
 | **Project state** | Phase, tasks, stack, decisions, lessons | `memory/project-state.md` | All agents |
 | **Agent messages** | Inter-agent handoffs, architecture debate | `memory/agent-messages.md` | Architect, Reviewer, etc. |
-| **Tool memory** | Previous commands, results, reusable snippets | `docs/tool-memory.md` (optional) | Agents after tool use |
-| **Knowledge memory** | Research, architecture, patterns, full context | `docs/project-context-full.md`, `docs/` | workflow-get-project-context, research |
+| **Tool memory** | Previous commands, results, reusable snippets | `docs/system-docs/tool-memory.md` (optional) | Agents after tool use |
+| **Knowledge memory** | Research, architecture, patterns, full context | `docs/user-docs/workflow-get-project-context/project-context-full.md`, `docs/user-docs/` | workflow-get-project-context, research |
 
 ---
 
@@ -123,7 +123,7 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 ## 3. Tool memory (previous commands / results)
 
 - **What:** Commands run, outcomes, useful snippets (e.g. npm scripts, env setup)
-- **Where:** `docs/tool-memory.md` (optional; create when useful)
+- **Where:** `docs/system-docs/tool-memory.md` (optional; create when useful)
 - **Updated:** When an agent runs terminal/file/GitHub tools and gets useful output
 
 **Schema (example):**
@@ -161,14 +161,14 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 ## 5. Knowledge memory (research, architecture, patterns)
 
 - **What:** Stack, structure, architecture decisions, research findings, full codebase context
-- **Where:** `memory/project-state.md` (summary), `docs/project-context-full.md` (exhaustive), `docs/` (research, PRD, specs)
+- **Where:** `memory/project-state.md` (summary), `docs/user-docs/workflow-get-project-context/project-context-full.md` (exhaustive), `docs/user-docs/` (research, PRD, specs)
 - **Updated:** workflow-project-context / workflow-get-project-context; research analyst; LLD/HLD outputs
 
 **Sources:**
 - `memory/project-state.md` — **Primary.** Stack, structure, patterns, decisions, lessons
-- `docs/project-context-full.md` — Exhaustive context (from GetContext:)
-- `docs/decision-log.md` — Why decisions were made; rationale
-- `docs/` — Research, PRD, architecture, API specs
+- `docs/user-docs/workflow-get-project-context/project-context-full.md` — Exhaustive context (from GetContext:)
+- `docs/system-docs/decision-log.md` — Why decisions were made; rationale
+- `docs/user-docs/` — Research, PRD, architecture, API specs
 
 **Agent rule:** Read project-state before a phase. Update project-state after key decisions. Log "why" in decision-log when making architecture decisions.
 
@@ -198,7 +198,7 @@ For larger systems, consider:
 | Semantic search over docs | Vector DB (e.g. embeddings + Pinecone/Chroma) |
 | Tool history at scale | SQLite + command hash |
 
-The current setup (Markdown in `docs/`) is enough for most Cursor-based flows.
+The current setup (Markdown in `docs/user-docs/`) is enough for most Cursor-based flows.
 
 ---
 
@@ -208,4 +208,4 @@ The current setup (Markdown in `docs/`) is enough for most Cursor-based flows.
 - [ ] Read `memory/agent-messages.md` if expecting a handoff or review request
 - [ ] Update `memory/project-state.md` after each phase or significant action
 - [ ] Post to `memory/agent-messages.md` when handing off to another agent or requesting review
-- [ ] Optionally append to `docs/tool-memory.md` after useful tool runs
+- [ ] Optionally append to `docs/system-docs/tool-memory.md` after useful tool runs

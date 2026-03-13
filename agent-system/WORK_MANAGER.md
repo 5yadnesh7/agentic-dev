@@ -22,10 +22,10 @@
 |-------|-----------|---------------|
 | **-2** | **Idea Agent** (greenfield only): role-idea-agent — parse idea, project category, scope, research brief | Commit: `docs: add idea summary for [idea]` |
 | **-1** | **Research** (greenfield only): role-research-analyst — domain, competitors, tech (web search, GitHub, market analysis) | Commit: `docs: add research for [idea]`. **Gate:** Ask user critical product questions if needed. |
-| **0** | Setup: create branch `feature/[TICKET]-[desc]`; if existing repo → workflow-project-context. Create/update `docs/project-context.md`. | Commit: `chore: init feature/[TICKET]-[desc]` |
+| **0** | Setup: create branch `feature/[TICKET]-[desc]`; if existing repo → workflow-project-context. Create/update `docs/user-docs/workflow-project-context/project-context.md`. | Commit: `chore: init feature/[TICKET]-[desc]` |
 | **0.5** | **Brainstorm** (greenfield): workflow-brainstorm → feature ideas, product variations, future expansion | Commit: `docs: add brainstorm for [idea]` |
 | **0.6** | **Product Manager** (greenfield): role-product-manager → Product Planning Document (overview, users, core/non-core features, user journeys, business rules, modules, tech, architecture) | **Gate:** User approves. Commit: `docs: add product planning for [idea]` |
-| **1** | UX Design: role-ui-ux-designer → flows, screen specs, wireframes, HTML/CSS mockups, design tokens | Skip if pure backend. **Gate:** User approves design. Output: `docs/ux-design.md`, `mockups/*.html`, `mockups/*.css`. Commit: `docs: add UX design and mockups for [feature]` |
+| **1** | UX Design: role-ui-ux-designer → flows, screen specs, wireframes, HTML/CSS mockups, design tokens | Skip if pure backend. **Gate:** User approves design. Output: `docs/user-docs/designer/ux-design.md`, `mockups/*.html`, `mockups/*.css`. Commit: `docs: add UX design and mockups for [feature]` |
 | **1b** | **Project Manager**: role-project-manager → roadmap, phases, task breakdown (from product spec + UX) | Commit: `docs: add project roadmap and task board` |
 | **2** | Technical Design: LLD/HLD (interfaces, schema, sequences) | Commit: `docs: add LLD/HLD for [feature]` |
 | **2a** | **Documentation Agent**: role-product-manager — API specs, feature descriptions, edge cases, validation rules | Commit: `docs: add technical documentation for [feature]` |
@@ -41,7 +41,7 @@
 | **10** | PR: Quality gate (ORCHESTRATOR) → open PR | |
 | **11** | **Monitoring** (post-release): role-monitoring-agent — error tracking, performance, analytics, logging (Sentry, Prometheus, Grafana) | Runbook, dashboards |
 
-**After each phase:** Invoke **workflow-project-context** to update `docs/project-context.md` with that phase's output. Reuse for future phases.
+**After each phase:** Invoke **workflow-project-context** to update `docs/user-docs/workflow-project-context/project-context.md` with that phase's output. Reuse for future phases.
 
 ---
 

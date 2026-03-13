@@ -3,7 +3,7 @@ name: role-ui-ux-designer
 description: UX design: product screens, user flows, wireframes, design system, HTML/CSS mockups. Use for Design: trigger, Phase 2. Produces static HTML/CSS mockup pages. Design must be user-approved before development.
 tags: [strategic, design, ux, mockup]
 layer: strategic
-produces: [docs/ux-design.md, mockups/*.html, mockups/*.css]
+produces: [docs/user-docs/designer/ux-design.md, mockups/*.html, mockups/*.css]. Create docs/user-docs/designer/ if not exist.
 ---
 
 # Role: UI/UX Designer

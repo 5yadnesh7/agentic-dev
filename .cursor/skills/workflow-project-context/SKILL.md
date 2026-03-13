@@ -1,6 +1,6 @@
 ---
 name: workflow-project-context
-description: Get and maintain project context. Creates/updates docs/project-context.md. Run at Phase 0 (explore) and after each phase to update context for future reuse. Use for Explore:, brownfield, or when user asks for project/codebase context.
+description: Get and maintain project context. Creates/updates docs/user-docs/workflow-project-context/project-context.md. Run at Phase 0 (explore) and after each phase to update context for future reuse. Use for Explore:, brownfield, or when user asks for project/codebase context.
 tags: [strategic, context, exploration]
 layer: strategic
 ---
@@ -13,7 +13,7 @@ layer: strategic
 |-|-|
 | **Layer** | Strategic |
 | **Input** | Codebase; phase output |
-| **Output** | docs/project-context.md (updated) |
+| **Output** | docs/user-docs/workflow-project-context/project-context.md (updated) |
 | **Dependencies** | — |
 | **Purpose** | Get and maintain project context; update after each phase |
 
@@ -32,7 +32,7 @@ Get and maintain a **persistent project context doc** that is:
 
 ## Output location
 
-`docs/project-context.md` — committed to repo so it persists and is reusable.
+`docs/user-docs/workflow-project-context/project-context.md` — committed to repo so it persists and is reusable. Create docs/user-docs/workflow-project-context/ if not exist.
 
 ---
 
@@ -79,7 +79,7 @@ Get and maintain a **persistent project context doc** that is:
 
 ## Phase update (after each phase completes)
 
-**Append to or update** `docs/project-context.md` with a section for that phase:
+**Append to or update** `docs/user-docs/workflow-project-context/project-context.md` with a section for that phase:
 
 ```markdown
 ## Phase [X] — [Phase name] (DONE)
@@ -166,5 +166,5 @@ This allows future phases to reference "what Phase 2 produced", "what Phase 3 ad
 
 - **Update, don't replace** — Add new phase section; keep prior phases for history.
 - **Commit** after update: `docs: update project context for Phase [X]`
-- **Read before starting** a phase: reference `docs/project-context.md` to avoid re-exploring.
+- **Read before starting** a phase: reference `docs/user-docs/workflow-project-context/project-context.md` to avoid re-exploring.
 - Use for brownfield onboarding and for agents resuming work after a break.

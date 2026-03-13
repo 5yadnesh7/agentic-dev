@@ -13,7 +13,7 @@ layer: executive
 |-|-|
 | **Layer** | Executive |
 | **Input** | User request with Idea:/Project:/Build:/Workflow: trigger; ORCHESTRATOR.md, WORK_MANAGER.md |
-| **Output** | Orchestrated execution; phases run; artifacts in docs/, tasks/ |
+| **Output** | Orchestrated execution; phases run; artifacts in docs/user-docs/, tasks/ |
 | **Dependencies** | ORCHESTRATOR.md, WORK_MANAGER.md |
 | **Purpose** | Execute full product lifecycle from idea to PR |
 
@@ -44,10 +44,12 @@ Read in order:
 
 | Trigger | Entry mode | Flow |
 |---------|------------|------|
-| `Idea:`, `Project:`, `Build:` | **Greenfield — use dev-supervisor** | Read `agents/dev-supervisor.md`. Execute its numbered steps. Call each skill explicitly. Use `.cursor/workflows/new-project.workflow.md` for explicit order. |
-| `Workflow: [feature]` | Feature | Phases 0–11; use `.cursor/workflows/feature-development.workflow.md` for explicit order |
-| `Bug:` | Bug fix | Use `.cursor/workflows/bug-fix.workflow.md`; invoke workflow-semantic-debugging |
-| `Planner:`, `Review:`, etc. | Single-purpose | See ORCHESTRATOR trigger map |
+| `Idea:`, `Project:`, `Build:` | **Greenfield — dev-supervisor** | Read `agents/dev-supervisor.md`. Use `.cursor/workflows/new-project.workflow.md`. |
+| `/cto` or "cto" / "help me" | **Triage — cto** | Read `agents/cto.md`. CTO routes to sub-agents. |
+| `/architect`, `/tester`, "devops", etc. | **Sub-agent** | Load `agents/<name>.md`, execute skills from AGENT_SKILL_MAP. |
+| `Workflow: [feature]` | Feature | Phases 0–11; `.cursor/workflows/feature-development.workflow.md` |
+| `Bug:` | Bug fix | `bug-fix.workflow.md`; workflow-semantic-debugging |
+| `Planner:`, `Review:`, etc. (skill triggers) | Single-purpose | See ORCHESTRATOR trigger map; may route to skill or sub-agent |
 
 ### 3. Execute phases
 
@@ -78,7 +80,7 @@ Run phases in order. **User gates:** Phase 0.6 (Product Planning approval), Phas
 
 ### 4. After each phase
 
-- **workflow-project-context** — Update `docs/project-context.md` with phase output
+- **workflow-project-context** — Update `docs/user-docs/workflow-project-context/project-context.md` with phase output
 - **Project memory** — Update current phase, completed phases, open tasks
 
 ### 5. Per-task loop (Phase 3–4)

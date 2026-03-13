@@ -29,14 +29,14 @@ See `agent-system/SKILL_HIERARCHY.md`.
 
 | Doc | Purpose |
 |-----|---------|
-| `docs/project-context.md` | **Persistent.** Stack, structure, patterns, phase outputs. Updated by **workflow-project-context** after each phase. Reuse for future phases. |
-| `docs/project-memory.md` | Current phase, completed phases, open tasks, key decisions, user approvals |
-| `docs/project-brain.md` | Vision, decisions, stack, open questions, lessons. Every agent reads and updates. |
-| `docs/decision-log.md` | Why decisions were made; rationale for architecture choices |
-| `docs/tool-memory.md` | Commands that worked, env notes (optional). See **agent-system/MEMORY_SYSTEM.md**. |
+| `docs/user-docs/workflow-project-context/project-context.md` | **Persistent.** Stack, structure, patterns, phase outputs. Updated by **workflow-project-context** after each phase. Reuse for future phases. |
+| `docs/user-docs/shared/project-memory.md` | Current phase, completed phases, open tasks, key decisions, user approvals |
+| `docs/user-docs/shared/project-brain.md` | Vision, decisions, stack, open questions, lessons. Every agent reads and updates. |
+| `docs/system-docs/decision-log.md` | Why decisions were made; rationale for architecture choices |
+| `docs/system-docs/tool-memory.md` | Commands that worked, env notes (optional). See **agent-system/MEMORY_SYSTEM.md**. |
 | `.cursor/dev-docs/[TASK-ID].md` | **Temporary.** Task-scoped context during Phase 3–4. Created by **workflow-dev-doc** at task start; **deleted when task DONE**. Reduces long context and hallucination. |
 
-**After each phase:** Invoke workflow-project-context to update `docs/project-context.md`.
+**After each phase:** Invoke workflow-project-context to update `docs/user-docs/workflow-project-context/project-context.md`.
 **During task:** Create dev doc at start; delete when task DONE.
 
 ---
@@ -167,7 +167,19 @@ Agent systems work better as **graphs** than as strict linear pipelines. Paralle
        └──────┘
 ```
 
-**See also:** `agent-system/MEMORY_SYSTEM.md`, `agent-system/WORK_MANAGER.md`, `tools/README.md`.
+**See also:** `agent-system/MEMORY_SYSTEM.md`, `agent-system/WORK_MANAGER.md`, `docs/system-docs/agent-tools.md`.
+
+---
+
+## 3-tier routing
+
+See `agent-system/ROUTING.md` for full flow. **Precedence:** Explicit skill > Explicit sub-agent > CTO.
+
+| Tier | User invokes | Routes to |
+|------|--------------|-----------|
+| 1. Direct skill | `Bug:`, `Spec:`, `ArchReview:`, etc. | Skill directly; no CTO critique |
+| 2. Sub-agent | `/architect`, `/tester`, "devops", etc. | Agent → skills; CTO full Critic at end |
+| 3. CTO | `/cto`, "cto", "help me", "I don't know" | CTO triages → sub-agents → delivery |
 
 ---
 
@@ -175,6 +187,16 @@ Agent systems work better as **graphs** than as strict linear pipelines. Paralle
 
 | Trigger | Agents / Skills | Notes |
 |---------|-----------------|-------|
+| `/cto` or "cto" | **cto** → `agents/cto.md` — Triage, route, end-to-end ownership, full Critic | User doesn't know what to call |
+| `/architect` or "architect" | architect → AGENT_SKILL_MAP skills | Sub-agent: system design, DB, API |
+| `/worker` or "worker" | worker → AGENT_SKILL_MAP skills | Sub-agent: implementation |
+| `/tester` or "tester" | tester → AGENT_SKILL_MAP skills | Sub-agent: QA |
+| `/researcher` or "researcher" | researcher → role-research-analyst | Sub-agent: research |
+| `/planner` or "planner" | planner → AGENT_SKILL_MAP skills | Sub-agent: roadmap, tasks |
+| `/reviewer` or "reviewer" | reviewer → AGENT_SKILL_MAP skills | Sub-agent: code/arch review |
+| `/devops` or "devops" | devops → role-devops-engineer, role-cloud-engineer | Sub-agent: CI/CD, infra |
+| `/security` or "security" | security → role-security-engineer | Sub-agent: security audit |
+| `/designer` or "designer" | designer → role-ui-ux-designer | Sub-agent: UX, mockups |
 | `Idea:` / `Project:` / `Build:` | **dev-supervisor** → `agents/dev-supervisor.md` — Master agent; orchestrates research → architecture → task plan → execute. Explicit order in `.cursor/workflows/new-project.workflow.md`. | Autonomous dev system |
 | `Workflow: [feature]` | Full loop (WORK_MANAGER phases -1–11) | Parallel where Depends allow. Phase -1 & 0.5 only if greenfield. |
 | `Planner: [task]` | workflow-task-planner, role-product-manager, role-project-manager | Task files `tasks/001-X.md`, PRD, task board |
@@ -185,7 +207,7 @@ Agent systems work better as **graphs** than as strict linear pipelines. Paralle
 | `Infra: terraform` / `Infra: aws` | Cloud / DevOps Engineer | Terraform, AWS |
 | `Doc: tech` / `Doc: functional` | Technical Writer / Functional Analyst | Docs |
 | `Explore:` | workflow-project-context | Brownfield, Pattern Card |
-| `GetContext:` | workflow-get-project-context | Full project context → docs/project-context-full.md |
+| `GetContext:` | workflow-get-project-context | Full project context → docs/user-docs/workflow-get-project-context/project-context-full.md |
 | `API:` | API Design Lead | OpenAPI, contracts |
 | `Auth:` | Auth Engineer + Security | Auth implementation |
 | `Release:` | Release Manager + DevOps | CHANGELOG, tag |
@@ -199,9 +221,9 @@ Agent systems work better as **graphs** than as strict linear pipelines. Paralle
 | `ArchReview:` | workflow-architecture-review | Pre-coding: review spec for scalability, security, performance |
 | `ContextMap:` | workflow-context-map | Repo mental map; where logic lives, what to edit |
 | `Refactor:` | workflow-refactor | Refactor suggestions; duplicate code, large functions, naming |
-| `Learn:` | workflow-learning | Record lesson → docs/dev-lessons.md |
+| `Learn:` | workflow-learning | Record lesson → docs/system-docs/dev-lessons.md |
 | `Validate:` / `Assume:` | workflow-assumption-validation | Think-before-build; list assumptions, risks, missing info |
-| `Roadmap:` | workflow-project-roadmap | Phased milestones (docs/roadmap.md) before architecture |
+| `Roadmap:` | workflow-project-roadmap | Phased milestones (docs/user-docs/planner/roadmap.md) before architecture |
 
 **No explicit trigger?** Use **workflow-skill-receiver** with **skill-router** (`.cursor/skills/skill-router.md`): match user intent to SKILL_INDEX by keywords, tags, domain, and optional confidence scoring—then run the best-matching skill. Every skill is invokable by direct trigger (above) or by intelligent routing.
 

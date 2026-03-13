@@ -145,4 +145,4 @@ read state  →  think  →  act  →  update state
      └────────────────────────────────────┘
 ```
 
-**Files:** `memory/project-state.md`, `memory/agent-messages.md`, `docs/decision-log.md`
+**Files:** `memory/project-state.md`, `memory/agent-messages.md`, `docs/system-docs/decision-log.md`

@@ -1,8 +1,8 @@
-# TOOLS — Agent tool layer
+# Agent Tools — Cursor tool layer
 
 > **Agents without tools = chatbot. Agents with tools = developer.**
 
-Agents use tools to interact with the world. This directory documents the tool layer and what agents can use.
+Agents use tools to interact with the world. This doc describes the tool layer and what agents can use.
 
 ---
 
@@ -21,8 +21,6 @@ Agents use tools to interact with the world. This directory documents the tool l
 ---
 
 ## Cursor-provided tools (built-in)
-
-These are available to the AI agent in Cursor:
 
 | Tool | Use when |
 |------|----------|
@@ -43,15 +41,13 @@ Agents should use these rather than inventing new workflows.
 ## Tool usage rules
 
 1. **Prefer project tools** — Use existing npm scripts, Makefile targets before raw commands
-2. **Log useful results** — Add successful commands to `docs/tool-memory.md` when helpful
+2. **Log useful results** — Add successful commands to `docs/system-docs/tool-memory.md` when helpful
 3. **Don't repeat failures** — Check tool-memory before retrying similar commands
 4. **Security** — Never run commands that expose secrets; use `.env` and avoid committing credentials
 
 ---
 
 ## Project-specific tools
-
-When working in a codebase, agents should:
 
 - **Tests:** `npm test` (Jest), `npm run test:e2e` (Playwright), or project equivalent
 - **Lint:** `npm run lint`
@@ -63,7 +59,7 @@ When working in a codebase, agents should:
 
 ## Tool memory
 
-Results of tool runs that are worth reusing live in `docs/tool-memory.md`. For project state (phase, tasks, decisions), use `memory/project-state.md`. Agents update tool-memory when:
+Results of tool runs worth reusing live in `docs/system-docs/tool-memory.md`. For project state (phase, tasks, decisions), use `memory/project-state.md`. Agents update tool-memory when:
 
 - A command succeeds after earlier failures
 - Env or config is discovered

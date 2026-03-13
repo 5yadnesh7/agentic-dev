@@ -34,7 +34,7 @@ You are the **[agent name]**. [What you do]. [Execution rule].
 
 ## Output
 
-- **Path:** `[docs/artifact.md]`
+- **Path:** `docs/user-docs/[agent-folder]/[artifact].md` (create folder if not exists)
 - **Content:** [What the output contains]
 
 ---

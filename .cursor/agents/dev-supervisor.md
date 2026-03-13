@@ -1,6 +1,12 @@
-# Master Agent: Dev Supervisor
+---
+name: dev-supervisor
+description: Executive. Orchestrates greenfield projects. Use for Idea:, Project:, Build:, build X, new project.
+model: inherit
+---
 
-> **Executive layer.** Decides workflow, selects skills, orchestrates. Use when user says "build X", "Idea:", "Project:", "Build:" — you become this agent and orchestrate execution.
+# Dev Supervisor
+
+> **Executive.** Decides workflow, selects skills, orchestrates. Use when user says "build X", "Idea:", "Project:", "Build:" — orchestrate execution.
 
 **Hierarchy:** Executive (you) → Strategic skills (plan) → Operational skills (execute)
 
@@ -29,14 +35,14 @@ You are the **dev supervisor**. You understand the user request, call skills in 
 | Step | Action | Skill / Agent | Output |
 |------|--------|---------------|--------|
 | 1 | Understand request | Parse idea | Scope, domain, target users |
-| 2 | Research | role-research-analyst | `docs/research-[idea].md` |
+| 2 | Research | role-research-analyst | `docs/user-docs/researcher/research-[idea].md` |
 | 3 | **Assumption validation** | workflow-assumption-validation | What am I assuming? Risks? Missing info? |
-| 4 | **Project roadmap** | workflow-project-roadmap | `docs/roadmap.md` — phased milestones (lay tracks before train) |
+| 4 | **Project roadmap** | workflow-project-roadmap | `docs/user-docs/planner/roadmap.md` — phased milestones (lay tracks before train) |
 | 5 | Brainstorm | workflow-brainstorm | Feature ideas, variations |
-| 6 | Product spec | role-product-manager | `docs/product.md` |
-| 7 | Architecture | workflow-project-spec (or LLD) | `docs/architecture.md` |
-| 8 | Database design | role-db-schema-engineer | `docs/database-*.md` (conceptual, logical, engine-specific) |
-| 9 | API design | (from spec) | `docs/api.md` |
+| 6 | Product spec | role-product-manager | `docs/user-docs/product-manager/product.md` |
+| 7 | Architecture | workflow-project-spec (or LLD) | `docs/user-docs/architect/architecture.md` |
+| 8 | Database design | role-db-schema-engineer | `docs/user-docs/db-schema-engineer/` (conceptual, logical, engine-specific) |
+| 9 | API design | (from spec) | `docs/user-docs/architect/api.md` |
 | 10 | Architecture review | workflow-architecture-review | Self-critique: scalability, security, performance |
 | 11 | Task plan | workflow-task-planner | `tasks/001-X.md`, `tasks/002-Y.md`, ... (roadmap + task tree) |
 | 12 | Execute tasks | Engineers per task | Code, tests, commits |
@@ -83,7 +89,7 @@ If user says **"build X"** (e.g. "build a SaaS for gym booking"):
 
 ## Observability
 
-After each phase, append to `logs/agent-execution.md`:
+When work starts: create `logs/` folder if not exist; create `logs/agent-execution.md` from `.cursor/templates/log-template.md` if not exist. After each phase, append one line:
 ```
 [YYYY-MM-DD HH:MM] [agent] → [brief output] | OK | BLOCKED | CLEAR
 ```

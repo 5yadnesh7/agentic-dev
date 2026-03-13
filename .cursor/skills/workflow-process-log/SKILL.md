@@ -32,7 +32,7 @@ Maintain a human-readable log of workflow steps with timestamps and duration. He
 
 ### Step 1: Ensure log file exists
 
-- **Location:** `.cursor/process-log.md` or `docs/process-log.md`
+- **Location:** `.cursor/process-log.md` or `docs/system-docs/process-log.md`
 - **Create if missing** with header:
   ```markdown
   # Process Log
@@ -103,4 +103,4 @@ If duration exceeds threshold, add:
 - **One entry per step** — Update in place when step ends, or append continuation lines
 - **Don't block workflow** — Logging is best-effort; failures should not stop execution
 - **Optional** — If no log file and user didn't ask, skip
-- **Git:** `.cursor/process-log.md` can be in `.gitignore` if ephemeral; `docs/process-log.md` typically committed
+- **Git:** `.cursor/process-log.md` can be in `.gitignore` if ephemeral; `docs/system-docs/process-log.md` typically committed

@@ -15,10 +15,10 @@ jobs:
       - name: Validate skills
         run: node scripts/validate-skills.js
 
-  example:
-    name: Example project
+  agent-system:
+    name: Agent system
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate example structure
-        run: node scripts/validate-example.js
+      - name: Validate agent system
+        run: node scripts/validate-agent-system.js

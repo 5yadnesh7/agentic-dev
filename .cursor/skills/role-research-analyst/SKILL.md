@@ -13,7 +13,7 @@ layer: strategic
 |-|-|
 | **Layer** | Strategic |
 | **Input** | Idea; domain, problem statement |
-| **Output** | docs/research-[idea].md; domain, competitors, tech findings |
+| **Output** | docs/user-docs/researcher/research-[idea].md; domain, competitors, tech findings |
 | **Dependencies** | — |
 | **Purpose** | Deep research; domain, competitors, tech; feasibility |
 
@@ -95,7 +95,7 @@ Answer these yourself based on research:
 
 ## Output format
 
-Produce `docs/research/[idea-slug]-research.md`:
+Produce `docs/user-docs/researcher/[idea-slug]-research.md`. Create docs/user-docs/researcher/ if not exist:
 
 ```markdown
 # Research: [Project / Idea Name]

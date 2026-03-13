@@ -12,7 +12,7 @@ layer: operational
 | | |
 |-|-|
 | **Layer** | Operational |
-| **Input** | Path or recent changes; docs/project-context.md |
+| **Input** | Path or recent changes; docs/user-docs/workflow-project-context/project-context.md |
 | **Output** | Refactor suggestions (duplicates, large functions, naming) |
 | **Dependencies** | project-context |
 | **Purpose** | Code quality review; output suggestions, do not auto-apply |
@@ -31,7 +31,7 @@ Good agents improve code quality over time. This skill checks for refactor oppor
 ### 1. Scan target
 
 - User-specified path or recent changes
-- Read `docs/project-context.md` for patterns
+- Read `docs/user-docs/workflow-project-context/project-context.md` for patterns
 - **Checklist:** [ ] Scope clear
 
 ### 2. Check for issues
@@ -47,7 +47,7 @@ Good agents improve code quality over time. This skill checks for refactor oppor
 
 ### 3. Output suggestions
 
-Produce `docs/refactor-suggestions-[date].md`:
+ Produce `docs/user-docs/refactor/refactor-suggestions-[date].md`. Create docs/user-docs/refactor/ if not exist:
 
 ```markdown
 # Refactor Suggestions — [Date]

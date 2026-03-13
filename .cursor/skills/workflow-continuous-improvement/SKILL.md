@@ -41,7 +41,7 @@ Run a retrospective / improvement pass. Agents ask critical questions and sugges
 
 ### 1. Gather context
 
-- Read `docs/project-context.md`
+- Read `docs/user-docs/workflow-project-context/project-context.md`
 - Review recent changes (git log, structure)
 - **Checklist:** [ ] Context loaded
 
@@ -62,7 +62,7 @@ Run a retrospective / improvement pass. Agents ask critical questions and sugges
 
 ### 5. Report
 
-Produce `docs/improvement-report-[date].md`:
+Produce `docs/user-docs/continuous-improvement/improvement-report-[date].md`. Create docs/user-docs/continuous-improvement/ if not exist:
 
 ```markdown
 # Improvement Report — [Date]

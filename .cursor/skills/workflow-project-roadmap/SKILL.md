@@ -13,7 +13,7 @@ layer: strategic
 |-|-|
 | **Layer** | Strategic |
 | **Input** | Idea; research, assumptions |
-| **Output** | docs/roadmap.md (phased milestones) |
+| **Output** | docs/user-docs/planner/roadmap.md (phased milestones). Create docs/user-docs/planner/ if not exist. |
 | **Dependencies** | Research, assumption validation |
 | **Purpose** | Convert idea into phased milestones before architecture |
 
@@ -32,7 +32,7 @@ Run **after** Research and Assumption Validation, **before** Architecture Design
 
 ## Output
 
-`docs/roadmap.md` — Phased development strategy. Macro planning; task decomposition comes later.
+`docs/user-docs/planner/roadmap.md` — Phased development strategy. Create folder if not exist. Macro planning; task decomposition comes later.
 
 ## Step-by-step process
 

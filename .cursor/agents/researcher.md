@@ -1,6 +1,12 @@
-# Agent: Researcher
+---
+name: researcher
+description: Sub-agent. Domain research, competitors, tech feasibility. Invoke via /researcher or by name.
+model: inherit
+---
 
-> **Finds information.** Domain, competitors, tech, feasibility.
+# Researcher
+
+> **Sub-agent.** Finds information. Domain, competitors, tech, feasibility.
 
 ## Skill
 
@@ -8,9 +14,14 @@
 
 ## Triggers
 
+- `/researcher` or "researcher" (or "research", "feasibility", "tech comparison")
 - `Research:`
 - Phase -1 (greenfield)
 - "research", "feasibility", "tech comparison", "competitors", "market"
+
+## Self-review
+
+After producing output, self-review: sources cited, bias, gaps in comparison. Fix before handoff.
 
 ## Tools
 
@@ -22,7 +33,7 @@
 
 ## Output
 
-- **Path:** `docs/research-[topic].md`
+- **Path:** `docs/user-docs/researcher/research-[topic].md` (create docs/user-docs/researcher/ if not exist)
 - **Content:** Tech comparison, feasibility, competitors, risks
 - **Feeds:** Brainstorm, Product Planning, Assumption validation
 

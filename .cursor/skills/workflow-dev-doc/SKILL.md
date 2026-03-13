@@ -132,4 +132,4 @@ For a whole phase (e.g. Phase 3: DB tasks), create one doc:
 - **Do not commit** `.cursor/dev-docs/` — these are working files
 - **Always delete** when task/phase is DONE
 - **Keep content minimal** — pointers and constraints, not full code
-- **Reference** `docs/project-context.md` for patterns; dev doc focuses on task specifics
+- **Reference** `docs/user-docs/workflow-project-context/project-context.md` for patterns; dev doc focuses on task specifics

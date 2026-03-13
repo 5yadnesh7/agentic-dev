@@ -155,7 +155,7 @@ When build, lint, or tests fail:
 
 ## Output format (Impact Report)
 
-Produce `docs/impact/[change-slug]-impact.md` (optional):
+Produce `docs/user-docs/impact/[change-slug]-impact.md`. Create docs/user-docs/impact/ if not exist (optional):
 
 ```markdown
 # Impact Analysis — [Change description]

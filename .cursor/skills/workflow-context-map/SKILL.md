@@ -29,7 +29,7 @@ Large repos confuse LLMs. This skill builds a **repo mental map**: where logic l
 
 ## Output
 
-`docs/context-map.md` with tree structure and annotations.
+`docs/user-docs/context-map/context-map.md`. Create docs/user-docs/context-map/ if not exist. with tree structure and annotations.
 
 ## Output format
 

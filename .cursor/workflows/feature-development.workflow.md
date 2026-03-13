@@ -16,8 +16,8 @@
 | 2 | Requirements | role-product-manager | PRD, ACs for feature |
 | 3 | Assumption validation | workflow-assumption-validation | Assumptions, risks, missing info for feature |
 | 4 | Architecture | LLD / role-senior-engineer | Technical design |
-| 5 | Database design | (if DB changes) | `docs/database.md` or migration spec |
-| 6 | API design | (if API changes) | `docs/api.md` or endpoint spec |
+| 5 | Database design | (if DB changes) | `docs/user-docs/architect/database.md` or migration spec |
+| 6 | API design | (if API changes) | `docs/user-docs/architect/api.md` or endpoint spec |
 | 7 | Frontend structure | role-ui-ux-designer (if UI) | Screens, flows, HTML/CSS mockups in mockups/ |
 | 8 | Task plan | workflow-task-planner | `tasks/001-X.md`, `tasks/002-Y.md`, ... |
 | 9 | Execute tasks | Per-task loop | Code, tests, commits |

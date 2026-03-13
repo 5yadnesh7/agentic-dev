@@ -1,6 +1,6 @@
 ---
 name: workflow-get-project-context
-description: Get whole project context—every small bit of information—and write to docs/project-context-full.md. Use when user asks for full project context, complete codebase map, or exhaustive project documentation.
+description: Get whole project context—every small bit of information—and write to docs/user-docs/workflow-get-project-context/project-context-full.md. Use when user asks for full project context, complete codebase map, or exhaustive project documentation.
 tags: [strategic, context, exploration]
 layer: strategic
 ---
@@ -13,13 +13,13 @@ layer: strategic
 |-|-|
 | **Layer** | Strategic |
 | **Input** | Codebase |
-| **Output** | docs/project-context-full.md (exhaustive) |
+| **Output** | docs/user-docs/workflow-get-project-context/project-context-full.md (exhaustive) |
 | **Dependencies** | — |
 | **Purpose** | Capture complete project context for onboarding or handoff |
 
 ## Purpose
 
-Capture **every small bit of project information** into a single Markdown file. Exhaustive deep dive: all files, configs, dependencies, env, scripts, patterns, conventions. Produces `docs/project-context-full.md` for full onboarding or context handoff.
+Capture **every small bit of project information** into a single Markdown file. Exhaustive deep dive: all files, configs, dependencies, env, scripts, patterns, conventions. Produces `docs/user-docs/workflow-get-project-context/project-context-full.md` for full onboarding or context handoff. Create docs/user-docs/workflow-get-project-context/ if not exist.
 
 ## When to run
 
@@ -29,8 +29,8 @@ Capture **every small bit of project information** into a single Markdown file. 
 - **Handoff** — Before long break; need complete snapshot
 
 **Distinct from workflow-project-context:**
-- **workflow-project-context** — High-level summary; updated per phase; `docs/project-context.md`
-- **workflow-get-project-context** — Exhaustive; every detail; `docs/project-context-full.md`
+- **workflow-project-context** — High-level summary; updated per phase; `docs/user-docs/workflow-project-context/project-context.md`
+- **workflow-get-project-context** — Exhaustive; every detail; `docs/user-docs/workflow-get-project-context/project-context-full.md`
 
 ## Step-by-step process
 
@@ -105,7 +105,7 @@ For each significant directory:
 
 ## Output location
 
-`docs/project-context-full.md` — comprehensive, can be long. Optionally add to .gitignore if too large for commits; otherwise commit for onboarding.
+`docs/user-docs/workflow-get-project-context/project-context-full.md` — comprehensive, can be long. Optionally add to .gitignore if too large for commits; otherwise commit for onboarding.
 
 ## Output format
 

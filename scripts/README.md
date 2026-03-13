@@ -18,12 +18,24 @@ node scripts/validate-skills.js --strict   # metadata + input + output
 
 **Exit:** 0 if all pass, 1 if any fail.
 
-## validate-example.js
+## validate-agent-system.js
 
-Validates example project structure (examples/saas-example).
+Validates 3-tier agent system (skill → sub-agent → CTO).
 
-**Checks:** IDEA.md, docs/roadmap.md, docs/architecture.md, tasks/*.md exist.
+**Checks:**
+- `agent-system/AGENT_SKILL_MAP.md` exists; all referenced skills have `.cursor/skills/<name>/SKILL.md`
+- All sub-agents have `.cursor/agents/<name>.md` (architect, worker, tester, etc.)
+- CTO agent file exists
+- `ORCHESTRATOR.md` has CTO and sub-agent triggers
+- `SKILL_INDEX.md` has CTO and sub-agent entries
+- `ROUTING.md` exists and documents precedence and 3-tier model
+- Sub-agent files have YAML frontmatter (`name`, `description`) and Self-review section
+- **Rules:** each `.cursor/rules/*.mdc` has non-empty `description` (shown in Cursor rule picker)
+- **Skills:** each skill has single-line `description` (no YAML multiline `>`, which may not display properly)
 
-**Usage:** `node scripts/validate-example.js`
+**Usage:**
+```bash
+node scripts/validate-agent-system.js
+```
 
-**Exit:** 0 if structure valid, 1 if any check fails.
+**Exit:** 0 if all pass, 1 if any fail.

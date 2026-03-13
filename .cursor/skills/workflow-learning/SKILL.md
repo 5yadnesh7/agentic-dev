@@ -13,13 +13,13 @@ layer: operational
 |-|-|
 | **Layer** | Operational |
 | **Input** | Wrong approach, correct pattern; context |
-| **Output** | Entry in docs/dev-lessons.md |
+| **Output** | Entry in docs/system-docs/dev-lessons.md |
 | **Dependencies** | — |
 | **Purpose** | Record lessons for future reuse |
 
 ## Purpose
 
-**Agents record lessons.** When a pattern is discovered (correct or incorrect), add it to `docs/dev-lessons.md`. Future runs reference it. The system improves over time.
+**Agents record lessons.** When a pattern is discovered (correct or incorrect), add it to `docs/system-docs/dev-lessons.md`. Future runs reference it. The system improves over time.
 
 ## When to run
 
@@ -44,14 +44,14 @@ layer: operational
 **When:** [Date or brief context]
 ```
 
-### 3. Append to docs/dev-lessons.md
+### 3. Append to docs/system-docs/dev-lessons.md
 
 - Add at end of file
 - Keep entries concise (2–4 lines each)
 
 ### 4. Reference
 
-- Before similar work, agents should read `docs/dev-lessons.md`
+- Before similar work, agents should read `docs/system-docs/dev-lessons.md`
 - Apply lessons when relevant
 
 ## Rules

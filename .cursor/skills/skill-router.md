@@ -70,7 +70,7 @@ name: workflow-project-spec
 tags: [planning, product, spec]
 domain: architecture
 input: project idea
-output: docs/product.md, architecture.md, database.md, api.md, tasks.md
+output: docs/user-docs/product-manager/product.md, docs/user-docs/architect/architecture.md, docs/user-docs/db-schema-engineer/, docs/user-docs/architect/api.md, tasks.md
 layer: strategic
 ---
 ```
@@ -83,7 +83,7 @@ name: workflow-semantic-debugging
 tags: [debugging, backend, operational]
 domain: development
 input: error message, bug description, stack trace
-output: fix committed, regression test, docs/debug/[slug]-report.md
+output: fix committed, regression test, docs/user-docs/debug/[slug]-report.md
 layer: operational
 ---
 ```

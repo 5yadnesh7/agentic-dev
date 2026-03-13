@@ -25,7 +25,7 @@ Establish and persist the project's commit message convention so all agents use 
 
 - **First prompt in project** — No convention file exists
 - **User asks** — "What commit format?", "Set commit convention", "How should we format commits?"
-- **No file found** — Neither `.cursor/commit-convention.md` nor `docs/commit-convention.md` exists
+- **No file found** — Neither `.cursor/commit-convention.md` nor `docs/user-docs/shared/commit-convention.md` exists
 
 **Do not run when:**
 - Convention file already exists (read and use it)
@@ -37,7 +37,7 @@ Establish and persist the project's commit message convention so all agents use 
 
 | Action | Details |
 |--------|---------|
-| **Paths** | `.cursor/commit-convention.md`, `docs/commit-convention.md` |
+| **Paths** | `.cursor/commit-convention.md`, `docs/user-docs/shared/commit-convention.md` |
 | **If found** | Read and use; do not ask again or overwrite |
 | **If not found** | Proceed to step 2 |
 
@@ -147,7 +147,7 @@ BREAKING CHANGE: login now requires email format
 ## Validation checklist
 
 After writing file:
-- [ ] File exists at `.cursor/commit-convention.md` or `docs/commit-convention.md`
+- [ ] File exists at `.cursor/commit-convention.md` or `docs/user-docs/shared/commit-convention.md`
 - [ ] Types are listed
 - [ ] At least 2 examples
 - [ ] User confirmed (or default applied)

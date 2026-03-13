@@ -79,7 +79,7 @@ You are the system entry point. You parse the user's raw input (project name, de
 
 ## Output format
 
-Produce `docs/idea/[idea-slug]-idea-summary.md`:
+Produce `docs/user-docs/idea-agent/[idea-slug]-idea-summary.md`. Create docs/user-docs/idea-agent/ if not exist:
 
 ```markdown
 # Idea Summary: [Project Name]

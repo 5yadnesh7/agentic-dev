@@ -1,6 +1,12 @@
-# Agent: Doc Agent
+---
+name: doc-agent
+description: Sub-agent. Documentation, API specs, content. Use for Doc:, update docs, API spec, CHANGELOG.
+model: inherit
+---
 
-> **Updates docs.** API specs, content, CHANGELOG, runbooks.
+# Doc Agent
+
+> **Sub-agent.** Updates docs. API specs, content, CHANGELOG, runbooks.
 
 ## Skills
 

@@ -2,10 +2,22 @@
 
 ---
 
-## Triggers
+## 3-tier model
 
-| Trigger | Agent(s) / Skill |
-|---------|-------------------|
+| Tier | Example | Routes to |
+|------|---------|-----------|
+| Skill | `Bug:`, `Spec:` | Skill directly |
+| Sub-agent | `/architect`, `/tester`, "devops" | Agent → skills; CTO Critic at end |
+| CTO | `/cto`, "cto", "help me" | CTO triages → sub-agents |
+
+---
+
+## Invocation
+
+| Invoke | Agent(s) / Skill |
+|--------|-------------------|
+| `/cto` or "cto" | CTO (triage, route, end-to-end delivery) |
+| `/architect`, `/tester`, `/planner`, `/devops`, `/security`, `/designer`, etc. | Sub-agent → skills |
 | `Idea:` / `Project:` / `Build:` | Full **greenfield** (Idea Agent → Research → Brainstorm → Product Manager → UI/UX → Project Manager → ... → 11) |
 | `Workflow: [feature]` | Full lifecycle (orchestrator) |
 | `Planner: [task]` | PM, Project Manager |
@@ -14,7 +26,7 @@
 | `Test: [target]` | QA (Jest + Playwright) |
 | `Research:` | role-research-analyst |
 | `Explore:` | workflow-project-context |
-| `GetContext:` | workflow-get-project-context (full context → docs/project-context-full.md) |
+| `GetContext:` | workflow-get-project-context (full context → docs/user-docs/workflow-get-project-context/project-context-full.md) |
 | `Auth:` | Auth Engineer, Security |
 | `Impact:` | workflow-impact-analysis (after changes: check dependents, fix if broken) |
 | `Spec: [idea]` | workflow-project-spec (product, architecture, database, api, tasks) |
@@ -23,7 +35,7 @@
 | `ArchReview:` | workflow-architecture-review (pre-coding: scalability, security, performance) |
 | `ContextMap:` | workflow-context-map (repo mental map) |
 | `Refactor:` | workflow-refactor (refactor suggestions) |
-| `Learn:` | workflow-learning (record → docs/dev-lessons.md) |
+| `Learn:` | workflow-learning (record → docs/system-docs/dev-lessons.md) |
 | `Validate:` / `Assume:` | workflow-assumption-validation (think-before-build) |
 | `Roadmap:` | workflow-project-roadmap (phased milestones) |
 | `Infra:`, `Doc:`, `API:`, `Release:` | See ORCHESTRATOR |

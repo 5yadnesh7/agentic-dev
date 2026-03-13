@@ -1,6 +1,12 @@
-# Agent: Coder
+---
+name: coder
+description: Sub-agent. Writes code. Invoke via /coder or by name. Same domain as worker; worker preferred.
+model: inherit
+---
 
-> **Writes code.** Implementation, atomic units, tests.
+# Coder
+
+> **Sub-agent.** Writes code. Implementation, atomic units, tests.
 
 ## Skills
 
@@ -19,7 +25,7 @@
 
 - Read, Write, StrReplace
 - Shell (npm test, lint, build)
-- See `tools/README.md`
+- See `docs/system-docs/agent-tools.md`
 
 ## Output
 

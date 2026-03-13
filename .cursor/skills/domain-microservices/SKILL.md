@@ -98,8 +98,8 @@ You design service boundaries, API contracts, and communication patterns for mic
 | inventory | Products, stock | products, stock_levels | REST /v1/... |
 
 ## Contracts
-- Auth: OpenAPI at docs/auth-openapi.yaml
-- Orders: OpenAPI at docs/orders-openapi.yaml
+- Auth: OpenAPI at docs/user-docs/architect/auth-openapi.yaml
+- Orders: OpenAPI at docs/user-docs/architect/orders-openapi.yaml
 - Events: [Event names, payloads]
 ```
 

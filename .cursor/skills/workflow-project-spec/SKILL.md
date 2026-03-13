@@ -57,11 +57,13 @@ user approval
 
 | File | Content |
 |------|---------|
-| `docs/product.md` | Problem definition, users, core/non-core features, user flows, business rules |
-| `docs/architecture.md` | High-level architecture, tech stack, modules |
-| `docs/database.md` | Schema outline, entities, relationships |
-| `docs/api.md` | API endpoints, contracts, auth |
-| `docs/tasks.md` | Initial task breakdown |
+| `docs/user-docs/product-manager/product.md` | Problem definition, users, core/non-core features, user flows, business rules |
+| `docs/user-docs/architect/architecture.md` | High-level architecture, tech stack, modules |
+| `docs/user-docs/architect/database.md` | Schema outline, entities, relationships |
+| `docs/user-docs/architect/api.md` | API endpoints, contracts, auth |
+| `docs/user-docs/planner/tasks.md` | Initial task breakdown |
+
+**Rule:** Create each folder (e.g. docs/user-docs/product-manager/, docs/user-docs/architect/) if not exist before writing.
 
 ## Step-by-step process
 

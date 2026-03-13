@@ -1,25 +1,41 @@
 # Agent behaviour for this repo
 
-This project is an **autonomous dev system** — not just a prompt library. It uses a master agent (dev-supervisor) to enforce execution order and orchestrate skills.
+This project is an **autonomous dev system** — not just a prompt library. It uses a **3-tier invocation model**: direct skill, sub-agent, or CTO.
 
-## Master agent (the brain)
+## 3-tier model
 
-**For new projects, greenfield, or "build X":** Read `.cursor/agents/dev-supervisor.md` and become the dev supervisor. You orchestrate execution: call research → architecture → task plan → execute in explicit order. Do not describe; invoke each skill.
+| Tier | User invokes | Routes to |
+|------|--------------|-----------|
+| **Skill** | `Bug:`, `Spec:`, `ArchReview:` | Skill directly |
+| **Sub-agent** | `/architect`, `/tester`, "devops", etc. | Agent → skills; CTO Critic at end |
+| **CTO** | `/cto`, "cto", "help me", "I need" | CTO triages → sub-agents → delivery |
+
+All agents in `.cursor/agents/` use YAML frontmatter (`name`, `description`) so Cursor recognizes them. Sub-agents: architect, worker, tester, researcher, planner, reviewer, devops, security, designer. Executives: cto, dev-supervisor.
+
+## Master agents (executives)
+
+- **dev-supervisor** — Greenfield, Idea:, Project:, Build:. Read `agents/dev-supervisor.md`.
+- **cto** — Triage, route, end-to-end delivery. Read `agents/cto.md`.
+
+## Sub-agents
+
+- architect, worker, tester, researcher, planner, reviewer, devops, security, designer
+- Each has `name`, `description` in frontmatter. Invoke via `/{name}` (e.g. `/architect`) or by name (e.g. "architect").
 
 ## Trigger policy: every skill is trigger-based
 
-**Every skill** must be invokable by either:
-1. **Direct trigger** — User uses an explicit prefix (e.g. `Idea:`, `Bug:`, `Review:`). Use **workflow-orchestrator** (or **dev-supervisor** for Idea/Project/Build).
-2. **Intelligent trigger** — User says something in natural language. Use **workflow-skill-receiver**; it matches intent to a skill and invokes it.
-
-When in doubt: if the user's message maps to a skill in SKILL_INDEX, invoke that skill (via orchestrator if direct trigger, via skill-receiver if no trigger). Do not require the user to know trigger names.
+**Every skill** is invokable by either:
+1. **Direct trigger** — Use **workflow-orchestrator** (or **dev-supervisor** for Idea/Project/Build, **cto** for triage).
+2. **Intelligent trigger** — Use **workflow-skill-receiver**; match intent to SKILL_INDEX.
 
 ## How to run the workflow
 
-- **Idea / Project / Build** (e.g. "build a SaaS for gym booking"): Read **`agents/dev-supervisor.md`**. Follow its execution order. Call each skill explicitly. Use `.cursor/workflows/new-project.workflow.md` for step sequence.
-- **Other explicit trigger** (Workflow:, Planner:, Review:, Test:, etc.): use **workflow-orchestrator**. Read `agent-system/ORCHESTRATOR.md` and `agent-system/WORK_MANAGER.md` and run the mapped phases/agents.
-- **No trigger** (e.g. "review my auth code", "get project summary"): use **workflow-skill-receiver**. Match the user message to `agent-system/SKILL_INDEX.md` (keywords, intent, domain) and run the matching skill.
-- **Create a new skill** (e.g. "create a skill for X"): use **workflow-skill-creator**. Follow its criteria and add the skill to SKILL_INDEX.
+- **Idea / Project / Build**: Read **`agents/dev-supervisor.md`**. Use `.cursor/workflows/new-project.workflow.md`.
+- **CTO / "help me"**: Read **`agents/cto.md`**. CTO triages and routes to sub-agents.
+- **Sub-agent** (e.g. `/architect`, `/tester`, "devops"): Load agent from `.cursor/agents/<name>.md`, execute its skills.
+- **Other trigger** (Planner:, Review:, Test:, etc.): **workflow-orchestrator**.
+- **No trigger**: **workflow-skill-receiver** → SKILL_INDEX.
+- **Create skill**: **workflow-skill-creator**. Follow its criteria and add the skill to SKILL_INDEX.
 
 ## Execution
 

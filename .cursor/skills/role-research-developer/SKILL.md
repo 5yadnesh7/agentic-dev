@@ -43,7 +43,7 @@ You build prototypes, spikes, and proof-of-concepts. You explore feasibility wit
 
 ### Step 2: Choose isolation
 
-- **Location:** `experiments/`, `spikes/`, `poc/` or `docs/spikes/[name]/`
+- **Location:** `experiments/`, `spikes/`, `poc/` or `docs/user-docs/spikes/[name]/`
 - **No production code:** R&D lives in a separate directory; never under `src/` or `app/`
 - **Optional:** Separate branch `spike/[name]` or `experiment/[name]`
 
@@ -102,7 +102,7 @@ Produce a spike report:
 | Deliverable | Location | Purpose |
 |-------------|----------|---------|
 | Spike code | `experiments/[name]/` or `spikes/[name]/` | Runnable prototype |
-| Spike report | `docs/spikes/[name]-report.md` | Findings, recommendation |
+| Spike report | `docs/user-docs/spikes/[name]-report.md`. Create docs/user-docs/spikes/ if not exist. | Findings, recommendation |
 | README | In spike dir | How to run, dependencies |
 
 ## Rules
@@ -122,5 +122,5 @@ experiments/audio-api-spike/
 ├── package.json
 └── .env.example       # API_KEY=your_key_here
 
-docs/spikes/audio-api-spike-report.md  # Findings, recommendation
+docs/user-docs/spikes/audio-api-spike-report.md  # Findings, recommendation
 ```

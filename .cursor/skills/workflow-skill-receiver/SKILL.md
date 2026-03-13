@@ -25,7 +25,7 @@ When the user message does **not** start with a known trigger, use **skill-route
 
 ## When to use
 
-- User message does **not** start with: `Idea:`, `Project:`, `Build:`, `Workflow:`, `Planner:`, `Bug:`, `Review:`, `Test:`, `Infra:`, `Doc:`, `Explore:`, `GetContext:`, `Research:`, `API:`, `Auth:`, `Release:`, `Micro:`, `AI:`, `ML:`, `Impact:`
+- User message does **not** start with: `Idea:`, `Project:`, `Build:`, `/cto`, `/architect`, `/tester`, `Workflow:`, `Planner:`, `Bug:`, `Review:`, `Test:`, `Infra:`, `Doc:`, `Explore:`, `GetContext:`, `Research:`, `API:`, `Auth:`, `Release:`, `Micro:`, `AI:`, `ML:`, `Impact:`
 - User is asking for an action that a skill or role can handle
 
 ## Step-by-step process
@@ -62,10 +62,10 @@ Read `agent-system/SKILL_INDEX.md` and `.cursor/skills/skill-router.md`. Router 
 | "set up tests" | workflow-testing | Single match |
 | Vague / no match | Respond normally; do not force a skill | — |
 
-### Step 5: Load the skill
+### Step 5: Load skill or sub-agent
 
-- **Project:** `.cursor/skills/<skill-name>/SKILL.md`
-- **Personal:** `~/.cursor/skills/<skill-name>/SKILL.md`
+- **Sub-agent** (architecture, testing, devops, etc.): Load `.cursor/agents/<name>.md`; execute skills from `agent-system/AGENT_SKILL_MAP.md`.
+- **Skill:** `.cursor/skills/<skill-name>/SKILL.md` or `~/.cursor/skills/<skill-name>/SKILL.md`.
 - **Rule:** If match is db-schema-*, apply rule content for files in context
 
 **Checklist:** [ ] Skill file loaded from `.cursor/skills/` or `~/.cursor/skills/`

@@ -20,5 +20,5 @@ Optionally read/post `agent-messages.md` when collaborating or handing off.
 ## See also
 
 - `agent-system/MEMORY_SYSTEM.md` — Full memory layer definition
-- `docs/decision-log.md` — Why decisions were made (detailed rationale)
-- `docs/project-context-full.md` — Exhaustive codebase context (from GetContext:)
+- `docs/system-docs/decision-log.md` — Why decisions were made (detailed rationale)
+- `docs/user-docs/workflow-get-project-context/project-context-full.md` — Exhaustive codebase context (from GetContext:)

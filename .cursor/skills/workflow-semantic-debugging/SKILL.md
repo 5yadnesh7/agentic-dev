@@ -3,7 +3,7 @@ name: workflow-semantic-debugging
 description: Semantic debugging: find root cause and implement fix end-to-end. Use for Bug: trigger, debugging, or when user reports a bug. Finds, fixes, adds regression test, verifies, commits.
 tags: [operational, debugging, bug-fix]
 layer: operational
-produces: [docs/debug/[slug]-report.md]
+produces: [docs/user-docs/debug/[slug]-report.md]
 required_context: [memory/project-state]
 ---
 
@@ -15,7 +15,7 @@ required_context: [memory/project-state]
 |-|-|
 | **Layer** | Operational (execution) |
 | **Input** | Bug description, error message, stack trace, steps to reproduce |
-| **Output** | Fix committed; regression test; `docs/debug/[slug]-report.md` (optional) |
+| **Output** | Fix committed; regression test; `docs/user-docs/debug/[slug]-report.md` (optional) |
 | **Dependencies** | memory/project-state.md (read first); memory/agent-messages.md (if handoff) |
 | **Purpose** | Find root cause, implement fix, add regression test, verify, commit |
 
@@ -259,7 +259,7 @@ it('handles [bug scenario] - regression for [bug id]', () => {
 
 ### Step 9: Self-evolving skills (optional)
 
-**If the fix reveals a reusable playbook** (e.g. JWT auth setup, Redis cache, Stripe integration) and this pattern has been done 2+ times (check `docs/dev-lessons.md` or process-log):
+**If the fix reveals a reusable playbook** (e.g. JWT auth setup, Redis cache, Stripe integration) and this pattern has been done 2+ times (check `docs/system-docs/dev-lessons.md` or process-log):
 
 1. **Invoke workflow-skill-creator** — Summarize the solution, convert to reusable instructions
 2. **Save as new skill** — e.g. `skills/jwt-auth-setup.md`, `skills/redis-cache.md`
@@ -271,7 +271,7 @@ it('handles [bug scenario] - regression for [bug id]', () => {
 
 ## Output format (Debug Report)
 
-Produce `docs/debug/[bug-slug]-report.md` (optional, for record):
+Produce `docs/user-docs/debug/[bug-slug]-report.md` (optional, for record). Create docs/user-docs/debug/ if not exist:
 
 ```markdown
 # Semantic Debug Report — [Bug description]

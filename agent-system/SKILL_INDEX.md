@@ -6,6 +6,8 @@ Every skill is **trigger-based**: invokable by **direct trigger** (ORCHESTRATOR)
 
 | Skill name | Direct trigger | Intelligent match (keywords/phrases) |
 |------------|----------------|-------------------------------------|
+| **CTO (agent)** | /cto, "cto" | "help me", "I need", "I don't know", "figure it out" |
+| **Sub-agents** | /architect, /tester, /devops, etc. (or by name) | "architecture help", "I need testing", "set up CI/CD", etc. |
 | workflow-orchestrator | Idea:, Project:, Build:, Workflow:, Planner:, Review:, Test:, Infra:, Doc:, API:, Auth:, Release:, Micro:, AI:, ML:, Explore:, GetContext:, Bug:, Research: | "full workflow", "idea to production", "run the full lifecycle", "build [X]" |
 | workflow-skill-receiver | (dispatcher—no direct trigger) | Any message; matches intent to this index |
 | workflow-skill-creator | — | "create a skill", "add a skill for", "write a skill" |

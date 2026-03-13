@@ -34,7 +34,7 @@ Ensure consistent commits, branch naming, and (when applicable) Jira linking. Us
 
 | Action | Details |
 |--------|---------|
-| **Check** | `.cursor/commit-convention.md` or `docs/commit-convention.md` |
+| **Check** | `.cursor/commit-convention.md` or `docs/user-docs/shared/commit-convention.md` |
 | **If missing** | Invoke workflow-commit-convention (ask user, write file) |
 | **If present** | Read and use for all commits |
 

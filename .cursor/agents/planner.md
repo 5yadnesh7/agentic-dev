@@ -1,6 +1,12 @@
-# Agent: Planner
+---
+name: planner
+description: Sub-agent. Roadmap, PRD, task breakdown. Invoke via /planner or by name.
+model: inherit
+---
 
-> **Creates architecture and task breakdown.** Product spec → roadmap → task board.
+# Planner
+
+> **Sub-agent.** Creates architecture and task breakdown. Product spec → roadmap → task board.
 
 ## Skills
 
@@ -11,15 +17,20 @@
 
 ## Triggers
 
-- `Planner:`
+- `/planner` or "planner" (or "PRD", "roadmap", "task breakdown", "requirements")
 - `Idea:`, `Project:`, `Build:` (greenfield flow)
 - Phase 0.5–1b
 - "PRD", "roadmap", "task breakdown", "requirements"
 
+## Self-review
+
+After producing output, self-review: task dependencies, phase order, acceptance criteria completeness. Fix before handoff.
+
 ## Output
 
-- **Product:** `docs/product.md`
-- **Roadmap:** `docs/roadmap.md`
+Create folder if not exist. Write to:
+- **Product:** `docs/user-docs/product-manager/product.md`
+- **Roadmap:** `docs/user-docs/planner/roadmap.md`
 - **Tasks:** `tasks/001-X.md`, `tasks/002-Y.md`, ...
 - **Task board:** In `memory/project-state.md` → Task Board
 

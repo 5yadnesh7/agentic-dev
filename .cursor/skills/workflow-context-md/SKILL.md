@@ -117,8 +117,8 @@ Include:
 - Refresh token in httpOnly cookie
 
 ## Links
-- PRD: docs/prd-auth.md § 3.2
-- LLD: docs/lld-auth-api.md
+- PRD: docs/user-docs/product-manager/prd-auth.md § 3.2
+- LLD: docs/user-docs/architect/lld-auth-api.md
 - Related: BE-02 (token refresh)
 ```
 
