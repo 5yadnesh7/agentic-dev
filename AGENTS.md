@@ -6,9 +6,9 @@ This project is an **autonomous dev system** — not just a prompt library. It u
 
 | Tier | User invokes | Routes to |
 |------|--------------|-----------|
-| **Skill** | `Bug:`, `Spec:`, `ArchReview:` | Skill directly |
-| **Sub-agent** | `/architect`, `/tester`, "devops", etc. | Agent → skills; CTO Critic at end |
-| **CTO** | `/cto`, "cto", "help me", "I need" | CTO triages → sub-agents → delivery |
+| **Skill** | `/bug`, `/spec`, `/arch-review` | Skill directly |
+| **Sub-agent** | `/architect`, `/tester`, `/devops`, etc. | Agent → skills; CTO Critic at end |
+| **CTO** | `/cto`, "help me", "I need" | CTO triages → sub-agents → delivery |
 
 All agents in `.cursor/agents/` use YAML frontmatter (`name`, `description`) so Cursor recognizes them. Sub-agents: architect, worker, tester, researcher, planner, reviewer, devops, security, designer. Executives: cto, dev-supervisor.
 
@@ -19,8 +19,8 @@ All agents in `.cursor/agents/` use YAML frontmatter (`name`, `description`) so 
 
 ## Sub-agents
 
-- architect, worker, tester, researcher, planner, reviewer, devops, security, designer
-- Each has `name`, `description` in frontmatter. Invoke via `/{name}` (e.g. `/architect`) or by name (e.g. "architect").
+- `/architect`, `/worker`, `/tester`, `/researcher`, `/planner`, `/reviewer`, `/devops`, `/security`, `/designer`
+- Each has `name`, `description` in frontmatter. Invoke via `/{name}` (e.g. `/architect`, `/tester`, `/cto`).
 
 ## Trigger policy: every skill is trigger-based
 
@@ -32,8 +32,8 @@ All agents in `.cursor/agents/` use YAML frontmatter (`name`, `description`) so 
 
 - **Idea / Project / Build**: Read **`agents/dev-supervisor.md`**. Use `.cursor/workflows/new-project.workflow.md`.
 - **CTO / "help me"**: Read **`agents/cto.md`**. CTO triages and routes to sub-agents.
-- **Sub-agent** (e.g. `/architect`, `/tester`, "devops"): Load agent from `.cursor/agents/<name>.md`, execute its skills.
-- **Other trigger** (Planner:, Review:, Test:, etc.): **workflow-orchestrator**.
+- **Sub-agent** (e.g. `/architect`, `/tester`, `/devops`): Load agent from `.cursor/agents/<name>.md`, execute its skills.
+- **Other trigger** (/planner, /review, /test, etc.): **workflow-orchestrator**.
 - **No trigger**: **workflow-skill-receiver** → SKILL_INDEX.
 - **Create skill**: **workflow-skill-creator**. Follow its criteria and add the skill to SKILL_INDEX.
 

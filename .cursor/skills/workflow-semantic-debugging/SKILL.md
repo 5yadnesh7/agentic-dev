@@ -62,7 +62,7 @@ read state → think → act → update state
 
 ## When to run
 
-- **Trigger:** `Bug: [description]` (e.g. "Bug: login returns 500", "Bug: cart total wrong")
+- **Trigger:** `/bug [description]` (e.g. "/bug login returns 500", "/bug cart total wrong")
 - **User says:** "debug", "fix this bug", "why is X failing?", "investigate and fix error"
 
 ## End-to-end process (find → fix → test → verify → commit)
@@ -215,10 +215,10 @@ it('handles [bug scenario] - regression for [bug id]', () => {
 | **Run tests** | `npm test` — all pass |
 | **Run lint** | `npm run lint` — 0 errors |
 | **Manual check** | If applicable: reproduce original steps; bug is gone |
-| **Verify impact** | Check dependents: does fix break callers? Use workflow-impact-analysis if many files |
+| **Verify impact** | Check dependents: does fix break callers? Use workflow-impact-analysis (Invoke `/impact`) if many files |
 | **No regressions** | Existing tests still pass; no new failures |
 
-**Verify impact:** If fix touches shared code (utils, models, hooks), trace callers and run related tests. For large changes, run full test suite and consider `Impact:` to find dependents.
+**Verify impact:** If fix touches shared code (utils, models, hooks), trace callers and run related tests. For large changes, run full test suite and consider `/impact` to find dependents.
 
 **Checklist:**
 - [ ] `npm test` passes

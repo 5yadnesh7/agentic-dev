@@ -1,6 +1,6 @@
 ---
 name: architect
-description: Sub-agent. System design, architecture, database, API. Invoke via /architect or by name.
+description: Sub-agent. System design, architecture, database, API. Invoke via /architect.
 model: inherit
 ---
 
@@ -16,7 +16,7 @@ model: inherit
 
 ## Triggers
 
-- `/architect` or "architect" (or "architecture", "system design", "database schema", "API design")
+- `/architect` (or "architecture", "system design", "database schema", "API design")
 - Phase 5–7 (architecture, DB, API design)
 - "architecture", "system design", "database schema", "API design"
 

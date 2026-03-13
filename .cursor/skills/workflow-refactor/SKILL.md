@@ -23,7 +23,7 @@ Good agents improve code quality over time. This skill checks for refactor oppor
 
 ## When to run
 
-- **Trigger:** `Refactor:`
+- **Trigger:** `/refactor`
 - **User says:** "refactor suggestions", "code quality", "improve this code", "duplicate code", "clean up"
 
 ## Step-by-step process

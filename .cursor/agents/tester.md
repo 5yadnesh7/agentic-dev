@@ -1,6 +1,6 @@
 ---
 name: tester
-description: Sub-agent. QA, tests, regression. Invoke via /tester or by name.
+description: Sub-agent. QA, tests, regression. Invoke via /tester.
 model: inherit
 ---
 
@@ -16,10 +16,10 @@ model: inherit
 
 ## Triggers
 
-- `/tester` or "tester" (or "unit tests", "E2E", "test strategy")
+- `/tester` (or "unit tests", "E2E", "test strategy")
 - Per-task loop (Step 5: Unit test)
 - Phase 6 (integration test)
-- `Test:`, `Bug:`
+- `/test`, `/bug`
 
 ## Self-review
 

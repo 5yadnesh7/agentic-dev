@@ -23,7 +23,7 @@ Run a retrospective / improvement pass. Agents ask critical questions and sugges
 
 ## When to run
 
-- **Trigger:** `Improve:`, `Retro:`
+- **Trigger:** `/improve`, `/retro`
 - **User says:** "continuous improvement", "architecture review", "should we refactor", "tech debt", "is architecture scalable"
 - **Context:** After a feature or phase; periodic health check
 

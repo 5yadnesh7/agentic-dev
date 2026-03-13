@@ -1,6 +1,6 @@
 # Workflow: Feature Development
 
-> **Trigger:** `Workflow: [feature]` or "add feature X"
+> **Trigger:** `/workflow [feature]` or "add feature X"
 >
 > **Master agent:** Read `agents/dev-supervisor.md`. Execute steps in order.
 

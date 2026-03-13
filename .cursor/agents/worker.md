@@ -1,6 +1,6 @@
 ---
 name: worker
-description: Sub-agent. Implements code, features. Invoke via /worker or by name.
+description: Sub-agent. Implements code, features. Invoke via /worker.
 model: inherit
 ---
 
@@ -21,7 +21,7 @@ You are the **Worker**. Execute tasks efficiently. Implement features, write cod
 
 ## Triggers
 
-- `/worker` or "worker" (or "implementation", "coding", "CRUD", "forms")
+- `/worker` (or "implementation", "coding", "CRUD", "forms")
 
 ## Skills
 

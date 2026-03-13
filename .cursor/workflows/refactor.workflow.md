@@ -1,6 +1,6 @@
 # Workflow: Refactor
 
-> **Trigger:** `Refactor:` or "refactor suggestions", "code quality"
+> **Trigger:** `/refactor` or "refactor suggestions", "code quality"
 >
 > **Skill:** workflow-refactor. Outputs suggestions; does not auto-apply.
 

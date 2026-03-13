@@ -8,11 +8,11 @@
 
 | Entry | Trigger | Flow |
 |-------|---------|------|
-| **Greenfield** | `Idea:`, `Project:`, `Build:` | Idea Agent → Research → Brainstorm → Product Planning → full lifecycle |
-| **Feature** | `Workflow: [feature]` | Phases 0→11 (skip -2, -1, 0.5, 0.6 if feature already scoped) |
-| **Existing repo** | `Workflow:` on brownfield | Phase 0 runs Explore first (workflow-project-context) |
+| **Greenfield** | `/idea`, `/project`, `/build` | Idea Agent → Research → Brainstorm → Product Planning → full lifecycle |
+| **Feature** | `/workflow [feature]` | Phases 0→11 (skip -2, -1, 0.5, 0.6 if feature already scoped) |
+| **Existing repo** | `/workflow` on brownfield | Phase 0 runs Explore first (workflow-project-context) |
 
-**Greenfield example:** `Idea: AI audiobook generator` → Idea Agent → Research → Brainstorm → Product Manager → UI/UX → Project Manager → ...
+**Greenfield example:** `/idea AI audiobook generator` → Idea Agent → Research → Brainstorm → Product Manager → UI/UX → Project Manager → ...
 
 ---
 

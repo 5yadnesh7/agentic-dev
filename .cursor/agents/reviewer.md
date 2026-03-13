@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: Sub-agent. Code review, architecture review, security audit. Invoke via /reviewer or by name.
+description: Sub-agent. Code review, architecture review, security audit. Invoke via /reviewer.
 model: inherit
 ---
 
@@ -18,8 +18,8 @@ model: inherit
 
 ## Triggers
 
-- `/reviewer` or "reviewer" (or "PR review", "code review", "security audit")
-- `Review:`
+- `/reviewer` (or "PR review", "code review", "security audit")
+- `/review`
 - Per-task loop (before PM acceptance)
 - Phase 6b (security testing)
 - "review my code", "PR review", "security audit"

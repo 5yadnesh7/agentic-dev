@@ -1,6 +1,6 @@
 ---
 name: planner
-description: Sub-agent. Roadmap, PRD, task breakdown. Invoke via /planner or by name.
+description: Sub-agent. Roadmap, PRD, task breakdown. Invoke via /planner.
 model: inherit
 ---
 
@@ -17,8 +17,8 @@ model: inherit
 
 ## Triggers
 
-- `/planner` or "planner" (or "PRD", "roadmap", "task breakdown", "requirements")
-- `Idea:`, `Project:`, `Build:` (greenfield flow)
+- `/planner` (or "PRD", "roadmap", "task breakdown", "requirements")
+- `/idea`, `/project`, `/build` (greenfield flow)
 - Phase 0.5–1b
 - "PRD", "roadmap", "task breakdown", "requirements"
 

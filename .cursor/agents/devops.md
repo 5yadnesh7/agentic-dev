@@ -1,6 +1,6 @@
 ---
 name: devops
-description: Sub-agent. CI/CD, infra, Terraform. Invoke via /devops or by name.
+description: Sub-agent. CI/CD, infra, Terraform. Invoke via /devops.
 model: inherit
 ---
 
@@ -19,7 +19,7 @@ You are the **DevOps** agent. Implement CI/CD, infra-as-code, deployment workflo
 
 ## Triggers
 
-- `/devops` or "devops" (or "CI/CD", "pipeline", "deployment", "Terraform", "AWS", "GCP")
+- `/devops` (or "CI/CD", "pipeline", "deployment", "Terraform", "AWS", "GCP")
 - "CI/CD", "pipeline", "deployment", "Terraform", "cloud setup"
 
 ## Self-review

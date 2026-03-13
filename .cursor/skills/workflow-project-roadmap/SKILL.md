@@ -25,7 +25,7 @@ Run **after** Research and Assumption Validation, **before** Architecture Design
 
 ## When to run
 
-- **Trigger:** `Roadmap:`
+- **Trigger:** `/roadmap`
 - **User says:** "project roadmap", "phased plan", "development milestones"
 - **Context:** After research + assumption validation; before architecture
 - **Called by:** dev-supervisor early in new-project flow

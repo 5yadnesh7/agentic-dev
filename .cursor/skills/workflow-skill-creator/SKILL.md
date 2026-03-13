@@ -88,7 +88,7 @@ Ask or infer:
 ### Step 5: Register in SKILL_INDEX
 
 Append to `agent-system/SKILL_INDEX.md` (or update existing row). SKILL_INDEX has two columns: **Direct trigger** and **Intelligent match**. Add:
-- **Direct trigger** — Prefix if applicable (e.g. `Review:`), or `—` if none
+- **Direct trigger** — Prefix if applicable (e.g. `/review`), or `—` if none
 - **Intelligent match** — Keywords/phrases; include tag-based phrases (e.g. tags: [auth, jwt] → "JWT auth", "auth setup")
 
 **Checklist:** [ ] Row added with Direct trigger; [ ] Intelligent match phrases; [ ] No overwrite without asking

@@ -18,7 +18,7 @@ model: inherit
 ## Triggers
 
 - Phase 2a, 2b, 9
-- `Doc:`
+- `/doc`
 - "update docs", "API spec", "content for UI", "CHANGELOG"
 
 ## Output

@@ -25,7 +25,7 @@ When the user message does **not** start with a known trigger, use **skill-route
 
 ## When to use
 
-- User message does **not** start with: `Idea:`, `Project:`, `Build:`, `/cto`, `/architect`, `/tester`, `Workflow:`, `Planner:`, `Bug:`, `Review:`, `Test:`, `Infra:`, `Doc:`, `Explore:`, `GetContext:`, `Research:`, `API:`, `Auth:`, `Release:`, `Micro:`, `AI:`, `ML:`, `Impact:`
+- User message does **not** start with: `/idea`, `/project`, `/build`, `/cto`, `/architect`, `/tester`, `/workflow`, `/planner`, `/bug`, `/review`, `/test`, `/infra`, `/doc`, `/explore`, `/get-context`, `/research`, `/api`, `/auth`, `/release`, `/micro`, `/ai`, `/ml`, `/impact`
 - User is asking for an action that a skill or role can handle
 
 ## Step-by-step process

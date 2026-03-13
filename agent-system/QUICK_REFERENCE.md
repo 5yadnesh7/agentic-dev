@@ -6,9 +6,9 @@
 
 | Tier | Example | Routes to |
 |------|---------|-----------|
-| Skill | `Bug:`, `Spec:` | Skill directly |
-| Sub-agent | `/architect`, `/tester`, "devops" | Agent → skills; CTO Critic at end |
-| CTO | `/cto`, "cto", "help me" | CTO triages → sub-agents |
+| Skill | `/bug`, `/spec` | Skill directly |
+| Sub-agent | `/architect`, `/tester`, `/devops`, etc. | Agent → skills; CTO Critic at end |
+| CTO | `/cto`, "help me" | CTO triages → sub-agents |
 
 ---
 
@@ -16,29 +16,29 @@
 
 | Invoke | Agent(s) / Skill |
 |--------|-------------------|
-| `/cto` or "cto" | CTO (triage, route, end-to-end delivery) |
+| `/cto` | CTO (triage, route, end-to-end delivery) |
 | `/architect`, `/tester`, `/planner`, `/devops`, `/security`, `/designer`, etc. | Sub-agent → skills |
-| `Idea:` / `Project:` / `Build:` | Full **greenfield** (Idea Agent → Research → Brainstorm → Product Manager → UI/UX → Project Manager → ... → 11) |
-| `Workflow: [feature]` | Full lifecycle (orchestrator) |
-| `Planner: [task]` | PM, Project Manager |
-| `Bug: [desc]` | workflow-semantic-debugging (find + fix + test + commit) |
-| `Review: [target]` | Code Reviewer, Security |
-| `Test: [target]` | QA (Jest + Playwright) |
-| `Research:` | role-research-analyst |
-| `Explore:` | workflow-project-context |
-| `GetContext:` | workflow-get-project-context (full context → docs/user-docs/workflow-get-project-context/project-context-full.md) |
-| `Auth:` | Auth Engineer, Security |
-| `Impact:` | workflow-impact-analysis (after changes: check dependents, fix if broken) |
-| `Spec: [idea]` | workflow-project-spec (product, architecture, database, api, tasks) |
-| `PR:` | workflow-pr-generator (branch, commits, PR description) |
-| `Improve:` / `Retro:` | workflow-continuous-improvement (architecture/DB/refactor review) |
-| `ArchReview:` | workflow-architecture-review (pre-coding: scalability, security, performance) |
-| `ContextMap:` | workflow-context-map (repo mental map) |
-| `Refactor:` | workflow-refactor (refactor suggestions) |
-| `Learn:` | workflow-learning (record → docs/system-docs/dev-lessons.md) |
-| `Validate:` / `Assume:` | workflow-assumption-validation (think-before-build) |
-| `Roadmap:` | workflow-project-roadmap (phased milestones) |
-| `Infra:`, `Doc:`, `API:`, `Release:` | See ORCHESTRATOR |
+| `/idea` / `/project` / `/build` | Full **greenfield** (Idea Agent → Research → Brainstorm → Product Manager → UI/UX → Project Manager → ... → 11) |
+| `/workflow [feature]` | Full lifecycle (orchestrator) |
+| `/planner [task]` | PM, Project Manager |
+| `/bug [desc]` | workflow-semantic-debugging (find + fix + test + commit) |
+| `/review [target]` | Code Reviewer, Security |
+| `/test [target]` | QA (Jest + Playwright) |
+| `/research` | role-research-analyst |
+| `/explore` | workflow-project-context |
+| `/get-context` | workflow-get-project-context (full context → docs/user-docs/workflow-get-project-context/project-context-full.md) |
+| `/auth` | Auth Engineer, Security |
+| `/impact` | workflow-impact-analysis (after changes: check dependents, fix if broken) |
+| `/spec [idea]` | workflow-project-spec (product, architecture, database, api, tasks) |
+| `/pr` | workflow-pr-generator (branch, commits, PR description) |
+| `/improve` / `/retro` | workflow-continuous-improvement (architecture/DB/refactor review) |
+| `/arch-review` | workflow-architecture-review (pre-coding: scalability, security, performance) |
+| `/context-map` | workflow-context-map (repo mental map) |
+| `/refactor` | workflow-refactor (refactor suggestions) |
+| `/learn` | workflow-learning (record → docs/system-docs/dev-lessons.md) |
+| `/validate` / `/assume` | workflow-assumption-validation (think-before-build) |
+| `/roadmap` | workflow-project-roadmap (phased milestones) |
+| `/infra`, `/doc`, `/api`, `/release` | See ORCHESTRATOR |
 
 **No direct trigger?** Use **workflow-skill-receiver** (intelligent trigger): match user intent to SKILL_INDEX and invoke the skill. Every skill is trigger-based: direct or intelligent.
 

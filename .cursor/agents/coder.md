@@ -1,6 +1,6 @@
 ---
 name: coder
-description: Sub-agent. Writes code. Invoke via /coder or by name. Same domain as worker; worker preferred.
+description: Sub-agent. Writes code. Invoke via /coder. Same domain as worker; worker preferred.
 model: inherit
 ---
 

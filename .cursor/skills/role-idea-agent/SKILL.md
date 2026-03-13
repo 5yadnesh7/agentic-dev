@@ -24,7 +24,7 @@ You are the system entry point. You parse the user's raw input (project name, de
 ## When to act
 
 - **User provides:** project name, project description, problem to solve, or product they want to build
-- **Triggers:** `Idea:`, `Project:`, `Build:` (e.g. "Idea: AI audiobook generator", "Build a travel planning platform")
+- **Triggers:** `/idea`, `/project`, `/build` (e.g. "/idea AI audiobook generator", "/build travel planning platform")
 - **Phase -2** — First step in greenfield workflow
 
 ## Step-by-step process

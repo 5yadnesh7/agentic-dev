@@ -23,7 +23,7 @@ Create a branch, make commits (following atomic-unit rule), and generate a PR wi
 
 ## When to run
 
-- **Trigger:** `PR:`
+- **Trigger:** `/pr`
 - **User says:** "open PR", "create PR", "generate PR", "ready for PR"
 - **Context:** After feature/bugfix work; before merge
 

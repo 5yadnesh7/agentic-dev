@@ -1,6 +1,6 @@
 # Workflow: Bug Fix
 
-> **Trigger:** `Bug: [description]` or "debug", "fix this bug"
+> **Trigger:** `/bug [description]` or "debug", "fix this bug"
 >
 > **Skill:** workflow-semantic-debugging. Implements **Tester ↔ Coder** feedback loop.
 

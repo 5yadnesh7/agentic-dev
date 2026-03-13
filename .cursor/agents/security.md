@@ -1,6 +1,6 @@
 ---
 name: security
-description: Sub-agent. Security audit, OWASP, auth. Invoke via /security or by name.
+description: Sub-agent. Security audit, OWASP, auth. Invoke via /security.
 model: inherit
 ---
 
@@ -18,7 +18,7 @@ You are the **Security** agent. Audit for OWASP Top 10, auth/authz, API security
 
 ## Triggers
 
-- `/security` or "security" (or "security review", "OWASP", "auth audit", "vulnerability")
+- `/security` (or "security review", "OWASP", "auth audit", "vulnerability")
 - "security review", "OWASP", "auth audit", "vulnerability"
 
 ## Self-review

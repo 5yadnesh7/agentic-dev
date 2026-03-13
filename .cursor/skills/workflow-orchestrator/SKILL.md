@@ -23,9 +23,9 @@ Execute the full product lifecycle from idea to PR. Manages phases, assigns agen
 
 ## When to use (direct triggers only)
 
-- User message **starts with** `Idea:`, `Project:`, `Build:` → **Greenfield** lifecycle
-- User message **starts with** `Workflow: [feature]` → Full feature lifecycle
-- User message **starts with** any trigger from `agent-system/QUICK_REFERENCE.md` (including `Spec:`, `PR:`, `Improve:`, `Retro:`)
+- User message **starts with** `/idea`, `/project`, `/build` → **Greenfield** lifecycle
+- User message **starts with** `/workflow [feature]` → Full feature lifecycle
+- User message **starts with** any trigger from `agent-system/QUICK_REFERENCE.md` (including `/spec`, `/pr`, `/improve`, `/retro`)
 - User asks: "how does the workflow run?", "what are the phases?"
 
 **No direct trigger?** → Use **workflow-skill-receiver** (intelligent match). Do not use orchestrator when user says something in natural language (e.g. "review my code") without a prefix—skill-receiver will match intent and invoke the right skill.
@@ -44,12 +44,12 @@ Read in order:
 
 | Trigger | Entry mode | Flow |
 |---------|------------|------|
-| `Idea:`, `Project:`, `Build:` | **Greenfield — dev-supervisor** | Read `agents/dev-supervisor.md`. Use `.cursor/workflows/new-project.workflow.md`. |
-| `/cto` or "cto" / "help me" | **Triage — cto** | Read `agents/cto.md`. CTO routes to sub-agents. |
-| `/architect`, `/tester`, "devops", etc. | **Sub-agent** | Load `agents/<name>.md`, execute skills from AGENT_SKILL_MAP. |
-| `Workflow: [feature]` | Feature | Phases 0–11; `.cursor/workflows/feature-development.workflow.md` |
-| `Bug:` | Bug fix | `bug-fix.workflow.md`; workflow-semantic-debugging |
-| `Planner:`, `Review:`, etc. (skill triggers) | Single-purpose | See ORCHESTRATOR trigger map; may route to skill or sub-agent |
+| `/idea`, `/project`, `/build` | **Greenfield — dev-supervisor** | Read `agents/dev-supervisor.md`. Use `.cursor/workflows/new-project.workflow.md`. |
+| `/cto`, "help me" | **Triage — cto** | Read `agents/cto.md`. CTO routes to sub-agents. |
+| `/architect`, `/tester`, `/devops`, etc. | **Sub-agent** | Load `agents/<name>.md`, execute skills from AGENT_SKILL_MAP. |
+| `/workflow [feature]` | Feature | Phases 0–11; `.cursor/workflows/feature-development.workflow.md` |
+| `/bug` | Bug fix | `bug-fix.workflow.md`; workflow-semantic-debugging |
+| `/planner`, `/review`, etc. (skill triggers) | Single-purpose | See ORCHESTRATOR trigger map; may route to skill or sub-agent |
 
 ### 3. Execute phases
 

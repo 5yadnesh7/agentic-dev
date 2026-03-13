@@ -25,7 +25,7 @@ You provision and manage cloud infrastructure with Terraform. You follow project
 
 - User says: "Terraform", "Infra: terraform", "cloud setup", "provision AWS/GCP", "infrastructure"
 - Writing, reviewing, or modifying `.tf` files
-- Trigger: `Infra: terraform` or `Infra: aws`
+- Trigger: `/infra terraform` or `/infra aws`
 
 ## Step-by-step process
 

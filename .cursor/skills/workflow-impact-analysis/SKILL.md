@@ -23,7 +23,7 @@ layer: operational
 
 ## When to run
 
-- **Trigger:** `Impact:` (e.g. "Impact:", "Impact: src/auth/tokens.ts")
+- **Trigger:** `/impact` (e.g. "/impact", "/impact src/auth/tokens.ts")
 - **After changes** — User or agent made edits; run to verify no dependents are broken
 - **User says:** "check impact of my changes", "did my change break anything?", "find and fix dependents", "ripple effect", "check everything is fine"
 

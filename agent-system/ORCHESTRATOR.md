@@ -177,9 +177,9 @@ See `agent-system/ROUTING.md` for full flow. **Precedence:** Explicit skill > Ex
 
 | Tier | User invokes | Routes to |
 |------|--------------|-----------|
-| 1. Direct skill | `Bug:`, `Spec:`, `ArchReview:`, etc. | Skill directly; no CTO critique |
-| 2. Sub-agent | `/architect`, `/tester`, "devops", etc. | Agent → skills; CTO full Critic at end |
-| 3. CTO | `/cto`, "cto", "help me", "I don't know" | CTO triages → sub-agents → delivery |
+| 1. Direct skill | `/bug`, `/spec`, `/arch-review`, etc. | Skill directly; no CTO critique |
+| 2. Sub-agent | `/architect`, `/tester`, `/devops`, etc. | Agent → skills; CTO full Critic at end |
+| 3. CTO | `/cto`, "help me", "I don't know" | CTO triages → sub-agents → delivery |
 
 ---
 
@@ -187,43 +187,43 @@ See `agent-system/ROUTING.md` for full flow. **Precedence:** Explicit skill > Ex
 
 | Trigger | Agents / Skills | Notes |
 |---------|-----------------|-------|
-| `/cto` or "cto" | **cto** → `agents/cto.md` — Triage, route, end-to-end ownership, full Critic | User doesn't know what to call |
-| `/architect` or "architect" | architect → AGENT_SKILL_MAP skills | Sub-agent: system design, DB, API |
-| `/worker` or "worker" | worker → AGENT_SKILL_MAP skills | Sub-agent: implementation |
-| `/tester` or "tester" | tester → AGENT_SKILL_MAP skills | Sub-agent: QA |
-| `/researcher` or "researcher" | researcher → role-research-analyst | Sub-agent: research |
-| `/planner` or "planner" | planner → AGENT_SKILL_MAP skills | Sub-agent: roadmap, tasks |
-| `/reviewer` or "reviewer" | reviewer → AGENT_SKILL_MAP skills | Sub-agent: code/arch review |
-| `/devops` or "devops" | devops → role-devops-engineer, role-cloud-engineer | Sub-agent: CI/CD, infra |
-| `/security` or "security" | security → role-security-engineer | Sub-agent: security audit |
-| `/designer` or "designer" | designer → role-ui-ux-designer | Sub-agent: UX, mockups |
-| `Idea:` / `Project:` / `Build:` | **dev-supervisor** → `agents/dev-supervisor.md` — Master agent; orchestrates research → architecture → task plan → execute. Explicit order in `.cursor/workflows/new-project.workflow.md`. | Autonomous dev system |
-| `Workflow: [feature]` | Full loop (WORK_MANAGER phases -1–11) | Parallel where Depends allow. Phase -1 & 0.5 only if greenfield. |
-| `Planner: [task]` | workflow-task-planner, role-product-manager, role-project-manager | Task files `tasks/001-X.md`, PRD, task board |
-| `Bug: [desc]` | workflow-semantic-debugging | Find root cause, implement fix, add regression test, verify, commit |
-| `Review: [target]` | Code Reviewer + Security | workflow-code-review-pr |
-| `Test: [target]` | QA Lead, test skills | Unit, integration, E2E |
-| `HLD:` / `LLD:` | HLD Architect / LLD Designer | Design docs |
-| `Infra: terraform` / `Infra: aws` | Cloud / DevOps Engineer | Terraform, AWS |
-| `Doc: tech` / `Doc: functional` | Technical Writer / Functional Analyst | Docs |
-| `Explore:` | workflow-project-context | Brownfield, Pattern Card |
-| `GetContext:` | workflow-get-project-context | Full project context → docs/user-docs/workflow-get-project-context/project-context-full.md |
-| `API:` | API Design Lead | OpenAPI, contracts |
-| `Auth:` | Auth Engineer + Security | Auth implementation |
-| `Release:` | Release Manager + DevOps | CHANGELOG, tag |
-| `Micro:` | domain-microservices | Service decomposition |
-| `Research:` | Research Analyst | Feasibility, tech comparison |
-| `AI:` / `ML:` | AI/ML Engineer | Model integration |
-| `Impact:` | workflow-impact-analysis | After changes: find dependents, verify, fix or route to Junior/Senior/Tester |
-| `Spec: [idea]` | workflow-project-spec | Generate product.md, architecture.md, database.md, api.md, tasks.md |
-| `PR:` | workflow-pr-generator | Branch, commits, PR description, open PR |
-| `Improve:` / `Retro:` | workflow-continuous-improvement | Architecture/DB/refactor review; improvement report |
-| `ArchReview:` | workflow-architecture-review | Pre-coding: review spec for scalability, security, performance |
-| `ContextMap:` | workflow-context-map | Repo mental map; where logic lives, what to edit |
-| `Refactor:` | workflow-refactor | Refactor suggestions; duplicate code, large functions, naming |
-| `Learn:` | workflow-learning | Record lesson → docs/system-docs/dev-lessons.md |
-| `Validate:` / `Assume:` | workflow-assumption-validation | Think-before-build; list assumptions, risks, missing info |
-| `Roadmap:` | workflow-project-roadmap | Phased milestones (docs/user-docs/planner/roadmap.md) before architecture |
+| `/cto` | **cto** → `agents/cto.md` — Triage, route, end-to-end ownership, full Critic | User doesn't know what to call |
+| `/architect` | architect → AGENT_SKILL_MAP skills | Sub-agent: system design, DB, API |
+| `/worker` | worker → AGENT_SKILL_MAP skills | Sub-agent: implementation |
+| `/tester` | tester → AGENT_SKILL_MAP skills | Sub-agent: QA |
+| `/researcher` | researcher → role-research-analyst | Sub-agent: research |
+| `/planner` | planner → AGENT_SKILL_MAP skills | Sub-agent: roadmap, tasks |
+| `/reviewer` | reviewer → AGENT_SKILL_MAP skills | Sub-agent: code/arch review |
+| `/devops` | devops → role-devops-engineer, role-cloud-engineer | Sub-agent: CI/CD, infra |
+| `/security` | security → role-security-engineer | Sub-agent: security audit |
+| `/designer` | designer → role-ui-ux-designer | Sub-agent: UX, mockups |
+| `/idea` / `/project` / `/build` | **dev-supervisor** → `agents/dev-supervisor.md` — Master agent; orchestrates research → architecture → task plan → execute. Explicit order in `.cursor/workflows/new-project.workflow.md`. | Autonomous dev system |
+| `/workflow [feature]` | Full loop (WORK_MANAGER phases -1–11) | Parallel where Depends allow. Phase -1 & 0.5 only if greenfield. |
+| `/planner [task]` | workflow-task-planner, role-product-manager, role-project-manager | Task files `tasks/001-X.md`, PRD, task board |
+| `/bug [desc]` | workflow-semantic-debugging | Find root cause, implement fix, add regression test, verify, commit |
+| `/review [target]` | Code Reviewer + Security | workflow-code-review-pr |
+| `/test [target]` | QA Lead, test skills | Unit, integration, E2E |
+| `/hld` / `/lld` | HLD Architect / LLD Designer | Design docs |
+| `/infra terraform` / `/infra aws` | Cloud / DevOps Engineer | Terraform, AWS |
+| `/doc tech` / `/doc functional` | Technical Writer / Functional Analyst | Docs |
+| `/explore` | workflow-project-context | Brownfield, Pattern Card |
+| `/get-context` | workflow-get-project-context | Full project context → docs/user-docs/workflow-get-project-context/project-context-full.md |
+| `/api` | API Design Lead | OpenAPI, contracts |
+| `/auth` | Auth Engineer + Security | Auth implementation |
+| `/release` | Release Manager + DevOps | CHANGELOG, tag |
+| `/micro` | domain-microservices | Service decomposition |
+| `/research` | Research Analyst | Feasibility, tech comparison |
+| `/ai` / `/ml` | AI/ML Engineer | Model integration |
+| `/impact` | workflow-impact-analysis | After changes: find dependents, verify, fix or route to Junior/Senior/Tester |
+| `/spec [idea]` | workflow-project-spec | Generate product.md, architecture.md, database.md, api.md, tasks.md |
+| `/pr` | workflow-pr-generator | Branch, commits, PR description, open PR |
+| `/improve` / `/retro` | workflow-continuous-improvement | Architecture/DB/refactor review; improvement report |
+| `/arch-review` | workflow-architecture-review | Pre-coding: review spec for scalability, security, performance |
+| `/context-map` | workflow-context-map | Repo mental map; where logic lives, what to edit |
+| `/refactor` | workflow-refactor | Refactor suggestions; duplicate code, large functions, naming |
+| `/learn` | workflow-learning | Record lesson → docs/system-docs/dev-lessons.md |
+| `/validate` / `/assume` | workflow-assumption-validation | Think-before-build; list assumptions, risks, missing info |
+| `/roadmap` | workflow-project-roadmap | Phased milestones (docs/user-docs/planner/roadmap.md) before architecture |
 
 **No explicit trigger?** Use **workflow-skill-receiver** with **skill-router** (`.cursor/skills/skill-router.md`): match user intent to SKILL_INDEX by keywords, tags, domain, and optional confidence scoring—then run the best-matching skill. Every skill is invokable by direct trigger (above) or by intelligent routing.
 

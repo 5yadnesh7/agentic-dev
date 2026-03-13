@@ -1,6 +1,6 @@
 # Workflow: New Project
 
-> **Trigger:** `Idea:`, `Project:`, `Build:` or "build X"
+> **Trigger:** `/idea`, `/project`, `/build` or "build X"
 >
 > **Master agent:** Read `agents/dev-supervisor.md`. Collaborating agents with feedback loops.
 

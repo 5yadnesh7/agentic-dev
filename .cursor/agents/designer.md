@@ -1,6 +1,6 @@
 ---
 name: designer
-description: Sub-agent. UI/UX, wireframes, mockups. Invoke via /designer or by name.
+description: Sub-agent. UI/UX, wireframes, mockups. Invoke via /designer.
 model: inherit
 ---
 
@@ -18,7 +18,7 @@ You are the **Designer** agent. Create product screens, user flows, wireframes, 
 
 ## Triggers
 
-- `/designer` or "designer" (or "UX design", "wireframes", "design system")
+- `/designer` (or "UX design", "wireframes", "design system")
 - "UX design", "wireframes", "HTML mockup", "design system"
 
 ## Self-review

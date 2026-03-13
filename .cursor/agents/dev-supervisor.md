@@ -22,7 +22,7 @@ You are the **dev supervisor**. You understand the user request, call skills in 
 
 ## When to activate
 
-- User says: `build a SaaS for gym booking`, `Idea: AI audiobook`, `Project: X`, `Build: X`
+- User says: `build a SaaS for gym booking`, `/idea AI audiobook`, `/project X`, `/build X`
 - User wants a **new project** or **greenfield** — from idea to code
 - No explicit workflow requested — you choose the workflow
 

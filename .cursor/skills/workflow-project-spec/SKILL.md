@@ -29,7 +29,7 @@ Most AI coding failures happen because the model jumps straight to implementatio
 
 ## When to run
 
-- **Trigger:** `Spec: [idea]`
+- **Trigger:** `/spec [idea]`
 - **User says:** "generate project spec", "project spec for X", "full spec for [idea]"
 - **Context:** Greenfield; always before implementation
 

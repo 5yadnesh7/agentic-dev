@@ -23,7 +23,7 @@ Large repos confuse LLMs. This skill builds a **repo mental map**: where logic l
 
 ## When to run
 
-- **Trigger:** `ContextMap:`
+- **Trigger:** `/context-map`
 - **User says:** "map the repo", "repo structure", "where does X live", "codebase map"
 - **Context:** Brownfield; before making changes; when lost in a large codebase
 

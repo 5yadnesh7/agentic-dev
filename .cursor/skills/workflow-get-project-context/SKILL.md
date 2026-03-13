@@ -24,7 +24,7 @@ Capture **every small bit of project information** into a single Markdown file. 
 ## When to run
 
 - **User says:** "get full project context", "complete codebase map", "document everything about this project", "exhaustive project context"
-- **Trigger:** `GetContext:` or "whole project context"
+- **Trigger:** `/get-context` or "whole project context"
 - **Onboarding** — New agent or human needs full picture
 - **Handoff** — Before long break; need complete snapshot
 

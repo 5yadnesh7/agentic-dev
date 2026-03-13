@@ -23,7 +23,7 @@ layer: strategic
 
 ## When to run
 
-- **Trigger:** `ArchReview:`
+- **Trigger:** `/arch-review`
 - **User says:** "architecture review", "review my architecture plan", "critique architecture before coding"
 - **Context:** After `docs/architecture.md`, `docs/database.md`, `docs/api.md` exist; **before** task execution
 

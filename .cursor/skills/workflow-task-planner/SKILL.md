@@ -23,7 +23,7 @@ Decompose a project into executable task files. Each task becomes a file in `tas
 
 ## When to run
 
-- **Trigger:** `Planner:`, after product/architecture spec
+- **Trigger:** `/planner`, after product/architecture spec
 - **User says:** "decompose tasks", "create task plan", "task breakdown"
 - **Context:** After `docs/product.md`, `docs/architecture.md`, `docs/tasks.md` (or equivalent) exist
 - **Called by:** dev-supervisor as Step 8 (new project) or Step 7 (feature)

@@ -25,7 +25,7 @@ Most AI systems skip this step and produce fragile solutions. This skill adds a 
 
 ## When to run
 
-- **Trigger:** `Validate:`, `Assume:`
+- **Trigger:** `/validate`, `/assume`
 - **User says:** "validate assumptions", "check assumptions", "think before building"
 - **Context:** After research; before spec/architecture/task decomposition
 - **Called by:** dev-supervisor between Research and Brainstorm/Architecture

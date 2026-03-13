@@ -23,7 +23,7 @@ layer: operational
 
 ## When to run
 
-- **Trigger:** `Learn:`
+- **Trigger:** `/learn`
 - **User says:** "record this lesson", "add to dev-lessons", "remember this pattern"
 - **Context:** After fixing a bug, after architecture decision, after discovering correct/incorrect pattern
 

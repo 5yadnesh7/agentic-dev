@@ -9,10 +9,10 @@ How user requests flow: direct skill, sub-agent, or CTO.
 ```
 User message
     │
-    ├─ Has explicit skill trigger (Bug:, Spec:, ArchReview:, etc.)
+    ├─ Has explicit skill trigger (/bug, /spec, /arch-review, etc.)
     │   → Route directly to that skill. No CTO critique unless user asks.
     │
-    ├─ Invokes sub-agent by name (/architect, /tester, "devops", etc.)
+    ├─ Invokes sub-agent (/architect, /tester, /devops, etc.)
     │   → Load agent from .cursor/agents/ → agent picks skills → execute.
     │   → Sub-agent self-review → CTO full Critic at end.
     │
@@ -27,11 +27,11 @@ User message
 
 | Trigger | Skill |
 |---------|-------|
-| `Bug:` | workflow-semantic-debugging |
-| `Spec:` | workflow-project-spec |
-| `ArchReview:` | workflow-architecture-review |
-| `ContextMap:` | workflow-context-map |
-| `PR:` | workflow-pr-generator |
+| `/bug` | workflow-semantic-debugging |
+| `/spec` | workflow-project-spec |
+| `/arch-review` | workflow-architecture-review |
+| `/context-map` | workflow-context-map |
+| `/pr` | workflow-pr-generator |
 | etc. | See SKILL_INDEX.md |
 
 **Critic:** No automatic CTO critique. On-demand only.
@@ -42,15 +42,15 @@ User message
 
 | Invoke | Agent |
 |--------|-------|
-| `/architect` or "architect" | architect |
-| `/worker` or "worker" | worker |
-| `/tester` or "tester" | tester |
-| `/researcher` or "researcher" | researcher |
-| `/planner` or "planner" | planner |
-| `/reviewer` or "reviewer" | reviewer |
-| `/devops` or "devops" | devops |
-| `/security` or "security" | security |
-| `/designer` or "designer" | designer |
+| `/architect` | architect |
+| `/worker` | worker |
+| `/tester` | tester |
+| `/researcher` | researcher |
+| `/planner` | planner |
+| `/reviewer` | reviewer |
+| `/devops` | devops |
+| `/security` | security |
+| `/designer` | designer |
 
 **Flow:** Load agent → agent selects skills from AGENT_SKILL_MAP → execute → self-review → CTO full Critic at end.
 
@@ -60,7 +60,7 @@ User message
 
 | Invoke | Action |
 |--------|--------|
-| `/cto` or "cto" or "help me" | CTO triages and routes |
+| `/cto`, "help me" | CTO triages and routes |
 | "help me", "I need", "I don't know" | CTO triages and routes |
 
 **Flow:** CTO analyzes request → selects sub-agent(s) → orchestrates (parallel when independent) → full Critic after each handoff → end-to-end review when cycle complete.
@@ -69,6 +69,6 @@ User message
 
 ## Direct skill path: no auto-critique
 
-- User invokes `Bug:`, `Spec:`, etc. → skill runs → done.
+- User invokes `/bug`, `/spec`, etc. → skill runs → done.
 - No CTO critique unless user asks (e.g. "review this").
 - Exception: `workflow-semantic-debugging` has built-in Worker↔Critic loop.

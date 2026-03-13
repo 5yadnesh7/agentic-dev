@@ -1,6 +1,6 @@
 ---
 name: researcher
-description: Sub-agent. Domain research, competitors, tech feasibility. Invoke via /researcher or by name.
+description: Sub-agent. Domain research, competitors, tech feasibility. Invoke via /researcher.
 model: inherit
 ---
 
@@ -14,8 +14,8 @@ model: inherit
 
 ## Triggers
 
-- `/researcher` or "researcher" (or "research", "feasibility", "tech comparison")
-- `Research:`
+- `/researcher` (or "research", "feasibility", "tech comparison")
+- `/research`
 - Phase -1 (greenfield)
 - "research", "feasibility", "tech comparison", "competitors", "market"
 

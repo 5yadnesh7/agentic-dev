@@ -4,9 +4,9 @@
 
 | Tier | User invokes | Routes to |
 |------|--------------|-----------|
-| **1. Direct skill** | `Bug:`, `Spec:`, `ArchReview:` | Skill directly; no CTO critique |
-| **2. Sub-agent** | `/architect`, `/tester`, "devops", etc. | Agent → skills; CTO full Critic at end |
-| **3. CTO** | `/cto`, "cto", "help me" | CTO triages → sub-agents → end-to-end delivery |
+| **1. Direct skill** | `/bug`, `/spec`, `/arch-review` | Skill directly; no CTO critique |
+| **2. Sub-agent** | `/architect`, `/tester`, `/devops`, etc. | Agent → skills; CTO full Critic at end |
+| **3. CTO** | `/cto`, "help me" | CTO triages → sub-agents → end-to-end delivery |
 
 **Review layers:** Sub-agent self-review → CTO full Critic (after handoff) → CTO end-to-end review (when full cycle complete).
 
@@ -39,7 +39,7 @@ See `agent-system/ROUTING.md` and `agent-system/AGENT_SKILL_MAP.md`.
 **Triages and owns delivery when user doesn't know what to call.**
 
 - **Capabilities:** Parse requirement → select sub-agent(s) → orchestrate (parallel when independent) → full Critic after handoffs → end-to-end review when cycle complete.
-- **Invoke:** `/cto`, "cto", "help me", "I need", "I don't know".
+- **Invoke:** `/cto`, "help me", "I need", "I don't know".
 - **End-to-end responsibility:** Own requirement from research to delivery. Do not stop mid-task.
 - **File:** `.cursor/agents/cto.md`.
 
