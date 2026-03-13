@@ -23,7 +23,7 @@ You have **three ways** to get help:
 
 ### 1. Ask the CTO — when you're not sure what you need
 
-Type `/cto` or "help me" plus your question. The CTO figures out what to run and routes to the right agent.
+Type `/cto` or "help me" plus your question. The CTO triages your request, selects a suitable sub-agent, and assigns the task. The CTO does not implement—it delegates to the right agent.
 
 **Examples of what to type:**
 - `/cto I want to build a gym booking app`

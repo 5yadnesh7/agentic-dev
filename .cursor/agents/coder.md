@@ -14,6 +14,10 @@ model: inherit
 - **role-mid-engineer** — CRUD, forms, standard features
 - **workflow-dev-doc** — Task context during implementation
 
+## Delegation
+
+When the task includes work outside implementation (research, architecture, testing, UX, etc.), delegate to the suitable sub-agent via `mcp_task`. Do coding; delegate the rest. See `agent-system/DELEGATION.md`.
+
 ## Triggers
 
 - Phase 3–4 (implementation)

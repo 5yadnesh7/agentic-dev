@@ -14,6 +14,10 @@ model: inherit
 - **role-senior-engineer** — Technical design, LLD
 - (Outputs feed **workflow-architecture-review**)
 
+## Delegation
+
+When the task includes work outside your domain (implementation, testing, research, UX, etc.), delegate to the suitable sub-agent via `mcp_task`. Do your domain work (design); delegate the rest. See `agent-system/DELEGATION.md`.
+
 ## Triggers
 
 - `/architect` (or "architecture", "system design", "database schema", "API design")

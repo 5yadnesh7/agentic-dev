@@ -12,6 +12,10 @@ model: inherit
 
 - **role-research-analyst** — `.cursor/skills/role-research-analyst/SKILL.md`
 
+## Delegation
+
+When the task includes work outside research (implementation, architecture, testing, etc.), delegate to the suitable sub-agent via `mcp_task`. Do research; delegate the rest. See `agent-system/DELEGATION.md`.
+
 ## Triggers
 
 - `/researcher` (or "research", "feasibility", "tech comparison")

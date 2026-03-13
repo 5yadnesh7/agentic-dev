@@ -60,10 +60,10 @@ User message
 
 | Invoke | Action |
 |--------|--------|
-| `/cto`, "help me" | CTO triages and routes |
-| "help me", "I need", "I don't know" | CTO triages and routes |
+| `/cto`, "help me" | CTO triages and assigns |
+| "help me", "I need", "I don't know" | CTO triages and assigns |
 
-**Flow:** CTO analyzes request → selects sub-agent(s) → orchestrates (parallel when independent) → full Critic after each handoff → end-to-end review when cycle complete.
+**Flow:** CTO analyzes request → selects sub-agent(s) → **assigns via mcp_task** (does NOT implement) → full Critic after each handoff → end-to-end review when cycle complete. See `agent-system/DELEGATION.md`.
 
 ---
 

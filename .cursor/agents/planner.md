@@ -15,6 +15,10 @@ model: inherit
 - **workflow-brainstorm** — Feature ideas before PRD
 - **workflow-task-planner** — Decompose to `tasks/001-X.md` per phase
 
+## Delegation
+
+When the task includes work outside planning (implementation, architecture, testing, UX, etc.), delegate to the suitable sub-agent via `mcp_task`. Do planning; delegate the rest. See `agent-system/DELEGATION.md`.
+
 ## Triggers
 
 - `/planner` (or "PRD", "roadmap", "task breakdown", "requirements")

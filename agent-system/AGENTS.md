@@ -30,15 +30,16 @@ See `agent-system/ROUTING.md` and `agent-system/AGENT_SKILL_MAP.md`.
 | **Coder** | Code implementation (mid/senior) |
 | **Tester** | Validate code; run tests |
 | **Skill Generator** | Detect repeated patterns → create new skills |
-| **CTO** | Triage, route, end-to-end ownership, full Critic |
+| **CTO** | Triage, assign to sub-agents, review; never implement |
 
 ---
 
 ## 0. CTO (Executive)
 
-**Triages and owns delivery when user doesn't know what to call.**
+**Triages and assigns; never implements.** User doesn't know what to call → CTO figures it out.
 
-- **Capabilities:** Parse requirement → select sub-agent(s) → orchestrate (parallel when independent) → full Critic after handoffs → end-to-end review when cycle complete.
+- **Capabilities:** Parse requirement → select sub-agent(s) → **assign via mcp_task** → review output → route next. CTO does **NOT** write code, design, or test.
+- **Delegation:** Always delegate to sub-agents. See `agent-system/DELEGATION.md`.
 - **Invoke:** `/cto`, "help me", "I need", "I don't know".
 - **End-to-end responsibility:** Own requirement from research to delivery. Do not stop mid-task.
 - **File:** `.cursor/agents/cto.md`.

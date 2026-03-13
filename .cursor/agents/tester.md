@@ -8,6 +8,10 @@ model: inherit
 
 > **Sub-agent.** Runs tests, finds bugs. Collaborates with **Coder** — Tester verifies; if fail → back to Coder. Tester ↔ Coder feedback loop.
 
+## Delegation
+
+When the task includes work outside testing (implementation, architecture, research, etc.), delegate to the suitable sub-agent via `mcp_task`. Do testing; delegate the rest. See `agent-system/DELEGATION.md`.
+
 ## Skills
 
 - **workflow-semantic-debugging** — Find root cause, fix, regression test (includes Tester↔Coder loop)

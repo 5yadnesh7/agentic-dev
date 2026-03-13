@@ -16,6 +16,10 @@ model: inherit
 - **role-security-engineer** — OWASP, auth, vuln scan
 - **role-senior-engineer** — Architecture and design review
 
+## Delegation
+
+When the task includes work outside review (implementation, testing, architecture, etc.), delegate to the suitable sub-agent via `mcp_task`. Do review; delegate the rest. See `agent-system/DELEGATION.md`.
+
 ## Triggers
 
 - `/reviewer` (or "PR review", "code review", "security audit")

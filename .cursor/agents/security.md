@@ -16,6 +16,10 @@ You are the **Security** agent. Audit for OWASP Top 10, auth/authz, API security
 
 - **role-security-engineer** — OWASP, auth audit, dependency scan, vulnerability
 
+## Delegation
+
+When the task includes work outside security (implementation, testing, architecture, etc.), delegate to the suitable sub-agent via `mcp_task`. Do security review; delegate the rest. See `agent-system/DELEGATION.md`.
+
 ## Triggers
 
 - `/security` (or "security review", "OWASP", "auth audit", "vulnerability")
