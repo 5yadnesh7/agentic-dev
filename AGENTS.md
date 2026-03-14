@@ -15,7 +15,7 @@ All agents in `.cursor/agents/` use YAML frontmatter (`name`, `description`) so 
 ## Master agents (executives)
 
 - **dev-supervisor** — Greenfield, Idea:, Project:, Build:. Read `agents/dev-supervisor.md`.
-- **cto** — Triage, route, end-to-end delivery. Read `agents/cto.md`.
+- **cto** — Triage, assign via mcp_task to sub-agents, review. Never implement. Read `agents/cto.md`.
 
 ## Sub-agents
 
@@ -31,7 +31,7 @@ All agents in `.cursor/agents/` use YAML frontmatter (`name`, `description`) so 
 ## How to run the workflow
 
 - **Idea / Project / Build**: Read **`agents/dev-supervisor.md`**. Use `.cursor/workflows/new-project.workflow.md`.
-- **CTO / "help me"**: Read **`agents/cto.md`**. CTO triages and routes to sub-agents.
+- **CTO / "help me"**: Read **`agents/cto.md`**. CTO triages, assigns via mcp_task to sub-agents (never does implementation), reviews output.
 - **Sub-agent** (e.g. `/architect`, `/tester`, `/devops`): Load agent from `.cursor/agents/<name>.md`, execute its skills.
 - **Other trigger** (/planner, /review, /test, etc.): **workflow-orchestrator**.
 - **No trigger**: **workflow-skill-receiver** → SKILL_INDEX.
@@ -39,6 +39,7 @@ All agents in `.cursor/agents/` use YAML frontmatter (`name`, `description`) so 
 
 ## Execution
 
+- **Research + Brainstorm mandatory** — For every new project, feature, or module: run Research (role-research-analyst) and Brainstorm (workflow-brainstorm) before Requirements. Do not skip.
 - **Parallel** when nothing blocks (independent tasks can advance together).
 - **Sequential and wait** when a task Depends on another, or there is a user gate or blocker.
 
@@ -50,6 +51,6 @@ All agents in `.cursor/agents/` use YAML frontmatter (`name`, `description`) so 
 ## Standards
 
 - Coding standards are in `.cursor/rules/`: `next-*.mdc`, `react-vite-*.mdc` (frontend); `express-*.mdc` (Node); `python-*.mdc`; `db-schema-*.mdc`, `db-mongodb.mdc`, `db-redis.mdc`; `terraform-*.mdc`; `playwright-*.mdc`. Apply the matching rule when editing files.
-- Full role and workflow definitions: `agent-system/AGENTS.md`, `agent-system/QUICK_REFERENCE.md`.
+- Full role and workflow definitions: `agent-system/AGENTS.md`, `agent-system/QUICK_REFERENCE.md`. Handoff contracts: `agent-system/HANDOFF_CONTRACTS.md`.
 - **Master agent:** `.cursor/agents/dev-supervisor.md`
-- **Explicit workflows:** `.cursor/workflows/` (new-project, feature-development, bug-fix)
+- **Explicit workflows:** `.cursor/workflows/` (new-project, feature-development, bug-fix, refactor)

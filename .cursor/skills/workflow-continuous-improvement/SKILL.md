@@ -14,7 +14,7 @@ layer: strategic
 | **Layer** | Strategic |
 | **Input** | Architecture, codebase, recent changes |
 | **Output** | Improvement suggestions; refactor/tech-debt report |
-| **Dependencies** | project-brain, architecture docs |
+| **Dependencies** | memory/project-state.md, architecture docs |
 | **Purpose** | Retrospective; suggest improvements for architecture, DB, refactor |
 
 ## Purpose
@@ -41,7 +41,7 @@ Run a retrospective / improvement pass. Agents ask critical questions and sugges
 
 ### 1. Gather context
 
-- Read `docs/user-docs/workflow-project-context/project-context.md`
+- Read `memory/project-state.md` (primary). Read `docs/user-docs/workflow-project-context/project-context.md`
 - Review recent changes (git log, structure)
 - **Checklist:** [ ] Context loaded
 

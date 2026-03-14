@@ -27,9 +27,13 @@ Validates 3-tier agent system (skill → sub-agent → CTO).
 - All sub-agents have `.cursor/agents/<name>.md` (architect, worker, tester, etc.)
 - CTO agent file exists
 - `ORCHESTRATOR.md` has CTO and sub-agent triggers
-- `SKILL_INDEX.md` has CTO and sub-agent entries
+- `SKILL_INDEX.md` has CTO and sub-agent entries; all referenced skills exist
 - `ROUTING.md` exists and documents precedence and 3-tier model
 - Sub-agent files have YAML frontmatter (`name`, `description`) and Self-review section
+- **Workflows:** `new-project`, `feature-development`, `bug-fix`, `refactor` exist in `.cursor/workflows/`
+- **skill-router.md** exists at `.cursor/skills/skill-router.md`
+- **Docs:** `HANDOFF_CONTRACTS.md`, `MEMORY_SYSTEM.md`, `WORK_MANAGER.md` exist in agent-system
+- **Memory:** `memory/project-state.template.md` exists
 - **Rules:** each `.cursor/rules/*.mdc` has non-empty `description` (shown in Cursor rule picker)
 - **Skills:** each skill has single-line `description` (no YAML multiline `>`, which may not display properly)
 

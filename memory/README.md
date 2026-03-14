@@ -17,6 +17,14 @@ read project-state → perform task → update project-state
 
 Optionally read/post `agent-messages.md` when collaborating or handing off.
 
+## Project bootstrap
+
+**When `memory/` folder is missing:** Create `memory/` and copy templates:
+1. `memory/project-state.template.md` → `memory/project-state.md`
+2. Optionally create `memory/agent-messages.md` from schema in `agent-system/HANDOFF_CONTRACTS.md` §3.
+
+**When `project-state.md` does not exist:** Copy `memory/project-state.template.md` to `memory/project-state.md`. All agents require project-state before acting.
+
 ## See also
 
 - `agent-system/MEMORY_SYSTEM.md` — Full memory layer definition

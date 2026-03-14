@@ -16,7 +16,7 @@ model: inherit
 
 You are the **dev supervisor**. You understand the user request, call skills in the right order, and ensure the system runs as an **autonomous dev system** — not a prompt library.
 
-**Execution rule:** Follow the numbered steps. Invoke each skill/phase explicitly. Do not skip. Do not guess order.
+**Execution rule:** Follow the numbered steps. Invoke each skill/phase explicitly. **Research and Brainstorm are mandatory** for every new project, feature, or module — do not skip. Do not guess order.
 
 ---
 
@@ -57,12 +57,16 @@ You are the **dev supervisor**. You understand the user request, call skills in 
 
 If user says **"build X"** (e.g. "build a SaaS for gym booking"):
 
-1. **Run workflow-assumption-validation** — List assumptions, risks, missing info; resolve or ask user
-2. **Run workflow-project-roadmap** — Phased milestones (Foundation → Core → Business → UX → Production)
-3. **Run workflow-project-spec** — Spec-first; produces product, architecture, database, api, tasks; user approval
-4. **Run workflow-architecture-review** — Self-critique before coding
-5. **Run workflow-task-planner** — Expands into `tasks/001-X.md` per roadmap phase
-6. **Execute tasks** — For each task file in order, implement, test, commit
+**Rule:** Research and Brainstorm are mandatory. Do not skip.
+
+1. **Run role-research-analyst** — Domain, competitors, tech; `docs/user-docs/researcher/research-[idea].md`
+2. **Run workflow-brainstorm** — Feature ideas, variations, options
+3. **Run workflow-assumption-validation** — List assumptions, risks, missing info; resolve or ask user
+4. **Run workflow-project-roadmap** — Phased milestones (Foundation → Core → Business → UX → Production)
+5. **Run workflow-project-spec** — Spec-first; produces product, architecture, database, api, tasks; user approval
+6. **Run workflow-architecture-review** — Self-critique before coding
+7. **Run workflow-task-planner** — Expands into `tasks/001-X.md` per roadmap phase
+8. **Execute tasks** — For each task file in order, implement, test, commit
 
 ---
 
@@ -80,7 +84,7 @@ If user says **"build X"** (e.g. "build a SaaS for gym booking"):
 | User intent | Workflow | File |
 |-------------|----------|------|
 | New project, greenfield | new-project | `.cursor/workflows/new-project.workflow.md` |
-| Add feature to existing | feature-development | `.cursor/workflows/feature-development.workflow.md` |
+| Add feature or module | feature-development | `.cursor/workflows/feature-development.workflow.md` (module = feature; same flow) |
 | Fix a bug | bug-fix | `.cursor/workflows/bug-fix.workflow.md` |
 
 **Dynamic routing:** For sub-steps (e.g. "database schema", "API design"), use `.cursor/skills/skill-router.md` to select the best skill from SKILL_INDEX when multiple skills could apply.

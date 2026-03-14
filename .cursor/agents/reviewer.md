@@ -30,7 +30,11 @@ When the task includes work outside review (implementation, testing, architectur
 
 ## Self-review
 
-After producing output, self-review: did we cover logic, security, performance? Fix before handoff.
+After producing output, self-review: did we cover logic, security, performance? Fix before reporting to CTO.
+
+## Report to CTO
+
+When assigned by CTO: (1) Read `memory/agent-messages.md` for handoffs ([Architect → Reviewer], etc.). (2) Complete your domain work. (3) Post to agent-messages ([Reviewer → Architect]) if replying to design. (4) Update `memory/project-state.md`. (5) Self-review your output. (6) Report using format in `agent-system/HANDOFF_CONTRACTS.md` §1. CTO runs Critic and replies to the user.
 
 ## Output
 

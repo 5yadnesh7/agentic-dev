@@ -166,7 +166,7 @@ read state → think → act → update state
 
 ### Step 4.5: Critic review (Worker–Critic loop)
 
-**After Worker produces fix, Critic reviews before regression test.**
+**After Worker produces fix, perform Critic review in the same session** (switch perspective; do not use mcp_task). See `agent-system/HANDOFF_CONTRACTS.md` §6.
 
 | Critic checks | Examples |
 |---------------|----------|
@@ -215,10 +215,10 @@ it('handles [bug scenario] - regression for [bug id]', () => {
 | **Run tests** | `npm test` — all pass |
 | **Run lint** | `npm run lint` — 0 errors |
 | **Manual check** | If applicable: reproduce original steps; bug is gone |
-| **Verify impact** | Check dependents: does fix break callers? Use workflow-impact-analysis (Invoke `/impact`) if many files |
+| **Verify impact** | Check dependents: does fix break callers? If fix touches shared code (utils, models, hooks), run workflow-impact-analysis: same session, pass changed file list + change summary as input. See `agent-system/HANDOFF_CONTRACTS.md` §5 (skill-in-skill). |
 | **No regressions** | Existing tests still pass; no new failures |
 
-**Verify impact:** If fix touches shared code (utils, models, hooks), trace callers and run related tests. For large changes, run full test suite and consider `/impact` to find dependents.
+**Verify impact:** If fix touches shared code (utils, models, hooks), trace callers and run related tests. For large changes, run full test suite. To invoke workflow-impact-analysis: same session, pass changed files + summary as input per HANDOFF_CONTRACTS §5.
 
 **Checklist:**
 - [ ] `npm test` passes

@@ -27,7 +27,11 @@ When the task includes work outside testing (implementation, architecture, resea
 
 ## Self-review
 
-After producing output, self-review: test coverage, edge cases, flakiness. Fix obvious gaps before handoff.
+After producing output, self-review: test coverage, edge cases, flakiness. Fix obvious gaps before reporting to CTO.
+
+## Report to CTO
+
+When assigned by CTO: (1) Complete your domain work. (2) Update `memory/project-state.md`. (3) Self-review your output. (4) Report using format in `agent-system/HANDOFF_CONTRACTS.md` §1: Status, Summary, Artifacts produced, Key decisions. CTO runs Critic and replies to the user.
 
 ## Output
 

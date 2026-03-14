@@ -23,6 +23,8 @@ Architect (design) → Reviewer (critique)
 
 **The agent MUST follow this sequence. No step out of order.**
 
+**Rule:** Research and Brainstorm are **mandatory** for every new project. Do not skip.
+
 | # | Step | Skill / Agent | Output |
 |---|------|---------------|--------|
 | 1 | Research | role-research-analyst | `docs/user-docs/researcher/research-[idea].md` |
@@ -43,14 +45,18 @@ Architect (design) → Reviewer (critique)
 
 User says: **"build a SaaS for gym booking"**
 
+**Rule:** Research and Brainstorm are mandatory. Do not skip.
+
 | # | Step | Skill | Output |
 |---|------|-------|--------|
-| 1 | Assumption validation | workflow-assumption-validation | Assumptions, risks, missing info |
-| 2 | Project roadmap | workflow-project-roadmap | `docs/user-docs/planner/roadmap.md` — phased milestones |
-| 3 | Full spec | workflow-project-spec | product, architecture, database, api, tasks (spec-first; user approval) |
-| 4 | Architecture review | workflow-architecture-review | Reviewer critiques; if BLOCKED, Architect revises, re-review |
-| 5 | Task files | workflow-task-planner | `tasks/001-X.md` per roadmap phase |
-| 6 | Execute | Per-task loop | Implementation |
+| 1 | Research | role-research-analyst | `docs/user-docs/researcher/research-[idea].md` |
+| 2 | Brainstorm | workflow-brainstorm | Feature ideas, variations, options |
+| 3 | Assumption validation | workflow-assumption-validation | Assumptions, risks, missing info |
+| 4 | Project roadmap | workflow-project-roadmap | `docs/user-docs/planner/roadmap.md` — phased milestones |
+| 5 | Full spec | workflow-project-spec | product, architecture, database, api, tasks (spec-first; user approval) |
+| 6 | Architecture review | workflow-architecture-review | Reviewer critiques; if BLOCKED, Architect revises, re-review |
+| 7 | Task files | workflow-task-planner | `tasks/001-X.md` per roadmap phase |
+| 8 | Execute | Per-task loop | Implementation |
 
 ---
 

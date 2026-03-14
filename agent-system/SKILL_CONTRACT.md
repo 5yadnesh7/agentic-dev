@@ -13,7 +13,7 @@ description: [What]. Use when [triggers].
 tags: [layer, domain, tech]
 layer: executive | strategic | operational
 produces: [docs/artifact.md, ...]
-required_context: [project-brain, project-context, ...]
+required_context: [memory/project-state, docs/user-docs/workflow-project-context/project-context, ...]
 ---
 
 ## Skill contract
@@ -39,7 +39,7 @@ required_context: [project-brain, project-context, ...]
 | `tags` | Yes | Discovery: [layer, domain, tech] |
 | `layer` | Yes | executive \| strategic \| operational |
 | `produces` | Recommended | Paths of artifacts (e.g. docs/architecture.md) |
-| `required_context` | Optional | Files to read first (project-brain, project-context, etc.) |
+| `required_context` | Optional | Files to read first (memory/project-state, project-context, etc.) |
 
 ## Examples
 

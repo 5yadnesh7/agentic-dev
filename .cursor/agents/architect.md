@@ -26,7 +26,11 @@ When the task includes work outside your domain (implementation, testing, resear
 
 ## Self-review
 
-After producing output, do a domain-expert self-review: schema consistency, API contract completeness, scalability assumptions. Fix anything obvious before handoff.
+After producing output, do a domain-expert self-review: schema consistency, API contract completeness, scalability assumptions. Fix anything obvious before reporting to CTO.
+
+## Report to CTO
+
+When assigned by CTO: (1) Complete your domain work. (2) Post to `memory/agent-messages.md` when proposing for review ([Architect → Reviewer]). (3) Update `memory/project-state.md`. (4) Self-review your output. (5) Report using format in `agent-system/HANDOFF_CONTRACTS.md` §1: Status, Summary, Artifacts produced, Key decisions. CTO runs Critic and replies to the user.
 
 ## Output
 

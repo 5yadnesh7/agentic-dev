@@ -37,6 +37,7 @@
 | `/refactor` | workflow-refactor (refactor suggestions) |
 | `/learn` | workflow-learning (record → docs/system-docs/dev-lessons.md) |
 | `/validate` / `/assume` | workflow-assumption-validation (think-before-build) |
+| `/deep-think` / `/think` | workflow-deep-think (thorough analysis, research, perfect output) |
 | `/roadmap` | workflow-project-roadmap (phased milestones) |
 | `/infra`, `/doc`, `/api`, `/release` | See ORCHESTRATOR |
 
@@ -48,7 +49,7 @@
 
 **Greenfield:** -2 Idea → -1 Research → 0.5 Brainstorm → 0.6 Product Planning → 0 Setup → 1 UX → 1b Project Manager (roadmap, tasks) → 2 Tech Design → 2a Documentation → 2b Content → 3 DB → 4 Task loop → 5 Integration → 6 Integration test (Jest + Playwright) → 6b Security → 7 Product review → 8 End consumer → 9 Docs → 10 PR → 11 Monitoring
 
-**Feature:** 0 Setup → 1 UX → 1b Project Manager → 2 … → 10 PR
+**Feature:** 0 Setup → 0a Research → 0b Brainstorm → 1 Requirements → 1 UX → 1b Project Manager → 2 … → 10 PR
 
 ---
 
@@ -68,3 +69,9 @@
 ## Commit
 
 One commit per atomic unit. Conventional Commits.
+
+---
+
+## Handoff contracts
+
+See `agent-system/HANDOFF_CONTRACTS.md` — report format (sub-agent → CTO), CTO prompt structure, agent-messages schema, project-state schema, Worker–Critic protocol, skill-to-skill invocation.

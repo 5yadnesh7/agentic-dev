@@ -53,6 +53,7 @@ Every skill is **trigger-based**: invokable by **direct trigger** (ORCHESTRATOR)
 | workflow-refactor | /refactor | "refactor suggestions", "code quality", "duplicate code", "clean up code" |
 | workflow-learning | /learn | "record lesson", "add to dev-lessons", "remember this pattern" |
 | workflow-assumption-validation | /validate, /assume | "validate assumptions", "check assumptions", "think before building" |
+| workflow-deep-think | /deep-think, /think, DeepThink: | "think deeply", "do thorough research", "analyze in detail", "perfect solution", "comprehensive answer", "research and verify" |
 | workflow-project-roadmap | /roadmap | "project roadmap", "phased plan", "development milestones" |
 | role-db-schema-engineer | /db | "database schema", "db schema", "db design", "design the database", "data model" |
 

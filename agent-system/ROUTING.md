@@ -32,7 +32,10 @@ User message
 | `/arch-review` | workflow-architecture-review |
 | `/context-map` | workflow-context-map |
 | `/pr` | workflow-pr-generator |
-| etc. | See SKILL_INDEX.md |
+| `/deep-think`, `/think` | workflow-deep-think |
+| `/impact` | workflow-impact-analysis |
+| `/validate` | workflow-assumption-validation |
+| **Full list** | See `agent-system/SKILL_INDEX.md` |
 
 **Critic:** No automatic CTO critique. On-demand only.
 
@@ -63,7 +66,7 @@ User message
 | `/cto`, "help me" | CTO triages and assigns |
 | "help me", "I need", "I don't know" | CTO triages and assigns |
 
-**Flow:** CTO analyzes request → selects sub-agent(s) → **assigns via mcp_task** (does NOT implement) → full Critic after each handoff → end-to-end review when cycle complete. See `agent-system/DELEGATION.md`.
+**Flow:** CTO analyzes request → selects sub-agent(s) from routing table → **calls mcp_task** (subagent_type, description, prompt per HANDOFF_CONTRACTS §2) — does NOT implement → waits for result (report per HANDOFF_CONTRACTS §1) → full Critic → end-to-end review. Bug/debug → tester (workflow-semantic-debugging). See `agent-system/DELEGATION.md`, `agent-system/HANDOFF_CONTRACTS.md`.
 
 ---
 

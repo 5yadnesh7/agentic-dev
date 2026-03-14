@@ -92,10 +92,10 @@ Depends: [task IDs or none]
 - Use schema above
 - **Checklist:** [ ] All task files written
 
-### 5. Update project memory
+### 5. Update project state
 
-- Add task board to `docs/project-memory.md`
-- **Checklist:** [ ] project-memory updated
+- Add Task Board to `memory/project-state.md` (see `memory/project-state.template.md` schema). Create `memory/` and file if not exist.
+- **Checklist:** [ ] project-state updated
 
 ## Example output structure
 

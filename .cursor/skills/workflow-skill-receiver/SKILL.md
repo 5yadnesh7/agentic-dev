@@ -25,7 +25,7 @@ When the user message does **not** start with a known trigger, use **skill-route
 
 ## When to use
 
-- User message does **not** start with: `/idea`, `/project`, `/build`, `/cto`, `/architect`, `/tester`, `/workflow`, `/planner`, `/bug`, `/review`, `/test`, `/infra`, `/doc`, `/explore`, `/get-context`, `/research`, `/api`, `/auth`, `/release`, `/micro`, `/ai`, `/ml`, `/impact`
+- User message does **not** start with: `/idea`, `/project`, `/build`, `/cto`, `/architect`, `/tester`, `/workflow`, `/planner`, `/bug`, `/review`, `/test`, `/infra`, `/doc`, `/explore`, `/get-context`, `/research`, `/api`, `/auth`, `/release`, `/micro`, `/ai`, `/ml`, `/impact`, `/deep-think`, `/think`, `/validate`, `/spec`, `/pr`, `/roadmap`
 - User is asking for an action that a skill or role can handle
 
 ## Step-by-step process
@@ -101,6 +101,7 @@ Read `agent-system/SKILL_INDEX.md` and `.cursor/skills/skill-router.md`. Router 
 | "Commit my changes" | workflow-git-jira | Git + convention |
 | "Create a skill for X" | workflow-skill-creator | Skill creation |
 | "Check impact of my changes", "Did my change break anything?" | workflow-impact-analysis | After changes; dependents |
+| "Think deeply about X", "Do thorough research", "Give me the perfect solution", "Comprehensive answer" | workflow-deep-think | Deep analysis, research, perfect output |
 
 ## Intent → Skill mapping (full; from SKILL_INDEX)
 
@@ -148,6 +149,7 @@ Use this for intelligent matching. Each row = user intent maps to skill.
 | Refactor suggestions, code quality, duplicate code, clean up | workflow-refactor |
 | Record lesson, add to dev-lessons, remember this pattern | workflow-learning |
 | Validate assumptions, check assumptions, think before building | workflow-assumption-validation |
+| Think deeply, do thorough research, analyze in detail, perfect solution, comprehensive answer, research and verify | workflow-deep-think |
 | Project roadmap, phased plan, development milestones | workflow-project-roadmap |
 | MySQL schema, Postgres schema, MongoDB, Redis | db-schema-* rule |
 

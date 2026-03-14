@@ -29,7 +29,7 @@ const REQUIRED_SUB_AGENTS = [
 
 const REQUIRED_INVOCATIONS = [
   '/cto', '/architect', '/tester', '/planner', '/devops',
-  '/security', '/designer',
+  '/security', '/designer', '/worker', '/researcher', '/reviewer',
 ];
 
 function extractSkillsFromMap(content) {
@@ -104,7 +104,7 @@ function main() {
     errors.push('agent-system/ORCHESTRATOR.md does not exist');
   }
 
-  // 4. SKILL_INDEX has CTO and sub-agents
+  // 4. SKILL_INDEX has CTO and sub-agents; all skills in SKILL_INDEX exist
   const idxPath = path.join(AGENT_SYSTEM, 'SKILL_INDEX.md');
   if (fs.existsSync(idxPath)) {
     const idx = fs.readFileSync(idxPath, 'utf8');
@@ -113,6 +113,13 @@ function main() {
     }
     if (!idx.includes('Sub-agent') && !idx.includes('/architect')) {
       errors.push('SKILL_INDEX.md missing sub-agent invocations');
+    }
+    // 4b. All skills referenced in SKILL_INDEX (workflow-*, role-*, domain-*) must exist
+    const skillsFromIndex = extractSkillsFromMap(idx);
+    for (const skill of skillsFromIndex) {
+      if (!skillExists(skill)) {
+        errors.push(`SKILL_INDEX references "${skill}" but .cursor/skills/${skill}/SKILL.md not found`);
+      }
     }
   } else {
     errors.push('agent-system/SKILL_INDEX.md does not exist');
@@ -174,7 +181,38 @@ function main() {
     }
   }
 
-  // 9. Skills: each SKILL.md has non-empty single-line description
+  // 9. Workflow files exist
+  const WORKFLOWS_DIR = path.join(ROOT, '.cursor', 'workflows');
+  const REQUIRED_WORKFLOWS = ['new-project.workflow.md', 'feature-development.workflow.md', 'bug-fix.workflow.md', 'refactor.workflow.md'];
+  for (const w of REQUIRED_WORKFLOWS) {
+    const p = path.join(WORKFLOWS_DIR, w);
+    if (!fs.existsSync(p)) {
+      errors.push(`Missing .cursor/workflows/${w}`);
+    }
+  }
+
+  // 10. skill-router.md exists
+  const skillRouterPath = path.join(SKILLS_DIR, 'skill-router.md');
+  if (!fs.existsSync(skillRouterPath)) {
+    errors.push('.cursor/skills/skill-router.md does not exist');
+  }
+
+  // 11. Critical agent-system docs exist
+  const REQUIRED_DOCS = ['HANDOFF_CONTRACTS.md', 'MEMORY_SYSTEM.md', 'WORK_MANAGER.md'];
+  for (const d of REQUIRED_DOCS) {
+    const p = path.join(AGENT_SYSTEM, d);
+    if (!fs.existsSync(p)) {
+      errors.push(`agent-system/${d} does not exist`);
+    }
+  }
+
+  // 12. memory/project-state.template.md exists
+  const templatePath = path.join(ROOT, 'memory', 'project-state.template.md');
+  if (!fs.existsSync(templatePath)) {
+    errors.push('memory/project-state.template.md does not exist');
+  }
+
+  // 13. Skills: each SKILL.md has non-empty single-line description
   if (fs.existsSync(SKILLS_DIR)) {
     const dirs = fs.readdirSync(SKILLS_DIR);
     for (const d of dirs) {

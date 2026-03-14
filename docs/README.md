@@ -31,4 +31,4 @@ Documents are split into **system** (framework reference) and **user** (project 
 | workflow-context-map | `user-docs/context-map/` | context-map.md |
 | workflow-impact-analysis | `user-docs/impact/` | [slug]-impact.md |
 | role-research-developer | `user-docs/spikes/` | [name]-report.md |
-| shared (multiple agents) | `user-docs/shared/` | project-memory.md, project-brain.md |
+| shared (legacy) | `user-docs/shared/` | Deprecated. Use **`memory/project-state.md`** (primary state). See `agent-system/MEMORY_SYSTEM.md`. |

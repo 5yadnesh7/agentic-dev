@@ -29,14 +29,14 @@ See `agent-system/SKILL_HIERARCHY.md`.
 
 | Doc | Purpose |
 |-----|---------|
-| `docs/user-docs/workflow-project-context/project-context.md` | **Persistent.** Stack, structure, patterns, phase outputs. Updated by **workflow-project-context** after each phase. Reuse for future phases. |
-| `docs/user-docs/shared/project-memory.md` | Current phase, completed phases, open tasks, key decisions, user approvals |
-| `docs/user-docs/shared/project-brain.md` | Vision, decisions, stack, open questions, lessons. Every agent reads and updates. |
+| **`memory/project-state.md`** | **Primary.** Single source of truth. Current phase, completed tasks, key decisions, lessons learned, task board. All agents read and update. See `memory/project-state.template.md`. |
+| `memory/agent-messages.md` | Inter-agent handoffs (e.g. Architect → Reviewer). See `agent-system/HANDOFF_CONTRACTS.md`. |
+| `docs/user-docs/workflow-project-context/project-context.md` | Stack, structure, patterns. Updated by **workflow-project-context** after each phase. |
 | `docs/system-docs/decision-log.md` | Why decisions were made; rationale for architecture choices |
 | `docs/system-docs/tool-memory.md` | Commands that worked, env notes (optional). See **agent-system/MEMORY_SYSTEM.md**. |
-| `.cursor/dev-docs/[TASK-ID].md` | **Temporary.** Task-scoped context during Phase 3–4. Created by **workflow-dev-doc** at task start; **deleted when task DONE**. Reduces long context and hallucination. |
+| `.cursor/dev-docs/[TASK-ID].md` | **Temporary.** Task-scoped context during Phase 3–4. Created by **workflow-dev-doc** at task start; **deleted when task DONE**. |
 
-**After each phase:** Invoke workflow-project-context to update `docs/user-docs/workflow-project-context/project-context.md`.
+**After each phase:** Update `memory/project-state.md`. Optionally invoke workflow-project-context for `project-context.md`.
 **During task:** Create dev doc at start; delete when task DONE.
 
 ---
@@ -223,6 +223,7 @@ See `agent-system/ROUTING.md` for full flow. **Precedence:** Explicit skill > Ex
 | `/refactor` | workflow-refactor | Refactor suggestions; duplicate code, large functions, naming |
 | `/learn` | workflow-learning | Record lesson → docs/system-docs/dev-lessons.md |
 | `/validate` / `/assume` | workflow-assumption-validation | Think-before-build; list assumptions, risks, missing info |
+| `/deep-think` / `/think` / DeepThink: | workflow-deep-think | Deep analysis: deconstruct problem, research (web), validate, produce perfect output |
 | `/roadmap` | workflow-project-roadmap | Phased milestones (docs/user-docs/planner/roadmap.md) before architecture |
 
 **No explicit trigger?** Use **workflow-skill-receiver** with **skill-router** (`.cursor/skills/skill-router.md`): match user intent to SKILL_INDEX by keywords, tags, domain, and optional confidence scoring—then run the best-matching skill. Every skill is invokable by direct trigger (above) or by intelligent routing.

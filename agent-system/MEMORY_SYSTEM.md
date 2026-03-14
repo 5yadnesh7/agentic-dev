@@ -116,7 +116,7 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 
 **Agent rule:** Read project-state at session/phase start. Update project-state after each phase or significant action. Do not act without reading state first.
 
-**Schema:** See `memory/project-state.md` for the full template.
+**Schema:** See `memory/project-state.template.md` for the full schema. Use `memory/project-state.md` in project root. Required sections: Current Phase, Active Task, Completed Tasks, Key Decisions, Lessons Learned, Task Board.
 
 ---
 
@@ -152,7 +152,15 @@ When a **reusable playbook** appears 2+ times (bug fix, feature, integration):
 - **Where:** `memory/agent-messages.md`
 - **Updated:** When an agent needs to hand off context, request review, or debate a decision
 
-**Format:** `[FromAgent → ToAgent]` + context + message + question/request.
+**Schema (see `agent-system/HANDOFF_CONTRACTS.md`):**
+```markdown
+**[FromAgent → ToAgent]**
+Context: [one-line]
+[Message body]
+Request: [what ToAgent should do]
+```
+
+**When to read:** Before acting if CTO (or workflow) indicates you are the recipient of a handoff; or if project-state says "Awaiting [YourRole]". Search for `[.* → YourRole]`.
 
 **Agent rule:** Post to agent-messages when handing off to another agent or when a decision needs review. Read agent-messages before acting if you are the recipient.
 
@@ -205,7 +213,7 @@ The current setup (Markdown in `docs/user-docs/`) is enough for most Cursor-base
 ## Checklist for agents
 
 - [ ] Read `memory/project-state.md` at phase/session start
-- [ ] Read `memory/agent-messages.md` if expecting a handoff or review request
+- [ ] Read `memory/agent-messages.md` if CTO/workflow indicates handoff to you, or if project-state says "Awaiting [YourRole]"
 - [ ] Update `memory/project-state.md` after each phase or significant action
 - [ ] Post to `memory/agent-messages.md` when handing off to another agent or requesting review
 - [ ] Optionally append to `docs/system-docs/tool-memory.md` after useful tool runs

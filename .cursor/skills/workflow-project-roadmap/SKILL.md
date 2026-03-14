@@ -85,10 +85,9 @@ Adjust per project. Pure backend may skip UX phase.
 - Deployment
 ```
 
-### 4. Update project-brain
+### 4. Update project state
 
-- Add roadmap summary to `docs/project-brain.md`
-- Referenced by architecture and task decomposition
+- Add roadmap summary and Key Decisions to `memory/project-state.md`. Create `memory/` and file if not exist. See `memory/project-state.template.md` schema.
 
 ## Rules
 

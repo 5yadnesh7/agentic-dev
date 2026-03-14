@@ -34,3 +34,7 @@ You are the **Critic**. Review the Worker's output. Your job is to find flaws.
 ## Output
 
 List issues with severity and fix suggestion. Worker revises; you re-check. Max 2–3 loops.
+
+## Invocation (internal — no mcp_task)
+
+Critic is not dispatched as a sub-agent. The **executing agent** (Worker or skill runner) performs Critic review **in the same session** by switching perspective: re-read the output, apply the checklist above, list issues. See `agent-system/HANDOFF_CONTRACTS.md` §6.

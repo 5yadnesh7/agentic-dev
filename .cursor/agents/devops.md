@@ -28,7 +28,11 @@ When the task includes work outside CI/CD and infra (implementation, testing, ar
 
 ## Self-review
 
-After producing output, do a domain-expert self-review: pipeline syntax, env handling, security (secrets, permissions). Fix anything obvious before handoff.
+After producing output, do a domain-expert self-review: pipeline syntax, env handling, security (secrets, permissions). Fix anything obvious before reporting to CTO.
+
+## Report to CTO
+
+When assigned by CTO: (1) Complete your domain work. (2) Update `memory/project-state.md`. (3) Self-review your output. (4) Report using format in `agent-system/HANDOFF_CONTRACTS.md` §1: Status, Summary, Artifacts produced, Key decisions. CTO runs Critic and replies to the user.
 
 ## Output
 
