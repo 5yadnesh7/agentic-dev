@@ -57,6 +57,8 @@
 ## Step 7 — Database design (mandatory before backend)
 
 - [ ] **role-db-schema-engineer** executed (not a simple outline)
+- [ ] User was **asked** for DB connection config: username, password, host, port, database name (or env vars)
+- [ ] `docs/user-docs/db-schema-engineer/database-connection-config.md` exists
 - [ ] `docs/user-docs/db-schema-engineer/database-conceptual.md` exists
 - [ ] `docs/user-docs/db-schema-engineer/database-logical.md` exists
 - [ ] `docs/user-docs/db-schema-engineer/database-ddl-plan.md` exists
@@ -80,11 +82,13 @@
 
 ---
 
-## Step 10 — Frontend structure (if UI)
+## Step 10 — UI/UX design (mandatory when project has frontend)
 
-- [ ] role-ui-ux-designer executed (or skipped for pure backend)
-- [ ] `docs/user-docs/designer/ux-design.md` and mockups exist (if UI)
+- [ ] **role-ui-ux-designer** executed — **mandatory if project has UI/frontend**. Skip only for pure backend.
+- [ ] `docs/user-docs/designer/ux-design.md` exists
+- [ ] `mockups/*.html` and `mockups/styles.css` exist — visual mockups user can open in browser
 - [ ] **User approval obtained** (gate)
+- [ ] No frontend code until this step is DONE and approved
 
 ---
 
@@ -99,14 +103,16 @@
 
 ## Step 12 — Execute ALL tasks (do not stop after Phase 1)
 
-- [ ] Phase 1 tasks: all DONE
-- [ ] Phase 2 tasks: all DONE
-- [ ] Phase 3 tasks: all DONE
+**CRITICAL:** When Phase 1 tasks complete, **immediately proceed to Phase 2**. Do NOT stop. Do NOT report "done". Continue until ALL phases complete.
+
+- [ ] Phase 1 tasks: all DONE → **continue immediately to Phase 2**
+- [ ] Phase 2 tasks: all DONE → continue to Phase 3
+- [ ] Phase 3 tasks: all DONE → continue to Phase 4+
 - [ ] Phase 4+ tasks: all DONE
 - [ ] Every task: implemented, unit tested, committed
 - [ ] Per-task loop (Implement → Unit test → Code review) completed for each
 
-**Critical:** Do NOT stop after Phase 1. Continue until ALL phases are complete.
+**Stopping early = FAIL.** Complete all phases before Integration step.
 
 ---
 

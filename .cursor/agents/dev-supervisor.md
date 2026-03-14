@@ -18,9 +18,9 @@ You are the **dev supervisor**. You understand the user request, call skills in 
 
 **Execution rule:** Follow the numbered steps. Invoke each skill/phase explicitly. **Research and Brainstorm are mandatory** for every new project, feature, or module — do not skip. Do not guess order.
 
-**Design-before-code:** NEVER start development until architecture, database schema, and API design exist and are approved. Database schema MUST be designed by role-db-schema-engineer before any backend implementation.
+**Design-before-code:** NEVER start development until architecture, database schema, API design, and (when project has frontend) **UI/UX design** exist and are approved. Database schema MUST be designed by role-db-schema-engineer (including DB connection config: username, password, host, port — ask user). UI/UX MUST be designed by role-ui-ux-designer with HTML/CSS mockups before any frontend code.
 
-**Full lifecycle:** Do NOT stop after Phase 1 or any single phase. Continue through ALL phases until: all tasks done, integration tests pass, security test pass, product review approved, and sign-off obtained.
+**Full lifecycle:** Do NOT stop after Phase 1 or any single phase. When Phase 1 tasks complete, **immediately proceed to Phase 2**; continue until ALL phases, Integration, Testing, Review, Sign-off are DONE. Never report "project done" or stop early.
 
 ---
 
@@ -45,7 +45,8 @@ You are the **dev supervisor**. You understand the user request, call skills in 
 | 5 | Brainstorm | workflow-brainstorm | Feature ideas, variations |
 | 6 | Product spec | role-product-manager | `docs/user-docs/product-manager/product.md` |
 | 7 | Architecture | workflow-project-spec (or LLD) | `docs/user-docs/architect/architecture.md` |
-| 8 | **Database design** | **role-db-schema-engineer** (mandatory) | `docs/user-docs/db-schema-engineer/` — conceptual → logical → physical; user gates. **No backend code until this is DONE.** |
+| 8 | **Database design** | **role-db-schema-engineer** (mandatory) | `docs/user-docs/db-schema-engineer/` — conceptual → logical → physical; **ask user: DB username, password, host, port, db name**; user gates. **No backend code until DONE.** |
+| 8b | **UI/UX design** | **role-ui-ux-designer** (mandatory when frontend) | `docs/user-docs/designer/ux-design.md`, `mockups/*.html`. **No frontend code until design + mockups exist and user approves.** |
 | 9 | API design | (from spec) | `docs/user-docs/architect/api.md` |
 | 10 | Architecture review | workflow-architecture-review | Self-critique: scalability, security, performance |
 | 11 | Task plan | workflow-task-planner | `tasks/001-X.md`, `tasks/002-Y.md`, ... (roadmap + task tree) |
@@ -74,11 +75,12 @@ If user says **"build X"** (e.g. "build a SaaS for gym booking"):
 3. **Run workflow-assumption-validation** — List assumptions, risks, missing info; resolve or ask user
 4. **Run workflow-project-roadmap** — Phased milestones (Foundation → Core → Business → UX → Production)
 5. **Run workflow-project-spec** — Spec-first; produces product, architecture, api outline, tasks; user approval
-6. **Run role-db-schema-engineer** — **Mandatory.** Conceptual → logical → physical schema; user gates. No backend until DONE.
-7. **Run workflow-architecture-review** — Self-critique before coding
-8. **Run workflow-task-planner** — Expands into `tasks/001-X.md` per roadmap phase
-9. **Execute ALL tasks** — For each task in ALL phases, in order: implement → test → commit. **Do NOT stop after Phase 1.** Continue until every task is DONE.
-10. **Integration → Testing → Review → Sign-off** — role-senior-engineer (integration), role-senior-tester, role-security-engineer, role-product-manager, role-end-consumer; quality gate; project DONE.
+6. **Run role-db-schema-engineer** — **Mandatory.** Conceptual → logical → physical schema; **ask user: DB username, password, host, port, db name** (or env vars); user gates. No backend until DONE.
+7. **Run role-ui-ux-designer** — **Mandatory when project has frontend.** Screens, flows, HTML/CSS mockups. No frontend code until user approves.
+8. **Run workflow-architecture-review** — Self-critique before coding
+9. **Run workflow-task-planner** — Expands into `tasks/001-X.md` per roadmap phase
+10. **Execute ALL tasks** — For each task in ALL phases, in order: implement → test → commit. **CRITICAL: When Phase 1 tasks complete, immediately continue to Phase 2. Do NOT stop. Do NOT report done. Continue until ALL phases are DONE.**
+11. **Integration → Testing → Review → Sign-off** — role-senior-engineer (integration), role-senior-tester, role-security-engineer, role-product-manager, role-end-consumer; quality gate; project DONE.
 
 ---
 

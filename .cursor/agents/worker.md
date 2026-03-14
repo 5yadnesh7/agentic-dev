@@ -49,3 +49,7 @@ When assigned by CTO: (1) Complete your domain work. (2) Update `memory/project-
 
 - **Read before:** `memory/project-state.md` (Active Task, Technology Stack, Lessons Learned)
 - **Update after:** `memory/project-state.md` (Task Board state, Completed Tasks)
+
+## Full lifecycle (new-project / multi-phase)
+
+When executing tasks for a project with multiple phases: **Do NOT stop after Phase 1.** When all Phase 1 tasks are DONE, immediately proceed to Phase 2 tasks. Continue until ALL phases are complete, then hand off to Integration, Testing, Review, Sign-off. Stopping after Phase 1 = incomplete delivery.

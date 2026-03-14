@@ -52,6 +52,16 @@ You design conceptual, logical, and physical schemas, choose appropriate databas
    4. Ask the user to **approve the chosen engine or request an alternative**.
    5. If the user disagrees or suggests another engine, revise the comparison and recommendation until an engine is approved.
 
+4b. **Connection configuration (mandatory — ask user)**
+   1. **Ask the user** for database connection details before implementation:
+      - Username (or confirm default, e.g. `postgres`, `root`)
+      - Password (or confirm: use env var `DB_PASSWORD`, no default in code)
+      - Host (e.g. `localhost` or confirm)
+      - Port (e.g. `5432`, `3306` — or confirm default for chosen engine)
+      - Database name (e.g. `myapp_dev`, or confirm naming convention)
+   2. Document in `docs/user-docs/db-schema-engineer/database-connection-config.md` — **never hardcode secrets**; use env vars for password.
+   3. Ask user to confirm or provide values. If user prefers env vars only, document required env vars (e.g. `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT`, `DB_NAME`).
+
 5. **Logical and physical schema**
    1. Convert the conceptual model into a **logical schema**: tables/collections, columns/fields, data types, primary keys, and key relationships.
    2. Apply relevant DB rules (`db-schema-*.mdc`, `db-mongodb.mdc`, `db-redis.mdc`) depending on the chosen engine.
@@ -78,6 +88,7 @@ You design conceptual, logical, and physical schemas, choose appropriate databas
 Produce or update the following files. Create docs/user-docs/db-schema-engineer/ if not exist.
 
 - `docs/user-docs/db-schema-engineer/database-conceptual.md` — Conceptual entities and relationships; user‑approved.
+- `docs/user-docs/db-schema-engineer/database-connection-config.md` — Connection details (username, host, port, db name); password via env var. User-provided or confirmed.
 - `docs/user-docs/db-schema-engineer/database-tasks.md` — DB-related work items for the planner.
 - `docs/user-docs/db-schema-engineer/database-logical.md` — Logical schema (tables/collections, relationships, constraints).
 - `docs/user-docs/db-schema-engineer/database-[engine].md` — Engine-specific notes and decisions (optional per engine).

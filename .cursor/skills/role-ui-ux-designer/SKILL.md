@@ -25,7 +25,7 @@ You design user flows, product screens, navigation, wireframes, and component st
 ## When to act
 
 - User says: "UX design", "Design:", "screen specs", "user flows", "HTML mockup", "CSS mockup"
-- Phase 2 of Workflow (feature with UI). Skip if pure backend.
+- Phase 2 of Workflow (feature with UI). **In new-project: MANDATORY when project has frontend.** Skip only if pure backend (no UI).
 
 ## Step-by-step process
 

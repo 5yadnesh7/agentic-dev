@@ -10,7 +10,7 @@
 
 ## Design-before-code rule
 
-**NEVER start development until design is complete.** Architecture, database schema, and API design must exist and be approved before any implementation. Database schema MUST be designed by **role-db-schema-engineer** — do not use a simple outline.
+**NEVER start development until design is complete.** Architecture, database schema, API design, and (when project has frontend) **UI/UX design** must exist and be approved before any implementation. Database schema MUST be designed by **role-db-schema-engineer** — do not use a simple outline. UI/UX MUST be designed by **role-ui-ux-designer** with HTML/CSS mockups — do not write frontend code without approved design.
 
 ---
 
@@ -45,10 +45,10 @@ Architect (design) → Reviewer (critique)
 | 4 | Brainstorm | workflow-brainstorm | Feature ideas, variations |
 | 5 | Product spec | role-product-manager | `docs/user-docs/product-manager/product.md` |
 | 6 | Architecture | workflow-project-spec (or LLD) | `docs/user-docs/architect/architecture.md` |
-| 7 | **Database design** | **role-db-schema-engineer** (mandatory) | `docs/user-docs/db-schema-engineer/` — conceptual → logical → physical; user gates. **No backend until DONE.** |
+| 7 | **Database design** | **role-db-schema-engineer** (mandatory) | `docs/user-docs/db-schema-engineer/` — conceptual → logical → physical; **ask user: DB username, password, host, port, db name**; user gates. **No backend until DONE.** |
 | 8 | API design | (from spec) | `docs/user-docs/architect/api.md` |
 | 9 | Architecture review | workflow-architecture-review | Reviewer critiques; if issues → revise 6–8, re-review until CLEAR |
-| 10 | Frontend structure | role-ui-ux-designer (if UI) | Screens, flows, HTML/CSS mockups |
+| 10 | **UI/UX design** | **role-ui-ux-designer** (mandatory when project has frontend) | Screens, flows, wireframes, **HTML/CSS mockups** in `mockups/`. **No frontend code until UX design exists and user approves.** Skip only for pure backend. |
 | 11 | Task plan | workflow-task-planner | `tasks/001-X.md` per roadmap phase |
 | 12 | Execute ALL tasks | Engineers | Code, tests, commits — **ALL phases; do NOT stop after Phase 1** |
 | 13 | Integration | role-senior-engineer | Wire FE/BE; full test run |
@@ -73,11 +73,12 @@ User says: **"build a SaaS for gym booking"**
 | 3 | Assumption validation | workflow-assumption-validation | Assumptions, risks, missing info |
 | 4 | Project roadmap | workflow-project-roadmap | `docs/user-docs/planner/roadmap.md` — phased milestones |
 | 5 | Full spec | workflow-project-spec | product, architecture, api, tasks (spec-first; user approval) |
-| 6 | **Database design** | **role-db-schema-engineer** | `docs/user-docs/db-schema-engineer/` — mandatory; user gates |
-| 7 | Architecture review | workflow-architecture-review | Reviewer critiques; if BLOCKED, Architect revises, re-review |
-| 8 | Task files | workflow-task-planner | `tasks/001-X.md` per roadmap phase |
-| 9 | Execute ALL tasks | Per-task loop | Implementation — **ALL phases** |
-| 10 | Integration → Test → Review → Sign-off | role-senior-engineer, tester, security, product-manager, end-consumer | Project DONE |
+| 6 | **Database design** | **role-db-schema-engineer** | `docs/user-docs/db-schema-engineer/` — mandatory; ask user DB username, password, host, port; user gates |
+| 7 | **UI/UX design** (if frontend) | **role-ui-ux-designer** | `docs/user-docs/designer/ux-design.md`, `mockups/*.html` — mandatory before frontend code |
+| 8 | Architecture review | workflow-architecture-review | Reviewer critiques; if BLOCKED, Architect revises, re-review |
+| 9 | Task files | workflow-task-planner | `tasks/001-X.md` per roadmap phase |
+| 10 | Execute ALL tasks | Per-task loop | Implementation — **ALL phases; do NOT stop after Phase 1** |
+| 11 | Integration → Test → Review → Sign-off | role-senior-engineer, tester, security, product-manager, end-consumer | Project DONE |
 
 ---
 
