@@ -88,10 +88,11 @@ user approval
 - Tech stack, modules, high-level structure
 - **Checklist:** [ ] architecture.md written
 
-### 5. Design database
+### 5. Design database (initial outline only)
 
-- Entities, relationships, schema outline
-- **Checklist:** [ ] database.md written
+- Entities, relationships, schema outline — **for context only**
+- **Note:** In new-project flow, **role-db-schema-engineer** must be run separately for full design (conceptual → logical → physical, user gates). This step produces an outline; do not skip role-db-schema-engineer.
+- **Checklist:** [ ] database outline written
 
 ### 6. Define API contract
 

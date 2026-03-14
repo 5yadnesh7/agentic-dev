@@ -19,7 +19,7 @@ layer: strategic
 
 ## Purpose
 
-Decompose a project into executable task files. Each task becomes a file in `tasks/` that agents then implement. **Roadmap + task tree:** Read `docs/roadmap.md` for phase order; map tasks to phases (Phase 1 → tasks 001–003, Phase 2 → 004–006, etc.).
+Decompose a project into executable task files. Each task becomes a file in `tasks/` that agents then implement. **Roadmap + task tree:** Read `docs/roadmap.md` for phase order; map tasks to phases (Phase 1 → tasks 001–003, Phase 2 → 004–006, etc.). **Important:** Create tasks for ALL phases — the executor must run through every phase until sign-off, not stop after Phase 1.
 
 ## When to run
 

@@ -30,8 +30,8 @@
 | **2** | Technical Design: LLD/HLD (interfaces, schema, sequences) | Commit: `docs: add LLD/HLD for [feature]` |
 | **2a** | **Documentation Agent**: role-product-manager — API specs, feature descriptions, edge cases, validation rules | Commit: `docs: add technical documentation for [feature]` |
 | **2b** | **Content Agent**: role-content-writer — labels, messages, tooltips, onboarding, errors, CTAs | **Gate:** All copy ready before dev. Commit: `docs: add content spec for [feature]` |
-| **3** | DB foundation tasks → per-task loop | Parallel if no Depends |
-| **4** | All implementation tasks → per-task loop | Parallel where Depends allow |
+| **3** | DB foundation tasks → per-task loop | Parallel if no Depends. **Do not stop after Phase 3.** |
+| **4** | All implementation tasks → per-task loop | Parallel where Depends allow. **Execute ALL phases until sign-off.** |
 | **5** | Integration: role-senior-engineer wires FE to BE; full `npm test` | Commit: `feat(scope): wire [X] to [Y]` |
 | **6** | Integration test: role-senior-tester — Jest + Playwright; every flow from UX spec | FAIL → re-open task → loop. |
 | **6b** | **Security testing:** role-security-engineer — auth, authz, API, OWASP tools, dependency scan, security linter | FAIL → fix → recheck. |

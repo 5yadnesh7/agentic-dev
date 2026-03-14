@@ -40,6 +40,8 @@ All agents in `.cursor/agents/` use YAML frontmatter (`name`, `description`) so 
 ## Execution
 
 - **Research + Brainstorm mandatory** — For every new project, feature, or module: run Research (role-research-analyst) and Brainstorm (workflow-brainstorm) before Requirements. Do not skip.
+- **Design-before-code** — Never start development until architecture, database schema (role-db-schema-engineer), and API design exist and are approved. Use `.cursor/checklists/new-project-checklist.md` to verify each step.
+- **Full lifecycle** — Do not stop after Phase 1. Run all phases through Integration, Testing, Review, Sign-off. Every step is mandatory.
 - **Parallel** when nothing blocks (independent tasks can advance together).
 - **Sequential and wait** when a task Depends on another, or there is a user gate or blocker.
 
