@@ -14,9 +14,21 @@
 
 ---
 
+## User approval gates — STOP and wait
+
+At **DB schema (step 7)** and **UI/UX design (step 10)**: STOP and present output to user. Ask "Do you approve? Reply 'approved' or provide feedback." **Do NOT proceed** until user responds. Do not assume approval. Do not run ahead.
+
+## Critic on every step
+
+After each step produces output, run **Critic review** (see `agents/critic.md`). Switch perspective; apply checklist (logic, security, architecture, performance). If issues found, fix before proceeding. Do not skip.
+
 ## Full lifecycle rule
 
 **Do NOT stop after Phase 1 or any single phase.** Execute ALL phases until: all tasks done, integration tests pass, security test pass, product review approved, and sign-off obtained.
+
+## Tester mandatory
+
+After development and integration: **INVOKE role-senior-tester** (or tester agent) explicitly. Run Jest + Playwright. Do NOT skip testing.
 
 ---
 
@@ -52,7 +64,7 @@ Architect (design) → Reviewer (critique)
 | 11 | Task plan | workflow-task-planner | `tasks/001-X.md` per roadmap phase |
 | 12 | Execute ALL tasks | Engineers | Code, tests, commits — **ALL phases; do NOT stop after Phase 1** |
 | 13 | Integration | role-senior-engineer | Wire FE/BE; full test run |
-| 14 | Integration test | role-senior-tester | Jest + Playwright; all flows |
+| 14 | **INVOKE Tester** | **role-senior-tester** (mandatory) | Jest + Playwright; all flows. Call tester explicitly. Do NOT skip. |
 | 15 | Security test | role-security-engineer | Auth, authz, OWASP, dependency scan |
 | 16 | Product review | role-product-manager | All PRD ACs met |
 | 17 | End consumer | role-end-consumer | Cold-user simulation; satisfaction verdict |

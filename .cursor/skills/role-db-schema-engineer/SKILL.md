@@ -38,7 +38,8 @@ You design conceptual, logical, and physical schemas, choose appropriate databas
    2. Draft a **conceptual ER-style model** (entities, relationships, cardinalities) in text form in `docs/user-docs/db-schema-engineer/database-conceptual.md`.
    3. Highlight assumptions and open questions.
    4. Present the conceptual model to the user and **ask for approval or changes**.
-   5. If the user requests changes, iterate on the conceptual model until approved.
+   5. **STOP. Do NOT proceed** to step 3 until user replies "approved" or "yes" (or provides feedback).
+   6. If the user requests changes, iterate on the conceptual model until approved.
 
 3. **Task planning alignment (after conceptual approval)**
    1. Once the conceptual schema is approved, identify **database-related work items** (migrations, seed scripts, ORM models, integration points).
@@ -50,7 +51,8 @@ You design conceptual, logical, and physical schemas, choose appropriate databas
    2. For each candidate, briefly list pros/cons and how it fits the current project.
    3. Recommend a **primary choice** and explain why.
    4. Ask the user to **approve the chosen engine or request an alternative**.
-   5. If the user disagrees or suggests another engine, revise the comparison and recommendation until an engine is approved.
+   5. **STOP. Do NOT proceed** to step 4b until user replies "approved" or "yes" (or feedback).
+   6. If the user disagrees or suggests another engine, revise the comparison and recommendation until an engine is approved.
 
 4b. **Connection configuration (mandatory — ask user)**
    1. **Ask the user** for database connection details before implementation:
@@ -60,7 +62,8 @@ You design conceptual, logical, and physical schemas, choose appropriate databas
       - Port (e.g. `5432`, `3306` — or confirm default for chosen engine)
       - Database name (e.g. `myapp_dev`, or confirm naming convention)
    2. Document in `docs/user-docs/db-schema-engineer/database-connection-config.md` — **never hardcode secrets**; use env vars for password.
-   3. Ask user to confirm or provide values. If user prefers env vars only, document required env vars (e.g. `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT`, `DB_NAME`).
+   3. Present the config to user and ask to confirm or provide values.
+   4. **STOP. Do NOT proceed** to step 5 until user replies with approval or values.
 
 5. **Logical and physical schema**
    1. Convert the conceptual model into a **logical schema**: tables/collections, columns/fields, data types, primary keys, and key relationships.
@@ -77,11 +80,13 @@ You design conceptual, logical, and physical schemas, choose appropriate databas
 7. **Final user confirmation (user-approval gate 3)**
    1. Present a concise summary of:
       - Chosen database engine
+      - Connection config (no secrets)
       - High-level schema structure
       - Any important constraints or trade‑offs
-   2. Ask the user to confirm that this schema and engine choice are acceptable.
-   3. If the user requests changes, return to Step 5 (logical and physical schema) and iterate.
-   4. Once approved, mark database design as **CLEAR** in `memory/project-state.md` and explicitly state that backend and frontend work can proceed in parallel using this schema.
+   2. Ask the user: "Do you approve this database design? Reply 'approved' or provide feedback."
+   3. **STOP. Do NOT proceed** to backend implementation until user replies "approved" or "yes".
+   4. If the user requests changes, return to Step 5 (logical and physical schema) and iterate.
+   5. Once approved, mark database design as **CLEAR** in `memory/project-state.md` and state backend/frontend can proceed.
 
 ## Output format
 
@@ -94,6 +99,15 @@ Produce or update the following files. Create docs/user-docs/db-schema-engineer/
 - `docs/user-docs/db-schema-engineer/database-[engine].md` — Engine-specific notes and decisions (optional per engine).
 - `docs/user-docs/db-schema-engineer/database-ddl-plan.md` — Implementation-ready DDL/migration plan for engineers.
 - `memory/project-state.md` — Updated to record chosen engine, approval gates passed, and readiness for backend/frontend.
+
+## Approval gates — STOP and wait
+
+**At each approval gate you MUST:**
+1. Present the output to the user (conceptual schema, engine choice, connection config, or final schema summary)
+2. **STOP.** Ask: "Do you approve? Reply with 'approved' or 'yes' to continue, or provide feedback for changes."
+3. **Do NOT proceed** to the next step until the user responds. Do not assume approval. Do not run ahead.
+4. If user provides feedback → revise → present again → STOP and wait for approval
+5. Only when user says "approved", "yes", "looks good", or similar → proceed to next step
 
 ## Rules
 

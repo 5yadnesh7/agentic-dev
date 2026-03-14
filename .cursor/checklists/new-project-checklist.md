@@ -4,6 +4,10 @@
 
 **Rule:** Do not run step N+1 until all items in step N are checked.
 
+**User approval gates:** At DB schema (Step 7) and UI/UX (Step 10): STOP and wait for user to reply "approved" before proceeding. Do not run ahead.
+
+**Critic:** After each step, run Critic review on the output before advancing.
+
 ---
 
 ## Step 1 — Research
@@ -56,6 +60,7 @@
 
 ## Step 7 — Database design (mandatory before backend)
 
+**STOP at each gate. Wait for user "approved" before proceeding. Do not run ahead.**
 - [ ] **role-db-schema-engineer** executed (not a simple outline)
 - [ ] User was **asked** for DB connection config: username, password, host, port, database name (or env vars)
 - [ ] `docs/user-docs/db-schema-engineer/database-connection-config.md` exists
@@ -84,6 +89,7 @@
 
 ## Step 10 — UI/UX design (mandatory when project has frontend)
 
+**STOP after mockups. Show user mockups/ in browser. Wait for user "approved" before proceeding. Do not run ahead.**
 - [ ] **role-ui-ux-designer** executed — **mandatory if project has UI/frontend**. Skip only for pure backend.
 - [ ] `docs/user-docs/designer/ux-design.md` exists
 - [ ] `mockups/*.html` and `mockups/styles.css` exist — visual mockups user can open in browser
@@ -124,9 +130,10 @@
 
 ---
 
-## Step 14 — Integration test
+## Step 14 — Integration test (INVOKE Tester — mandatory)
 
-- [ ] role-senior-tester executed
+**Must explicitly invoke role-senior-tester (or tester agent). Do NOT skip.**
+- [ ] **role-senior-tester** (tester) invoked explicitly
 - [ ] Jest + Playwright; every flow from UX spec
 - [ ] All flows pass; FAIL → re-open task, fix, re-run
 
